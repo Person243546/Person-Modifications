@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Royalty</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Augmented Vanilla Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Champion"]/apparelRequired</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Champion"]</xpath>
+					<value>
+						<apparelRequired/>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Champion"]</xpath>
+					<value>
+					</value>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Champion"]/apparelRequired</xpath>
+				<value>
+					<apparelRequired>
+						<li>Apparel_ProtectiveGear</li>
+						<li>Apparel_ProtectiveHelmet</li>
+						<li>Apparel_ShieldBelt</li>
+					</apparelRequired>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Empire_Fighter_Champion"]/specificApparelRequirements</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[@Name="ImperialFighterBase"]/apparelAllowHeadgearChance</xpath>
+				<value>
+					<apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[@Name="ImperialTrooperBase"]/apparelMoney</xpath>
+				<value>
+					<apparelMoney>10000~13000</apparelMoney>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Psycasts Expanded</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/HediffDef[defName="PsychicAmplifier"]</xpath>
+				<value>
+					<stages>
+						<li>
+							<statOffsets>
+								<MarketValue>3000</MarketValue>
+							</statOffsets>
+						</li>
+					</stages>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/VFECore.Abilities.AbilityDef[defName="VPE_PsychicShock"]/durationTime</xpath>
+				<value>
+					<durationTime>1200</durationTime>
+				</value>
+			</li>-->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/VFECore.Abilities.AbilityDef[defName="VPE_PsychicShock"]/modExtensions/li[@Class="VanillaPsycastsExpanded.AbilityExtension_Psycast"]/entropyGain</xpath>
+				<value>
+					<entropyGain>40</entropyGain>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+					defName="Empire_Fighter_Grenadier"
+					]</xpath>
+				<value>	
+					<li Class="CombatExtended.LoadoutPropertiesExtension">	
+						<primaryMagazineCount>
+							<min>10</min>
+							<max>20</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/HediffDef[defName="PsychicBlindness"]/stages/li/capMods/li/postFactor</xpath>
+				<value>
+					<postFactor>0.1</postFactor>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+
+	</operations>
+		</match>
+	</Operation>
+	
+</Patch>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Save Our Ship 2</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Door Expanded Star Wars edition</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="PH_AutodoorB" or
+				defName="PH_AutodoorC" or
+				defName="PH_AutodoorD" or
+				defName="PH_AutodoorE" or
+				defName="PH_AutodoorF" or
+				defName="SW_DoorJail" or
+				defName="PH_DoorThickBlastBDoor" or
+				defName="PH_DoorBlastCDoor" or
+				defName="PH_DoorBlastDDoor" or
+				defName="PH_MonoDoorA" or
+				defName="PH_MonoDoorB" or
+				defName="PH_MonoDoorC" or
+				defName="PH_MonoDoorD"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_ShipPart"/>
+					<li Class="CompProperties_RoofMe"/>
+					<li Class="CompProperties_ShipHeat">
+						<compClass>CompShipHeat</compClass>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="PH_AutodoorB" or
+				defName="PH_AutodoorC" or
+				defName="PH_AutodoorD" or
+				defName="PH_AutodoorE" or
+				defName="PH_AutodoorF" or
+				defName="SW_DoorJail" or
+				defName="PH_DoorThickBlastBDoor" or
+				defName="PH_DoorBlastCDoor" or
+				defName="PH_DoorBlastDDoor" or
+				defName="PH_MonoDoorA" or
+				defName="PH_MonoDoorB" or
+				defName="PH_MonoDoorC" or
+				defName="PH_MonoDoorD"
+				]/building</xpath>
+				<value>
+					<shipPart>true</shipPart>
+				</value>
+			</li>
+			
+			
+			</operations>
+			</match>
+		</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>

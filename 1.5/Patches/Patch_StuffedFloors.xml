@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Stuffed Floors</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsStoneBasicBase"]/stuffCost</xpath>
+				<value>
+					<stuffCost>2</stuffCost>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsMetalBasicBase"]/stuffCost</xpath>
+				<value>
+					<stuffCost>4</stuffCost>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsMetalBasicBase"]/statBases/Beauty</xpath>
+				<value>
+					<Beauty>2</Beauty>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsMetalPrettyBase"]/stuffCost</xpath>
+				<value>
+					<stuffCost>5</stuffCost>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsMetalPrettyBase"]/statBases/Beauty</xpath>
+				<value>
+					<Beauty>3</Beauty>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[@Name="BaseFilth"]/statBases/Beauty</xpath>
+				<value>
+					<Beauty>-4</Beauty>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Expanded Woodworking</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsWoodPrettyBase"]/statBases/Beauty</xpath>
+					<value>
+						<Beauty>1</Beauty>
+					</value>
+				</li>
+					
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/StuffedFloors.FloorTypeDef[@Name="StuffedFloorsWoodPrettyBase"]/statBases/WorkToBuild</xpath>
+					<value>
+						<WorkToBuild>1200</WorkToBuild>
+					</value>
+				</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/TerrainDef[defName="Concrete"]/statBases/Beauty</xpath>
+	</Operation>
+	
+</Patch>

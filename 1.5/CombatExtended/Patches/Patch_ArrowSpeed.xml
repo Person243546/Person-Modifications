@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_Arrow_Stone"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>8</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Projectile_Arrow_Steel" or
+				defName="Projectile_StreamlinedArrow_Plasteel" or
+				defName="Projectile_GreatArrow_Stone"
+				]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>11</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_Arrow_Plasteel"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>9</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_StreamlinedArrow_Stone"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>10</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Projectile_StreamlinedArrow_Steel" or
+				defName="Projectile_CrossbowBolt_Stone"
+				]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>13</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Projectile_GreatArrow_Steel" or
+				defName="Projectile_CrossbowBolt_Plasteel"
+				]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>14</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_GreatArrow_Plasteel"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>12</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_CrossbowBolt_Steel"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>16</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Pilum_Fired"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>48</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseGreatArrowProjectile"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>36</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_GreatArrow_Stone"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>33</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Projectile_GreatArrow_Plasteel"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>39</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					@Name="BaseArrowProjectile" or
+					@Name="BaseStreamlinedArrowProjectile" or
+					@Name="BaseGreatArrowProjectile"
+				]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]</xpath>
+				<value>
+					<gravityFactor>1.5</gravityFactor>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[@Name="BaseCrossbowBoltProjectile"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<match Class="PatchOperationSequence">
+					<operations>
+						
+						<li Class="PatchOperationAdd">
+							<xpath>/Defs/ThingDef[@Name="BaseCrossbowBoltProjectile"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]</xpath>
+							<value>
+								<gravityFactor>1.5</gravityFactor>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>/Defs/ThingDef[@Name="BaseCrossbowBoltProjectile"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+							<value>
+								<speed>36</speed>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>/Defs/ThingDef[defName="Projectile_CrossbowBolt_Stone"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+							<value>
+								<speed>33</speed>
+							</value>
+						</li>
+						
+						<li Class="PatchOperationReplace">
+							<xpath>/Defs/ThingDef[defName="Projectile_CrossbowBolt_Plasteel"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+							<value>
+								<speed>39</speed>
+							</value>
+						</li>
+						
+					</operations>
+				</match>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	
+</Patch>

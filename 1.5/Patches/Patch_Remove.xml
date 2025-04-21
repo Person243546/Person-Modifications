@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Alpha Memes</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSniperRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Techist"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSniperRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Totemic"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSniperRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Techist"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Totemic"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_MarksmanRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_Flamethrower"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_ServiceRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="AM_Kemetic"]/thingDefStyles/li[thingDef="VWE_Gun_HMG"]</xpath>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Ideology Expanded - Memes and Structures</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSniperRifle"]</xpath>
+			</li>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_ChargeSMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_Flamethrower"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_HMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_MarksmanRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="VME_Corporate"]/thingDefStyles/li[thingDef="VWE_Gun_ServiceRifle"]</xpath>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Pawnmorpher: Insectoids</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="PMI_Chaospider"]/comps/li[@Class="Pawnmorph.CompProperties_AlwaysFormerHuman"]</xpath>
+			</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Augmented Vanilla Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_RSBattleRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_RSAMRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_Repeater"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_MarksmanRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_MilitiaRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_ChargeSidearm"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_ScatterCharger"]</xpath>
+			</li>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Morbid"]/thingDefStyles/li[thingDef="Gun_RSBattleRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Techist"]/thingDefStyles/li[thingDef="Gun_RSBattleRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Rustic"]/thingDefStyles/li[thingDef="Gun_Repeater"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/StyleCategoryDef[defName="Morbid"]/thingDefStyles/li[thingDef="Gun_RSAMRifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Rimsenal Style Pack - Sophian</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+					<li Class="PatchOperationRemove">
+						<xpath>/Defs/StyleCategoryDef[defName="RSSophian"]/thingDefStyles/li[thingDef="Gun_ChargeSidearm"]</xpath>
+					</li>
+					
+					<li Class="PatchOperationRemove">
+						<xpath>/Defs/StyleCategoryDef[defName="RSSophian"]/thingDefStyles/li[thingDef="Gun_ScatterCharger"]</xpath>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns +</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_Flintlock"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_Musket"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_FNFiveSeven"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_PNinety"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_SawedOff"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_SigMCX"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_AKSSeventyFour"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_TavorSeven"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_RPKSixteen"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_BigBoy"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_MiniFourteen"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_MThirtyNineEMR"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_FNMinimi"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_S9ChargeShotgun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_BrenLMG"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEP_R3ChargePistol"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="CEC_CompactSR"]</xpath>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Morgante Mafia Weapons Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_M1911a"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_ServiceRevolver"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_PoketRevolver"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_Lupara"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_PumpShotgun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Morg_MolotovCocktail"]</xpath>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+
+</Patch>

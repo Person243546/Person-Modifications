@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!--
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/thingDef[defName="MRSKitR"]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PrecisionRifling</li>
+						<li>DefenceTech</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+			
+			<Operation Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="GD_GrenadeLauncher"]/recipeMaker/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>DefenceTech</li>
+						<li>CE_Launchers</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+			
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/thingDef[
+					defName="Apparel_MedicH" or
+					defName="Apparel_PioneerH" or
+					defName="Apparel_NomadH" or
+					defName="Apparel_MedicArmor" or
+					defName="Apparel_PioneerArmor" or
+					defName="Apparel_NomadArmor"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>DefenceTech</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+			
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/thingDef[
+					defName="Apparel_FSArmor" or
+					defName="Apparel_AssaultArmor" or
+					defName="Apparel_FSArmorH" or
+					defName="Apparel_AssaultArmorH"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>MoltenTech</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+			
+			<Operation Class="PatchOperationAdd">
+				<xpath>Defs/thingDef[
+					defName="Apparel_HazardCarapace" or
+					defName="Apparel_ReflactorArmor" or
+					defName="Apparel_HazardCarapaceH" or
+					defName="Apparel_ReflactorArmorH"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>KineticTech</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+			
+			<Operation Class="PatchOperationReplace">
+				<xpath>Defs/thingDef[
+					defName="Apparel_StrikesuitH" or
+					defName="Apparel_DropsuitH"
+				]/recipeMaker/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>ShardTech</li>
+					</researchPrerequisites>
+				</value>
+			</Operation>
+	-->
+</Patch>

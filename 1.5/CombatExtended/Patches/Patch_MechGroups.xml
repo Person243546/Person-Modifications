@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/FactionDef[defName="Mechanoid"]/pawnGroupMakers</xpath>
+		<value>
+			<pawnGroupMakers>
+			  <li>
+				<!-- All types-->
+				<kindDef>Combat</kindDef>
+				<commonality>100</commonality>
+				<options>
+				  <Mech_Scyther>10</Mech_Scyther>
+					<AM_Aura MayRequire="sarg.alphamechs">7</AM_Aura>
+					<AM_Daggersnout MayRequire="sarg.alphamechs">5</AM_Daggersnout>
+					<AM_Fireworm MayRequire="sarg.alphamechs">7</AM_Fireworm>
+					<AM_Phalanx MayRequire="sarg.alphamechs">7</AM_Phalanx>
+					<AM_Goliath MayRequire="sarg.alphamechs">5</AM_Goliath>
+				  <Mech_Pikeman>15</Mech_Pikeman>
+				  <Mech_Lancer>15</Mech_Lancer>
+				  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+				  <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">15</Mech_Militor>
+				  <AM_Mech_Bellicor MayRequire="sarg.alphamechs">8</AM_Mech_Bellicor>
+				  <Mech_Militant MayRequire="zorin.morecombatmechanoids">8</Mech_Militant>
+				  <Mech_Centurion MayRequire="Ludeon.RimWorld.Biotech">2</Mech_Centurion>
+				  <Mech_Warqueen MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Warqueen>
+				  <Mech_Apocriton MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Apocriton>
+				  <Mech_Trebuchet MayRequire="zorin.morecombatmechanoids">10</Mech_Trebuchet>
+				  <RM_Mech_Vulture MayRequire="mlie.reinforcedmechanoid2">5</RM_Mech_Vulture>
+				  <RM_Mech_Ranger MayRequire="mlie.reinforcedmechanoid2">10</RM_Mech_Ranger>
+				</options>
+			  </li>
+			  <li>
+				<!-- Ranged only -->
+				<kindDef>Combat</kindDef>
+				<commonality>80</commonality>
+				<options>
+				  <Mech_Pikeman>15</Mech_Pikeman>
+				  <Mech_Lancer>15</Mech_Lancer>
+				  <AM_Siegebreaker MayRequire="sarg.alphamechs">7</AM_Siegebreaker>
+				  <Mech_Scorcher MayRequire="Ludeon.RimWorld.Biotech">5</Mech_Scorcher>
+				  <Mech_Tesseron MayRequire="Ludeon.RimWorld.Biotech">5</Mech_Tesseron>
+				  <Mech_Legionary MayRequire="Ludeon.RimWorld.Biotech">2</Mech_Legionary>
+				  <Mech_Diabolus MayRequire="Ludeon.RimWorld.Biotech">1</Mech_Diabolus>
+				  <RM_Mech_Vulture MayRequire="mlie.reinforcedmechanoid2">5</RM_Mech_Vulture>
+				  <Mech_Trebuchet MayRequire="zorin.morecombatmechanoids">5</Mech_Trebuchet>
+				  <RM_Mech_Ranger MayRequire="mlie.reinforcedmechanoid2">8</RM_Mech_Ranger>
+				</options>
+			  </li>
+			  <li>
+				<!-- Melee only-->
+				<kindDef>Combat</kindDef>
+				<commonality>70</commonality>
+				<options>
+				  <Mech_Scyther>10</Mech_Scyther>
+					<AM_Daggersnout MayRequire="sarg.alphamechs">4</AM_Daggersnout>
+					<AM_Aura MayRequire="sarg.alphamechs">7</AM_Aura>
+				</options>
+			  </li>
+			  <li>
+				<!-- Centipede only -->
+				<kindDef>Combat</kindDef>
+				<commonality>30</commonality>
+				<options>
+				  <Mech_CentipedeBlaster>12</Mech_CentipedeBlaster>
+				  <Mech_CentipedeGunner>8</Mech_CentipedeGunner>
+				  <Mech_CentipedeBurner>8</Mech_CentipedeBurner>
+				  <AM_Siegebreaker MayRequire="sarg.alphamechs">3</AM_Siegebreaker>
+				  <AM_Goliath MayRequire="sarg.alphamechs">3</AM_Goliath>
+				   <RM_Mech_Vulture MayRequire="mlie.reinforcedmechanoid2">5</RM_Mech_Vulture>
+				</options>
+			  </li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">
+				<!-- militor only -->
+				<kindDef>Combat</kindDef>
+				<commonality>30</commonality>
+				<options>
+				  <Mech_Militor>15</Mech_Militor>
+				  <AM_Mech_Bellicor MayRequire="sarg.alphamechs">5</AM_Mech_Bellicor>
+				  <AM_Daggersnout MayRequire="sarg.alphamechs">5</AM_Daggersnout>
+				  <Mech_Militant MayRequire="zorin.morecombatmechanoids">10</Mech_Militant>
+				</options>
+			  </li>
+			  <li>
+				<!-- breach raids -->
+				<kindDef>Combat</kindDef>
+				<commonality>1</commonality>
+				<options>
+				  <Mech_Pikeman>10</Mech_Pikeman>
+				  <Mech_Scyther>10</Mech_Scyther>
+				  <Mech_Lancer>10</Mech_Lancer>
+				  <Mech_CentipedeBlaster>10</Mech_CentipedeBlaster>
+				  <Mech_Termite_Breach>1</Mech_Termite_Breach>
+				  <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor>
+				  <RM_Mech_Vulture MayRequire="mlie.reinforcedmechanoid2">5</RM_Mech_Vulture>
+				</options>
+			  </li>
+			  <li Class="ReinforcedMechanoids.PawnGroupMaker_CaretakerRaid" MayRequire="mlie.reinforcedmechanoid2">
+				<!-- Caretaker Raid -->
+				<kindDef>Combat</kindDef>
+				<commonality>1</commonality>
+				<options>
+				  <Mech_Militor MayRequire="Ludeon.RimWorld.Biotech">20</Mech_Militor>
+				  <RM_Mech_Ranger MayRequire="mlie.reinforcedmechanoid2">10</RM_Mech_Ranger>
+				  <Mech_Lancer>10</Mech_Lancer>
+				  <Mech_Scyther>10</Mech_Scyther>
+				  <Mech_Legionary MayRequire="Ludeon.RimWorld.Biotech">5</Mech_Legionary>
+				  <Mech_CentipedeBlaster>5</Mech_CentipedeBlaster>
+				  <Mech_CentipedeGunner>3</Mech_CentipedeGunner>
+				  <Mech_CentipedeBurner>3</Mech_CentipedeBurner>
+				  <RM_Mech_Caretaker>1</RM_Mech_Caretaker>
+				</options>
+			  </li>
+			</pawnGroupMakers>
+		</value>
+	</Operation>
+	
+</Patch>

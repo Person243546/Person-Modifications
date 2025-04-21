@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>RimThunder - Core</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Vehicles Expanded</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="VVE_TankTrap"]/stuffCategories/li[.="Woody"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="CastFromMold"]/products</xpath>
+				<value>
+				  <products>
+					<ComponentHeavyCasting>1</ComponentHeavyCasting>
+				  </products>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="CastFromMold"]/ingredients/li/count</xpath>
+				<value>
+					<count>85</count>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="Make_ComponentTransmission"]/ingredients</xpath>
+				<value>
+					<ingredients>
+						<li>
+						<filter>
+						  <thingDefs>
+							<li>ComponentIndustrial</li>
+						  </thingDefs>
+						</filter>
+						<count>4</count>
+						</li>
+					</ingredients>
+				</value>
+			</li>-->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="Make_ComponentFuelTank"]/ingredients</xpath>
+				<value>
+					<ingredients>
+						<li>
+						  <filter>
+							<thingDefs>
+							  <li>Steel</li>
+							</thingDefs>
+						  </filter>
+						  <count>40</count>
+						</li>
+						<li>
+						<filter>
+						  <thingDefs>
+							<li>ComponentIndustrial</li>
+						  </thingDefs>
+						</filter>
+						<count>6</count>
+						</li>
+					</ingredients>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="VVE_CarPartBase"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>RT_AssemblyBench</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="ExtractMetalFromCasting"]/products</xpath>
+				<value>
+				<products>
+					<Steel>80</Steel>
+				</products>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="ComponentWheelRoad"]/recipeMaker/recipeUsers</xpath>
+				<value>
+					<li>VVE_GarageBench</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VVE_CarTransmission"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>Fabrication</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Charley_Blueprint" or
+				defName="VVE_Bulldog_Blueprint" or
+				defName="VVE_Wisent_Blueprint" or
+				defName="VVE_Tango_Blueprint" or
+				defName="VVE_Prowler_Blueprint" or
+				defName="VVE_Dirtbike_Blueprint"
+				]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Prowler_Blueprint" or
+				defName="VVE_Charley_Blueprint" or
+				defName="VVE_Dirtbike_Blueprint"
+				]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineLight>1</EngineLight>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Tango_Blueprint" or
+				defName="VVE_Bulldog_Blueprint" or
+				defName="VVE_Wisent_Blueprint"
+				]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineHeavy>1</EngineHeavy>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Tango_Blueprint" or
+				defName="VVE_Bulldog_Blueprint"
+				]/costList/VVE_CarWheel</xpath>
+				<value>
+					<ComponentWheelRoad>14</ComponentWheelRoad>
+					<ComponentHeavyCasting>1</ComponentHeavyCasting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Roadkill_Blueprint" or
+				defName="VVE_Bunsen_Blueprint"
+				]/costList/VVE_CarWheel</xpath>
+				<value>
+					<ComponentWheelRoad>10</ComponentWheelRoad>
+				</value>
+			</li>
+			
+	<li Class="PatchOperationFindMod">
+	<mods>
+		<li>Panther</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/label</xpath>
+				<value>
+					<label>Panther</label>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleDef[defName="PantherG"]/label</xpath>
+				<value>
+					<label>Panther</label>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList/Steel</xpath>
+				<value>
+					<Steel>400</Steel>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList/ComponentIndustrial</xpath>
+				<value>
+					<ComponentIndustrial>14</ComponentIndustrial>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineHeavy>1</EngineHeavy>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList</xpath>
+				<value>
+					<ComponentWheelRoad>20</ComponentWheelRoad>
+					<ComponentHeavyCasting>1</ComponentHeavyCasting>
+					<VVE_CarTransmission>1</VVE_CarTransmission>
+					<VVE_CarRadiator>2</VVE_CarRadiator>
+					<VVE_CarFuelTank>2</VVE_CarFuelTank>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="Panther_Blueprint"]/costList/VVE_CarWheel</xpath>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Combat Extended</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/statBases/ArmorRating_Blunt</xpath>
+						<value>
+							<ArmorRating_Blunt>32</ArmorRating_Blunt>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/statBases/ArmorRating_Sharp</xpath>
+						<value>
+							<ArmorRating_Sharp>16</ArmorRating_Sharp>
+						</value>
+					</li>
+					
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/vehicleStats/CargoCapacity</xpath>
+						<value>
+							<CargoCapacity>450</CargoCapacity>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="FrontArmorPlating"]/health</xpath>
+						<value>
+							<health>600</health>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="FrontArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+						<value>
+							<ArmorRating_Blunt>32</ArmorRating_Blunt>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="FrontArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+						<value>
+							<ArmorRating_Sharp>16</ArmorRating_Sharp>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="LeftArmorPlating"]/health</xpath>
+						<value>
+							<health>600</health>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="LeftArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+						<value>
+							<ArmorRating_Blunt>28</ArmorRating_Blunt>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="LeftArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+						<value>
+							<ArmorRating_Sharp>14</ArmorRating_Sharp>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="RightArmorPlating"]/health</xpath>
+						<value>
+							<health>600</health>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="RightArmorPlating"]/armor/ArmorRating_Blunt</xpath>
+						<value>
+							<ArmorRating_Blunt>28</ArmorRating_Blunt>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="RightArmorPlating"]/armor/ArmorRating_Sharp</xpath>
+						<value>
+							<ArmorRating_Sharp>14</ArmorRating_Sharp>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="BackArmorPlating"]/health</xpath>
+						<value>
+							<health>400</health>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="Roof"]/health</xpath>
+						<value>
+							<health>400</health>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="Roof"]/armor/ArmorRating_Blunt</xpath>
+						<value>
+							<ArmorRating_Blunt>20</ArmorRating_Blunt>
+						</value>
+					</li>
+
+					<li Class="PatchOperationReplace">
+						<xpath>Defs/Vehicles.VehicleDef[defName="PantherG"]/components/li[key="Roof"]/armor/ArmorRating_Sharp</xpath>
+						<value>
+							<ArmorRating_Sharp>10</ArmorRating_Sharp>
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Vehicles Expanded - Tier 3</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Badger_Blueprint" or
+				defName="VVE_BigRig_Blueprint" or
+				defName="VVE_Burya_Blueprint" or
+				defName="VVE_Cherokee_Blueprint" or
+				defName="VVE_Goliath_Blueprint" or
+				defName="VVE_Hermano_Blueprint" or
+				defName="VVE_Louie_Blueprint" or
+				defName="VVE_Marshal_Blueprint" or
+				defName="VVE_Nomad_Blueprint" or
+				defName="VVE_Paladin_Blueprint" or
+				defName="VVE_Udar_Blueprint"
+				]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Badger_Blueprint" or
+				defName="VVE_BigRig_Blueprint" or
+				defName="VVE_Burya_Blueprint" or
+				defName="VVE_Hermano_Blueprint" or
+				defName="VVE_Nomad_Blueprint" or
+				defName="VVE_Paladin_Blueprint"
+				]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineHeavy>1</EngineHeavy>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Goliath_Blueprint" or
+				defName="VVE_Louie_Blueprint" or
+				defName="VVE_Marshal_Blueprint" or
+				defName="VVE_Udar_Blueprint"
+				]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineTurbine>1</EngineTurbine>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Cherokee_Blueprint"
+				]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineTurbine>2</EngineTurbine>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Udar_Blueprint"
+				]/costList/VVE_CarWheel</xpath>
+				<value>
+					<ComponentWheelRoad>14</ComponentWheelRoad>
+					<ComponentHeavyCasting>1</ComponentHeavyCasting>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="VVE_Marshal_Blueprint"
+				]/costList/VVE_CarWheel</xpath>
+				<value>
+					<ComponentWheelRoad>16</ComponentWheelRoad>
+					<ComponentHeavyCasting>2</ComponentHeavyCasting>
+				</value>
+			</li>
+
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Quasimorph - Magnum shuttle</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="QM_Shuttle_Blueprint"]/costList/ComponentIndustrial</xpath>
+				<value>
+					<EngineJet>3</EngineJet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="QM_Shuttle_Blueprint"]/costList/ComponentIndustrial</xpath>
+				<value>
+					<ComponentIndustrial>5</ComponentIndustrial>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="QM_Shuttle_Blueprint"]/costList/Steel</xpath>
+				<value>
+					<Steel>305</Steel>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<!--		
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>RimThunder - Roaring Tiger</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_M1A2_MainBattleTank_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>7</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_M48H_MediumTank_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>6</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_M113_APC_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>5</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_M113M_APC_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>5</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_M1075_HEMTT_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>5</VVE_CarSuspension>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>RimThunder - Cold Front</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_GAZ63_Truck_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>1</VVE_CarAlternator>
+					<VVE_CarExhaust>1</VVE_CarExhaust>
+					<VVE_CarSuspension>4</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_GAZ64_Car_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>1</VVE_CarAlternator>
+					<VVE_CarExhaust>1</VVE_CarExhaust>
+					<VVE_CarSuspension>2</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_KV_1_HeavyTank_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>4</VVE_CarExhaust>
+					<VVE_CarSuspension>6</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_T_27_Tankette_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>2</VVE_CarExhaust>
+					<VVE_CarSuspension>4</VVE_CarSuspension>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_T_38_LightTank_Blueprint"]/costList</xpath>
+				<value>
+					<VVE_CarAlternator>2</VVE_CarAlternator>
+					<VVE_CarExhaust>2</VVE_CarExhaust>
+					<VVE_CarSuspension>4</VVE_CarSuspension>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	-->
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>CV90 - A Combat Vehicle Mod</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SV_CVNinety_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SV_CVNinety_Blueprint"]/costList/VVE_CarWheel</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SV_CVNinety_Blueprint"]/costList</xpath>
+				<value>
+					<EngineHeavy>1</EngineHeavy>
+					<ComponentWheelRoad>18</ComponentWheelRoad>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>VVE - Secondary Weapons</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/Vehicles.UpgradeTreeDef[
+					defName="VVE_Mule_UpgradeTree" or
+					defName="TGBM_VVE_Roadrunner_UpgradeTree" or
+					defName="TGBM_VVE_Trawler_UpgradeTree" or
+					defName="TGBM_VVE_Wisent_UpgradeTree"
+					]/nodes//li/upgrades/li[@Class="Vehicles.VehicleUpgrade"]/roles/li/handlingTypes[contains(li, "Turret")]</xpath>
+				<value>
+					<handlingTypes>Turret</handlingTypes>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Vehicles - Skyranger</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="XCOM_Skyranger_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="XCOM_Skyranger_Blueprint"]/costList</xpath>
+				<value>
+					<EngineJet>3</EngineJet>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Starcraft Vulture</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="STerran_Vulture_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="STerran_Vulture_Blueprint"]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineJet>2</EngineJet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="STerran_BWVulture_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="STerran_BWVulture_Blueprint"]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineJet>1</EngineJet>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Space Cowboy Vehicles</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SCV_Cabriolet_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SCV_Cabriolet_Blueprint"]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineJet>1</EngineJet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SCV_Jetbike_Blueprint"]/costList/VVE_EngineBlock</xpath>
+			</li>
+			
+			<li Class="PatchOperationInsert">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="SCV_Jetbike_Blueprint"]/costList/VVE_CarAlternator</xpath>
+				<value>
+					<EngineJet>1</EngineJet>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>RimThunder - Warhorse of Reich</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_ObelBlitzA_Truck_Blueprint"]/costList</xpath>
+				<value>
+				<costList>
+					<EngineMedium>1</EngineMedium>
+					<ComponentFuelTank>1</ComponentFuelTank>
+					<ComponentTransmission>4</ComponentTransmission>
+					<ComponentWheelTire>4</ComponentWheelTire>
+					<ComponentIndustrial>5</ComponentIndustrial>
+					<Steel>250</Steel>
+					<WoodLog>100</WoodLog>
+				</costList>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_ObelBlitzC_Truck_Blueprint"]/costList</xpath>
+				<value>
+				<costList>
+					<EngineMedium>1</EngineMedium>
+					<ComponentFuelTank>1</ComponentFuelTank>
+					<ComponentTransmission>4</ComponentTransmission>
+					<ComponentWheelTire>4</ComponentWheelTire>
+					<ComponentIndustrial>5</ComponentIndustrial>
+					<Steel>250</Steel>
+					<WoodLog>100</WoodLog>
+				</costList>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[defName="RT_ObelBlitzP_Truck_Blueprint"]/costList</xpath>
+				<value>
+				<costList>
+					<EngineMedium>1</EngineMedium>
+					<ComponentFuelTank>1</ComponentFuelTank>
+					<ComponentTransmission>4</ComponentTransmission>
+					<ComponentWheelTire>4</ComponentWheelTire>
+					<ComponentIndustrial>5</ComponentIndustrial>
+					<Steel>250</Steel>
+					<WoodLog>100</WoodLog>
+				</costList>	
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+				defName="RT_ObelBlitzP_Truck_Blueprint" or
+				defName="RT_ObelBlitzC_Truck_Blueprint" or
+				defName="RT_ObelBlitzA_Truck_Blueprint"
+				]</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>VVE_BasicVehicles</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[
+				defName="RT_Make_ObelBlitzC_Truck_Blueprint" or
+				defName="RT_Make_ObelBlitzA_Truck_Blueprint" or
+				defName="RT_Make_ObelBlitzP_Truck_Blueprint"
+				]/ingredients</xpath>
+				<value>
+				<ingredients>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>EngineMedium</li>
+							</thingDefs>
+						</filter>
+						<count>1</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ComponentFuelTank</li>
+							</thingDefs>
+						</filter>
+						<count>1</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ComponentTransmission</li>
+							</thingDefs>
+						</filter>
+						<count>4</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ComponentWheelTire</li>
+							</thingDefs>
+						</filter>
+						<count>4</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>ComponentIndustrial</li>
+							</thingDefs>
+						</filter>
+						<count>5</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>Steel</li>
+							</thingDefs>
+						</filter>
+						<count>250</count>
+					</li>
+					<li>
+						<filter>
+							<thingDefs>
+								<li>WoodLog</li>
+							</thingDefs>
+						</filter>
+						<count>100</count>
+					</li>
+				</ingredients>
+				<researchPrerequisite>VVE_BasicVehicles</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/RecipeDef[
+				defName="RT_Make_SdKfz6_Truck_Blueprint" or
+				defName="RT_Make_SdKfz251_Vehicle_Blueprint" or
+				defName="RT_Make_Kubelwagen_Blueprint"
+				]</xpath>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+
+	
+		</operations>
+		</match>
+	</li>
+
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>

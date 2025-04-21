@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Core</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/thingDef[
+					defName="MRSKitR" or
+					defName="Apparel_StrikesuitH" or
+					defName="Apparel_DropsuitH" or
+				]/recipeMaker/researchPrerequisite</xpath>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="MRSKitR"]/recipeMaker/researchPrerequisites</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="MRSKitR"]/recipeMaker</xpath>
+					<value>
+						<researchPrerequisites>
+							<li>PrecisionRifling</li>
+							<li>DefenceTech</li>
+						</researchPrerequisites>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="MRSKitR"]/recipeMaker/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites>
+							<li>PrecisionRifling</li>
+							<li>DefenceTech</li>
+						</researchPrerequisites>
+					</value>
+				</match>
+			</li>-->
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_MedicH" or
+					defName="Apparel_PioneerH" or
+					defName="Apparel_NomadH" or
+					defName="Apparel_MedicArmor" or
+					defName="Apparel_PioneerArmor" or
+					defName="Apparel_NomadArmor" or
+					defName="Apparel_FSArmor" or
+					defName="Apparel_AssaultArmor" or
+					defName="Apparel_FSArmorH" or
+					defName="Apparel_AssaultArmorH" or
+					defName="Apparel_HazardCarapace" or
+					defName="Apparel_ReflactorArmor" or
+					defName="Apparel_HazardCarapaceH" or
+					defName="Apparel_ReflactorArmorH"
+					]/recipeMaker/researchPrerequisite</xpath>
+			</li>
+			<!--
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_MedicH" or
+					defName="Apparel_PioneerH" or
+					defName="Apparel_NomadH" or
+					defName="Apparel_MedicArmor" or
+					defName="Apparel_PioneerArmor" or
+					defName="Apparel_NomadArmor" or
+					defName="Apparel_FSArmor" or
+					defName="Apparel_AssaultArmor" or
+					defName="Apparel_FSArmorH" or
+					defName="Apparel_AssaultArmorH" or
+					defName="Apparel_HazardCarapace" or
+					defName="Apparel_ReflactorArmor" or
+					defName="Apparel_HazardCarapaceH" or
+					defName="Apparel_ReflactorArmorH"
+					]/recipeMaker/researchPrerequisite</xpath>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_Strikesuit" or defName="Apparel_Dropsuit"]/recipeMaker/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>ShardTech</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_StrikesuitH" or defName="Apparel_DropsuitH"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>ShardTech</researchPrerequisite>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_HazardCarapace" or defName="Apparel_ReflactorArmor" or defName="Apparel_HazardCarapaceH" or defName="Apparel_ReflactorArmorH"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>KineticTech</researchPrerequisite>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_FSArmor" or defName="Apparel_AssaultArmor" or defName="Apparel_FSArmorH" or defName="Apparel_AssaultArmorH"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>MoltenTech</researchPrerequisite>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Apparel_MedicH" or defName="Apparel_PioneerH" or defName="Apparel_NomadH"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>DefenceTech</researchPrerequisite>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/thingDef[defName="MBPSKit" or defName="GD_ModularCarbine" or defName="MRSKitR"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>DefenceTech</researchPrerequisite>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Apparel_MedicArmor" or defName="Apparel_PioneerArmor" or defName="Apparel_NomadArmor"]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisite>DefenceTech</researchPrerequisite>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="GD_GrenadeLauncher"]/recipeMaker/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>DefenceTech</li>
+						<li>Mortars</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_MedicH" or
+					defName="Apparel_PioneerH" or
+					defName="Apparel_NomadH" or
+					defName="Apparel_MedicArmor" or
+					defName="Apparel_PioneerArmor" or
+					defName="Apparel_NomadArmor"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>DefenceTech</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_FSArmor" or
+					defName="Apparel_AssaultArmor" or
+					defName="Apparel_FSArmorH" or
+					defName="Apparel_AssaultArmorH"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>MoltenTech</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_HazardCarapace" or
+					defName="Apparel_ReflactorArmor" or
+					defName="Apparel_HazardCarapaceH" or
+					defName="Apparel_ReflactorArmorH"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>KineticTech</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="Apparel_StrikesuitH" or defName="Apparel_DropsuitH"]/recipeMaker/researchPrerequisites</xpath>
+				<match Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Apparel_StrikesuitH" or defName="Apparel_DropsuitH"]/recipeMaker/researchPrerequisites</xpath>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="Apparel_StrikesuitH" or defName="Apparel_DropsuitH"]/recipeMaker/researchPrerequisite</xpath>
+				<match Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="Apparel_StrikesuitH" or defName="Apparel_DropsuitH"]/recipeMaker/researchPrerequisite</xpath>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="Apparel_StrikesuitH" or
+					defName="Apparel_DropsuitH"
+				]/recipeMaker</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>PoweredArmor</li>
+						<li>ShardTech</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Bullet_473x33mmGDHybrid_FMJ" or
+				defName="Bullet_473x33mmGDHybrid_AP" or
+				defName="Bullet_473x33mmGDHybrid_HP" or
+				defName="Bullet_473x33mmGDHybrid_Incendiary" or
+				defName="Bullet_473x33mmGDHybrid_HE"
+				]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>119.9</armorPenetrationBlunt>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_473x33mmGDHybrid_Sabot"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>131.7</armorPenetrationBlunt>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_473x33mmGDHybrid_FMJ" or defName="Bullet_473x33mmGDHybrid_HE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>13</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_473x33mmGDHybrid_AP" or defName="Bullet_473x33mmGDHybrid_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>22</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_473x33mmGDHybrid_HP"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>7</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_473x33mmGDHybrid_Sabot"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>39.4</armorPenetrationSharp>	
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="GD_ModularCarbine" or 
+				defName="GD_ModularRifle" or
+				defName="GD_ModularDMR" or
+				defName="GD_ModularLMG" or 
+				defName="GD_GrenadeLauncher"
+				]</xpath>
+				<value>
+					<generateAllowChance>.25</generateAllowChance>
+				</value>
+			</li>-->
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_TEPowerCore_KE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>150</armorPenetrationBlunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_TEPowerCharge_KE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>75</armorPenetrationBlunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_TEPowerCharge_KE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>12.5</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_TEConcentratedPowerCharge_KE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>75</armorPenetrationBlunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_TEConcentratedPowerCharge_KE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>17</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_JI_AMR"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>25</armorPenetrationSharp>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_JI_AMR"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>250</armorPenetrationBlunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_JI_Molten"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationBlunt</xpath>
+				<value>
+					<armorPenetrationBlunt>250</armorPenetrationBlunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="YP_BingJu"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>handle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>1</power>
+							<chanceFactor>0.33</chanceFactor>
+							<cooldownTime>1.26</cooldownTime>
+							<armorPenetrationBlunt>0.250</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>blade</label>
+							<capacities>
+								<li>Cut</li>
+							</capacities>
+							<power>15</power>
+							<cooldownTime>0.6</cooldownTime>
+							<armorPenetrationBlunt>0.36</armorPenetrationBlunt>
+							<armorPenetrationSharp>16</armorPenetrationSharp>
+							<linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>point</label>
+							<capacities>
+								<li>Stab</li>
+							</capacities>
+							<power>11</power>
+							<cooldownTime>0.6</cooldownTime>
+							<armorPenetrationBlunt>0.25</armorPenetrationBlunt>
+							<armorPenetrationSharp>25</armorPenetrationSharp>
+							<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Feral Faction Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_Scraptooth"]</xpath>
+				<value>
+					<recipeMaker>
+					<researchPrerequisite>BlowbackOperation</researchPrerequisite>	
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_Deathdealer"]</xpath>
+				<value>
+					<recipeMaker>
+					<researchPrerequisite>BlowbackOperation</researchPrerequisite>	
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_Gnasher"]</xpath>
+				<value>
+					<recipeMaker>
+					<researchPrerequisite>BlowbackOperation</researchPrerequisite>	
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_Thrasher"]</xpath>
+				<value>
+					<recipeMaker>
+						<researchPrerequisite>GasOperation</researchPrerequisite>	
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_Crucifier"]</xpath>
+				<value>
+					<recipeMaker>
+						<researchPrerequisite>PrecisionRifling</researchPrerequisite>	
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_Crucifier"]/statBases/SightsEfficiency</xpath>
+				<value>
+					<SightsEfficiency>1.1</SightsEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_SkullBuster"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>BlowbackOperation</researchPrerequisite>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_RatStick"]/equippedAngleOffset</xpath>
+				<value>
+					<equippedAngleOffset>-30</equippedAngleOffset>	
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Federation Faction Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[defName="FPCCommander"]/apparelTags</xpath>
+				<value>
+					<li>IndustrialBasic</li>
+					<li>IndustrialAdvanced</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[defName="FPCUnityGuard"]/apparelTags</xpath>
+				<value>
+					<li>IndustrialBasic</li>
+					<li>IndustrialAdvanced</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName="FPCCommander"]/apparelMoney</xpath>
+				<value>
+					<apparelMoney>
+						<min>6070</min>
+						<max>6200</max>
+					</apparelMoney>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/FactionDef[defName="FPC"]/pawnGroupMakers/li[1]/commonality</xpath>
+				<value>
+					<commonality>80</commonality>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Proj_Repose"]/projectile</xpath>
+				<value>
+					<projectile Class="CombatExtended.ProjectilePropertiesCE">
+						<explosionRadius>3.7</explosionRadius>
+						<damageDef>Plasma</damageDef>
+						<damageAmountBase>65</damageAmountBase>
+						<explosionDelay>100</explosionDelay>
+						<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+					</projectile>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_AuxiliaryPistol" or defName="Bullet_CruciblePistolAD"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>8</damageAmountBase>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_MakeshiftCrucibleRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>12</damageAmountBase>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_CrucibleRifle" or defName="Bullet_HeatCannon"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>18</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace"><!-- small? -->
+				<xpath>Defs/ThingDef[defName="Bullet_CrucibleRifleAD" or defName="Bullet_CruciblePistol" or defName="Bullet_MakeshiftCrucibleRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>12</damageAmountBase>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_CruciblePistol"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>12</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_HeatCannon"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>18</damageAmountBase>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_CruciblePrecisionRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>21</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_CruciblePrecisionRifleAD"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>15</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Bullet_CrucibleCarbine_CE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+				<value>
+					<damageAmountBase>10</damageAmountBase>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+				
+					<ThingCategoryDef>
+					  <defName>AmmoCrucible</defName>
+					  <label>Crucible Energy Cells</label>
+					  <parent>AmmoAdvanced</parent>
+					  <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+					</ThingCategoryDef>
+					
+				  <ThingDef Class="CombatExtended.AmmoDef" Name="CrucibleCoreAmmoBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+					<description>Crucible energy ammo used by federation weapons.</description>
+					<statBases>
+					  <Mass>0.01</Mass>
+					  <Bulk>0.03</Bulk>
+					</statBases>
+					<tradeTags>
+					  <li>CE_AutoEnableTrade</li>
+					  <li>CE_AutoEnableCrafting</li>
+					</tradeTags>
+					<thingCategories>
+					  <li>AmmoCrucible</li>
+					</thingCategories>
+					<stackLimit>200</stackLimit>	
+				  </ThingDef>
+
+				  <ThingDef Class="CombatExtended.AmmoDef" ParentName="CrucibleCoreAmmoBase">
+					<defName>Ammo_CrucibleEnergyCore</defName>
+					<label>Crucible Cells</label>
+					<graphicData>
+					  <texPath>Things/A16/CrucibleCore</texPath>
+					  <graphicClass>Graphic_StackCount</graphicClass>
+					</graphicData>
+					<statBases>
+					  <MarketValue>0.58</MarketValue>
+					</statBases>
+					<ammoClass>Charged</ammoClass>
+					<generateAllowChance>1</generateAllowChance>
+				  </ThingDef>
+				  
+				  <ThingDef Class="CombatExtended.AmmoDef" ParentName="CrucibleCoreAmmoBase">
+					<defName>Ammo_CrucibleEnergyCoreLarge</defName>
+					<label>Large Crucible Cells</label>
+					<graphicData>
+					  <texPath>Things/A16/CrucibleCore</texPath>
+					  <graphicClass>Graphic_StackCount</graphicClass>
+					</graphicData>
+					<statBases>
+					  <MarketValue>0.58</MarketValue>
+					</statBases>
+					<ammoClass>Charged</ammoClass>
+					<generateAllowChance>1</generateAllowChance>
+				  </ThingDef>
+					
+					<RecipeDef ParentName="AmmoRecipeBase">
+						<defName>MakeAmmo_CrucibleEnergyCore</defName>
+						<label>make crucible energy cell x500</label>
+						<description>Craft 500 Crucible Energy Cells.</description>
+						<jobString>Making Crucible Energy Cells.</jobString>
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>Foerum</li>
+									</thingDefs>
+								</filter>
+								<count>50</count>
+							</li>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>CrucibleCore</li>
+									</thingDefs>
+								</filter>
+								<count>4</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>Foerum</li>
+								<li>CrucibleCore</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<researchPrerequisite>CrucibleTech</researchPrerequisite>
+						<recipeUsers Inherit="False">
+							<li>FedTable</li>
+						</recipeUsers>		
+						<products>
+							<Ammo_CrucibleEnergyCore>500</Ammo_CrucibleEnergyCore>
+						</products>
+					<workAmount>6500</workAmount>
+					</RecipeDef>
+					
+					<RecipeDef ParentName="AmmoRecipeBase">
+						<defName>MakeAmmo_CrucibleEnergyCoreLarge</defName>
+						<label>make large crucible energy cell x100</label>
+						<description>Craft 100 Large Crucible Energy Cells.</description>
+						<jobString>Making Large Crucible Energy Cells.</jobString>
+						<ingredients>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>Foerum</li>
+									</thingDefs>
+								</filter>
+								<count>50</count>
+							</li>
+							<li>
+								<filter>
+									<thingDefs>
+										<li>CrucibleCore</li>
+									</thingDefs>
+								</filter>
+								<count>4</count>
+							</li>
+						</ingredients>
+						<fixedIngredientFilter>
+							<thingDefs>
+								<li>Foerum</li>
+								<li>CrucibleCore</li>
+							</thingDefs>
+						</fixedIngredientFilter>
+						<researchPrerequisite>CrucibleTech</researchPrerequisite>
+						<recipeUsers Inherit="False">
+							<li>FedTable</li>
+						</recipeUsers>		
+						<products>
+							<Ammo_CrucibleEnergyCoreLarge>100</Ammo_CrucibleEnergyCoreLarge>
+						</products>
+					<workAmount>6500</workAmount>
+					</RecipeDef>
+					
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCRifle</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CrucibleRifle</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				  
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCRifleAD</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CrucibleRifleAD</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				  
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCorePRifle</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_PlasmaRifle</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreAPistol</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_AuxiliaryPistol</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCCannon</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CrucibleCannon</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCPistolAD</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CruciblePistolAD</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				  
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCPistol</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CruciblePistol</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreMRifle</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_MakeshiftCrucibleRifle</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreHCannon</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_HeatCannon</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCPRifle</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CruciblePrecisionRifle</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCPRifleAD</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CruciblePrecisionRifleAD</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCorePCaster</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCoreLarge>Bullet_PlasmaCaster</Ammo_CrucibleEnergyCoreLarge>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCorePCasterAD</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCoreLarge>Bullet_PlasmaCaster_Fed</Ammo_CrucibleEnergyCoreLarge>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCorePBomb</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCoreLarge>Bullet_PlasmaBomb</Ammo_CrucibleEnergyCoreLarge>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCoreCCarbine</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCore>Bullet_CrucibleCarbine_CE</Ammo_CrucibleEnergyCore>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				  <CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_CrucibleCorePMBomb</defName>
+					<label>Crucible Energy Cell</label>
+					<ammoTypes>
+					  <Ammo_CrucibleEnergyCoreLarge>Bullet_PlasmaMechBombard</Ammo_CrucibleEnergyCoreLarge>
+					</ammoTypes>
+				  </CombatExtended.AmmoSetDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CruciblePistol"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPistol</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_FedPistol"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPistolAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+				defName="AD_AuxPistol"
+				]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreAPistol</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+				defName="AD_Sentinel"
+				]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCorePRifle</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Gun_MCrucibleRifle"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreMRifle</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_FedRifle"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCRifleAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CrucibleRifle"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCRifle</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CrucibleRifle"]/comps/li[@Class="CombatExtended.CompProperties_UnderBarrel"]/propsUnderBarrel</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCRifleAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CruciblePistol"]/comps/li[@Class="CombatExtended.CompProperties_UnderBarrel"]/propsUnderBarrel</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPistolAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CruciblePresicionRifle"]/comps/li[@Class="CombatExtended.CompProperties_UnderBarrel"]/propsUnderBarrel</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPRifleAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_PlasmaCaliver"]/comps/li[@Class="CombatExtended.CompProperties_UnderBarrel"]/propsUnderBarrel</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCorePCasterAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+				defName="AD_HeatProjector" or
+				defName="AD_FedHeatCannon"
+				]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreHCannon</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+				defName="AD_FedHeatCannon"
+				]/equippedAngleOffset</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CruciblePresicionRifle"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPRifle</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_FedSniperRifle"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCPRifleAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_FedPlasmaCaster"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCorePCasterAD</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_PlasmaCaliver"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCorePCaster</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CrucibleCarbine"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCCarbine</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_PlasmaBombard"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCorePMBomb</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AD_CrucibleCannon"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<ammoSet>AmmoSet_CrucibleCoreCCannon</ammoSet>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+				defName="FPCFederator"
+				]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>6</min>
+							<max>10</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[
+				defName="FPCPeacemonger" or
+				defName="FPCPeacekeeper" or
+				defName="FPCPeacebringer" or
+				defName="FPCPeacemaker"
+				]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>4</min>
+							<max>6</max>
+						</primaryMagazineCount>
+					</li>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>

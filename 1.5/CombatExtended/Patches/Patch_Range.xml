@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_Revolver"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>16.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_Autopistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_MachinePistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_ChainShotgun"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bow_Great"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>36.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_HeavySMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>30.0</range>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_USASTwelve"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_TaurusJudge"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>14.0</range>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_ChargeSMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>35.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>38.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_Flintlock"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>18.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_SMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_LightSMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>30.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_CombatHandgun"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>16.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_HandCannon"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>18.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargePistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Gun_ChargeShotgun"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25.0</range>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded - Frontier</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEFT_Gun_HeavyRevolver"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEFT_Gun_VolcanicPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>28.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEFT_Gun_FrontierPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEFT_Gun_RepeatingShotgun"]/statBases/RangedWeapon_Cooldown</xpath>
+				<value>
+					<RangedWeapon_Cooldown>0.20</RangedWeapon_Cooldown>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Insectoids</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFE_Gun_Plasmacutter"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Settlers</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/recoilAmount</xpath>
+				<value>
+					<recoilAmount>0.95</recoilAmount>
+					<burstShotCount>2</burstShotCount>
+					<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFES_Gun_DoubleActionRevolver"]/statBases/RangedWeapon_Cooldown</xpath>
+				<value>
+					<RangedWeapon_Cooldown>0.48</RangedWeapon_Cooldown>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Augmented Vanilla Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_SmartPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_SMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>35.0</range>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_PistolHeavyRevolver"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Enthusiast's Collection</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CEC_CombatShotgun"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Core</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="YP_SagPung"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="YP_SeolHwa"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>18</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="YP_VectorShot"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>24.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/thingDef[defName="JI_Trollsverd"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>24.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/thingDef[defName="JI_Fafnir"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="GD_MSSH"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>24.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="GD_MSST"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/thingDef[defName="GD_MSSS"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="GD_MSSF"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>26.0</range>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="GD_TacticalPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>26.0</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/thingDef[defName="GD_HVSMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>26.0</range>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/thingDef[defName="TE_KineticPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Chapter #1</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="HRK_GlockSeventeen"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/range</xpath>
+				<value>
+					<range>22.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Outer Rim - Galactic Empire</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Outer Rim - Rebel Alliance</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[
+					defName="OuterRim_A180Blaster" or
+					defName="OuterRim_SE14RBlaster" or
+					defName="OuterRim_DE10Blaster" or
+					defName="OuterRim_K16BryarBlaster"
+					]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/range</xpath>
+					<value>
+						<range>26.0</range>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="OuterRim_EC17Blaster"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+					<value>
+						<range>20.0</range>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="OuterRim_DG29Blaster"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+					<value>
+						<range>29.0</range>
+					</value>
+				</li>
+				
+			</operations>
+			</match>
+		</li>
+
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>LB Rifle Series</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="LBPack_LBRSeven"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>16.0</range>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="LBPack_LBRHC"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Armory</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_Deagke"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>20.0</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+		
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded - Laser</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEL_Gun_LaserPistol" or defName="VWEL_Gun_SalvagedLaserPistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWEL_Gun_LaserSMG" or defName="VWEL_Gun_SalvagedLaserSMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>35</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>
