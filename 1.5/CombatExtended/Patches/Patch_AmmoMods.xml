@@ -558,7 +558,55 @@
 			defName="Bullet_5x35mmAdvCharged_Tox"
 			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
 			<value>
-				<armorPenetrationSharp>33</armorPenetrationSharp>
+				<armorPenetrationSharp>39</armorPenetrationSharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+			defName="Bullet_5x16mmAdvCharged_Ion" or
+			defName="Bullet_5x16mmAdvCharged_Tox"
+			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+			<value>
+				<armorPenetrationSharp>9</armorPenetrationSharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+			defName="Bullet_6x22mmAdvCharged_Ion" or
+			defName="Bullet_6x22mmAdvCharged_Tox"
+			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+			<value>
+				<armorPenetrationSharp>18</armorPenetrationSharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+			defName="Bullet_8x40mmAdvCharged_Ion" or
+			defName="Bullet_8x40mmAdvCharged_Tox"
+			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+			<value>
+				<armorPenetrationSharp>19</armorPenetrationSharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+			defName="Bullet_12x64mmAdvCharged_Ion"
+			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+			<value>
+				<armorPenetrationSharp>34</armorPenetrationSharp>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+			defName="Bullet_20x100mmAdvCharged_Ion"
+			]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+			<value>
+				<armorPenetrationSharp>48</armorPenetrationSharp>
 			</value>
 		</li>
 		

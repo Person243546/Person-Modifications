@@ -42,19 +42,109 @@
 	
 	<Operation Class="PatchOperationFindMod">
 	<mods>
+		<li>Ideology</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	<li Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded - Props and Decor</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="Ideogram"]/placeWorkers/li[.="PlaceWorker_PreventInteractionSpotOverlap"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Ideogram"]</xpath>
+				<value>
+					<fillPercent>0</fillPercent>
+					<altitudeLayer>Floor</altitudeLayer>
+					<clearBuildingArea>false</clearBuildingArea>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="Ideogram"]/building</xpath>
+				<value>
+					<isEdifice>false</isEdifice>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Ideogram"]/interactionCellOffset</xpath>
+				<value>
+					<interactionCellOffset>(0,0,-2)</interactionCellOffset>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs</xpath>
+				<value>
+					<ThingDef ParentName="AltarBase" MayRequire="vanillaexpanded.vfepropsanddecor">
+						<defName>VFEPD_PlanningTableAltar</defName>
+						<label>planning table</label>
+						<description>A large size planning screen mounted on a large table.</description>
+						<graphicData>
+							<texPath>Things/Building/SpacerProps/PlanningTable</texPath>
+							<graphicClass>Graphic_Random</graphicClass>
+							<drawSize>(3,3)</drawSize>
+							<shaderType>CutoutComplex</shaderType>
+						</graphicData>
+						<costStuffCount>100</costStuffCount>
+						<costList>
+							<ComponentIndustrial>2</ComponentIndustrial>
+						</costList>
+						<stuffCategories Inherit="False">
+						  <li>Metallic</li>
+						</stuffCategories>
+						<rotatable>false</rotatable>
+						<altitudeLayer>Building</altitudeLayer>
+						<castEdgeShadows>True</castEdgeShadows>
+						<passability>PassThroughOnly</passability>
+						<pathCost>80</pathCost>
+						<statBases>
+							<MaxHitPoints>180</MaxHitPoints>
+							<Mass>35</Mass>
+							<Flammability>0</Flammability>
+							<WorkToBuild>2000</WorkToBuild>
+							<Beauty>20</Beauty>
+							<StyleDominance>40</StyleDominance>
+						</statBases>
+						<size>(3,3)</size>
+						<uiIconScale>1</uiIconScale>
+						<building>
+							<isInert>true</isInert>
+						</building>
+					</ThingDef>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
 		<li>Expanded Materials - Metals</li>
 	</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
 		
 			<li Class="PatchOperationReplace">
-			<xpath>Defs/ThingDef[defName="Steel"]/graphicData</xpath>
-			  <value>
-				<graphicData>
-				  <texPath>Things/Item/Resource/Steel</texPath>
-				  <graphicClass>Graphic_StackCount</graphicClass>
-				</graphicData>
-			  </value>
+				<xpath>Defs/ThingDef[defName="Steel"]/graphicData</xpath>
+				<value>
+					<graphicData>
+					  <texPath>Things/Item/Resource/Steel</texPath>
+					  <graphicClass>Graphic_StackCount</graphicClass>
+					</graphicData>
+				</value>
 			</li>
 			
 			<li Class="PatchOperationReplace">
@@ -123,24 +213,35 @@
 		<operations>
 		
 			<li Class="PatchOperationReplace">
-			<xpath>Defs/ThingDef[defName = "Gomi_Handrail" or defName = "Gomi_FloorFence"]/pathCost</xpath>
-			  <value>
-				<pathCost>500</pathCost>
-			  </value>
+				<xpath>Defs/ThingDef[defName = "Gomi_Handrail" or defName = "Gomi_FloorFence"]/pathCost</xpath>
+				<value>
+					<pathCost>500</pathCost>
+				</value>
 			</li>
 			
 			<li Class="PatchOperationReplace">
-			<xpath>Defs/ThingDef[defName = "Gomi_Handrail" or defName = "Gomi_FloorFence"]/fillPercent</xpath>
-			  <value>
-				<fillPercent>0.5</fillPercent>
-			  </value>
+				<xpath>Defs/ThingDef[defName = "Gomi_Handrail" or defName = "Gomi_FloorFence"]/fillPercent</xpath>
+				<value>
+					<fillPercent>0.6</fillPercent>
+				</value>
 			</li>
 			
 			<li Class="PatchOperationReplace">
-			<xpath>Defs/ThingDef[defName = "Gomi_GLHighWall"]/fillPercent</xpath>
-			  <value>
-				<fillPercent>0.4</fillPercent>
-			  </value>
+				<xpath>Defs/ThingDef[defName = "Gomi_GLHighWall"]/fillPercent</xpath>
+				<value>
+					<fillPercent>0.4</fillPercent>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Gomi_Handrail" or
+				defName="Gomi_FloorFence" or
+				defName="Gomi_GLHighWall"
+				]</xpath>
+				<value>
+					<clearBuildingArea>false</clearBuildingArea>
+				</value>
 			</li>
 			
 		</operations>
@@ -246,6 +347,21 @@
 			  <value>
 				<durationDays>1</durationDays>
 			  </value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Alpha Crafts</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="AC_Chips"]/comps/li[@Class="CompProperties_Rottable"]</xpath>
 			</li>
 			
 		</operations>
@@ -365,6 +481,13 @@
 		<match Class="PatchOperationSequence">
 		<operations>
 		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="WallLamp"]</xpath>
+				<value>
+					<defaultStuff>Steel</defaultStuff>
+				</value>
+			</li>
+			
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="RB_ClerestoryWall"]/researchPrerequisites/li</xpath>
 				<value>
@@ -395,6 +518,13 @@
 				<xpath>/Defs/ThingDef[defName="RB_RusticWall"]/statBases/MaxHitPoints</xpath>
 				<value>
 					<MaxHitPoints>100</MaxHitPoints>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="RB_RusticWall"]/label</xpath>
+				<value>
+					<label>rustic wall</label>
 				</value>
 			</li>
 			
@@ -446,6 +576,70 @@
 				</operations>
 				</match>
 			</li>-->
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Classical</li> 
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="VFEC_LargePassiveCooler"]/description</xpath>
+			<value>
+				<description>A sturdy unpowered cooler notably larger than the traditional variety, cools rooms to just above freezing via water evaporation. Will run out and self-destruct after several days.</description>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="VFEC_LargePassiveCooler"]/comps/li[@Class="CompProperties_HeatPusher"]</xpath>
+			<value>
+				<li Class="CompProperties_HeatPusher">
+					<compClass>CompHeatPusherPowered</compClass>
+					<heatPerSecond>-20</heatPerSecond>
+					<heatPushMinTemperature>2</heatPushMinTemperature>
+				</li>
+			</value>
+		</li>
+			
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="VFEC_LargePassiveCooler"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+			<value>
+				<li Class="CompProperties_Refuelable">
+					<fuelConsumptionRate>6.0</fuelConsumptionRate>
+					<fuelCapacity>150.0</fuelCapacity>
+					<fuelFilter>
+						<thingDefs>
+							<li>WoodLog</li>
+						</thingDefs>
+					</fuelFilter>
+					<initialFuelPercent>1</initialFuelPercent>
+					<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				</li>
+			</value>
+		</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Empire</li> 
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="VFEE_StellicThrone"]/statBases/Beauty</xpath>
+			<value>
+				<Beauty>120</Beauty>
+			</value>
+		</li>
 			
 		</operations>
 		</match>
@@ -836,7 +1030,6 @@
 		<match Class="PatchOperationSequence">
 		<operations>
 		
-		
 		<li Class="PatchOperationFindMod">
 		<mods>
 			<li>Dubs Bad Hygiene</li>
@@ -937,14 +1130,71 @@
 		<match Class="PatchOperationSequence">
 		<operations>
 			
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/TerrainDef[defName="VFES_TrenchTerrain"]/modExtensions/li[@Class="VFESecurity.TerrainDefExtension"]/coverEffectiveness</xpath>
+			<value>
+				<coverEffectiveness>0.45</coverEffectiveness>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VFES_BarbedWire"]/costStuffCount</xpath>
+			<value>
+				<costStuffCount>5</costStuffCount>
+			</value>
+		</li>
+			
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VFES_BarbedWire"]/researchPrerequisites</xpath>
+			<value>
+				<researchPrerequisites>
+					<li>Smithing</li>
+				</researchPrerequisites>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VFES_Turret_Decoy"]/researchPrerequisites</xpath>
+			<value>
+				<researchPrerequisites>
+					<li>ComplexFurniture</li>
+				</researchPrerequisites>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="VFES_Turret_HMGComplex"]/researchPrerequisites</xpath>
+			<value>
+				<researchPrerequisites>
+					<li>GasOperation</li>
+				</researchPrerequisites>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="VFES_Platform" or defName="VFES_Trench"]/researchPrerequisites</xpath>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Fortification Industrial - Citadel</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
 			
 			<li Class="PatchOperationReplace">
-				<xpath>/Defs/TerrainDef[defName="VFES_TrenchTerrain"]/modExtensions/li[@Class="VFESecurity.TerrainDefExtension"]/coverEffectiveness</xpath>
+				<xpath>/Defs/ThingDef[
+				defName="FT_Trench" or
+				defName="FT_Platform"
+				]/researchPrerequisites</xpath>
 				<value>
-					<coverEffectiveness>0.45</coverEffectiveness>
+					<researchPrerequisites><li>FTC_PermanentStructure</li></researchPrerequisites>
 				</value>
 			</li>
 			
+			</operations>
+			</match>
+		</li>
 			
 		</operations>
 		</match>
@@ -1148,7 +1398,7 @@
 				<li Class="PatchOperationReplace">
 					<xpath>/Defs/WorkGiverDef[defName="DMS_Operate"]/label</xpath>
 					<value>
-						<label>Operate Machine DMS</label>
+						<label>Operate DMS Machine</label>
 					</value>
 				</li>
 					
@@ -1301,6 +1551,13 @@
 				<xpath>/Defs/ThingDef[defName="VFEArch_SingleDoor"]/statBases/MaxHitPoints</xpath>
 				<value>
 					<MaxHitPoints>40</MaxHitPoints>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VFEArch_FineWall"]/label</xpath>
+				<value>
+					<label>fine wall</label>
 				</value>
 			</li>
 			
@@ -1535,7 +1792,6 @@
 		<match Class="PatchOperationSequence">
 		<operations>
 			
-			
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="Facility_IVDrip"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/ImmunityGainSpeedFactor</xpath>
 				<value>
@@ -1543,6 +1799,23 @@
 				</value>
 			</li>
 			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Vanilla Furniture Expanded</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Shelf_WeaponRack"]/costStuffCount</xpath>
+				<value>
+					<costStuffCount>20</costStuffCount>
+				</value>
+			</li>
 			
 		</operations>
 		</match>
@@ -1964,16 +2237,149 @@
 	
 	<Operation Class="PatchOperationFindMod">
 	<mods>
-		<li>Reel's Expanded Storage</li>
+		<li>Reel's Expanded Storage work in progress</li>
 	</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
+		<!-- Table_IlluminatedDresserStorage
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/AdaptiveStorage.GraphicsDef[
+			defName="ToolCabinetStorage" or
+			defName="DresserStorage" or
+			defName="ShelfStorage" or
+			defName="ShelfSmallStorage" or
+			defName="FilingCabinetStorage" or
+			defName="WardrobeStorage" or
+			defName="RoyalDresserStorage" or
+			defName="VFE_DrugCabinetStorage" or
+			defName="VFE_MachiningCabinetStorage" or
+			defName="VFE_SmithyCabinetStorage" or
+			defName="VFE_TailorCabinetStorage" or
+			defName="VFE_FabricationCabinetStorage"
+			]</xpath>
+		</li>
+		-->
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/AdaptiveStorage.GraphicsDef[
+			defName="ToolCabinetStorage" or
+			defName="DresserStorage" or
+			defName="ShelfStorage" or
+			defName="ShelfSmallStorage"
+			]</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet" or defName="Dresser" or defName="ShelfSmall" or defName="Shelf"]/thingClass</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet" or defName="Dresser" or defName="ShelfSmall" or defName="Shelf"]/drawGUIOverlay</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet" or defName="Dresser" or defName="ShelfSmall" or defName="Shelf"]/inspectorTabs</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet" or defName="Dresser"]/graphicData/shaderType</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet"]/surfaceType</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet"]/stuffCategories</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="ToolCabinet"]/costStuffCount</xpath>
+		</li>
 		
 		<li Class="PatchOperationReplace">
-			<xpath>/Defs/ThingDef[defName="ReelStorageWoodCrate"]/building/maxItemsInCell</xpath>
+			<xpath>Defs/ThingDef[defName="ToolCabinet"]/costList</xpath>
 			<value>
-				<maxItemsInCell>4</maxItemsInCell>
-		  </value>
+				<costList>
+				  <Steel>200</Steel>
+				</costList>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="ToolCabinet"]/description</xpath>
+			<value>
+				<description>Increases work speed when placed near a workbench. One workbench can use up to two tool cabinets.</description>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Dresser"]/description</xpath>
+			<value>
+				<description>A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</description>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Shelf"]/description</xpath>
+			<value>
+				<description>A triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.\n\nSince shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.</description>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="ShelfSmall"]/description</xpath>
+			<value>
+				<description>A small triple-stack shelf that holds three times as much as empty ground. Items stored inside will never deteriorate and don't affect the beauty of their surroundings.\n\nSince shelf space is limited, shelves cannot hold chunks, buildings, plants and large corpses.</description>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/blueprintClass</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/maxItemsInCell</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/storageGroupTag</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/preventDeteriorationOnTop</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/ignoreStoredThingsBeauty</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/fixedStorageSettings</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[
+			defName="ToolCabinet" or
+			defName="Dresser"
+			]/building/defaultStorageSettings</xpath>
 		</li>
 		
 		</operations>
@@ -2003,7 +2409,6 @@
 				<designationCategory>Ideology</designationCategory>
 		  </value>
 		</li>
-		
 		
 		</operations>
 		</match>
@@ -2208,6 +2613,57 @@
 			</value>
 		</li>
 		
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs</xpath>
+			<value>
+			
+			<ThingDef ParentName="VFEPD_ColourableFurnitureBase">
+				<defName>VFEPD_PersonFakeChair</defName>
+				<label>fake chair</label>
+				<description>A non-functional chair.</description>
+				<graphicData>
+					  <texPath>Things/Building/Furniture/DiningChair</texPath>
+					  <graphicClass>Graphic_Multi</graphicClass>
+					  <drawSize>(1,1)</drawSize>
+					  <damageData>
+						<rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+						<rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+						<rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+						<rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+					  </damageData>
+					  <shadowData>
+						<volume>(0.23, 0.26, 0.23)</volume>
+					  </shadowData>
+					<color>(133,97,67)</color>
+				</graphicData>
+				<altitudeLayer>Building</altitudeLayer>
+				<castEdgeShadows>False</castEdgeShadows>
+				<blockWind>false</blockWind>
+				<passability>Standable</passability>
+				<fillPercent>0.3</fillPercent>
+				<pathCost>5</pathCost>
+				<statBases>
+					<MaxHitPoints>100</MaxHitPoints>
+					<WorkToBuild>0</WorkToBuild>
+					<Mass>1</Mass>
+					<Flammability>1</Flammability>
+				</statBases>
+				<size>(1,1)</size>
+				<building>
+					<isInert>true</isInert>
+				</building>
+			</ThingDef>
+			
+			<VFEProps.PropDef>
+				<defName>VFE_Prop_Furniture_PersonFakeChair</defName>
+				<category>VFE_PropCategory_Furniture</category>		
+				<priority>1</priority>
+				<prop>VFEPD_PersonFakeChair</prop>
+			</VFEProps.PropDef>
+			
+			</value>
+		</li>
+		
 		</operations>
 		</match>
 	</Operation>
@@ -2346,6 +2802,13 @@
 			<xpath>/Defs/MainButtonDef[defName="MF_FloorSettingButton"]/order</xpath>
 			<value>
 				<order>35</order>
+			</value>
+		</li>
+		
+		<li MayRequire="regrowth.botr.core" Class="PatchOperationReplace">
+			<xpath>/Defs/TerrainDef[defName="MF_RoofFromLowerLevel"]/texturePath</xpath>
+			<value>
+				<texturePath>Terrain/Surfaces/CrackedConcrete</texturePath>
 			</value>
 		</li>
 		
@@ -2628,6 +3091,13 @@
 	</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[@Name="OwlFridgeBase"]/designationCategory</xpath>
+			<value>
+				<designationCategory>ASFstorage</designationCategory>
+			</value>
+		</li>
 	
 		<li Class="PatchOperationFindMod">
 		<mods>
@@ -2660,6 +3130,31 @@
 	
 	<Operation Class="PatchOperationFindMod">
 	<mods>
+		<li>RimThunder - Core</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="RTC_ToolShelf" or defName="RTC_BlastCabinet"]/comps/li[@Class="CompProperties_Facility"]/statOffsets/WorkTableWorkSpeedFactor</xpath>
+			<value>
+				<WorkTableWorkSpeedFactor>0.025</WorkTableWorkSpeedFactor>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="RTC_ToolShelf" or defName="RTC_BlastCabinet"]/comps/li[@Class="CompProperties_Facility"]/maxSimultaneous</xpath>
+			<value>
+				<maxSimultaneous>1</maxSimultaneous>
+			</value>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
 		<li>Idle Work</li>
 	</mods>
 		<match Class="PatchOperationSequence">
@@ -2684,6 +3179,614 @@
 				</value>
 			</li>
 			
+			</operations>
+			</match>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Clean Categories: Dropdowns</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/TerrainDef[defName="Bridge"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_Bridges</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Table1x2c"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_Tables</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Table2x2c"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_Tables</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Table2x4c"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_Tables</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Table3x3c"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_Tables</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="WoodFiredGenerator"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_WoodGenerators</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="ChemfuelPoweredGenerator"]</xpath>
+			<value>
+				<designatorDropdown>Ferny_ChemfuelGenerators</designatorDropdown>
+			</value>
+		</li>
+				
+		<li Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+				
+			<DesignatorDropdownGroupDef>
+				<defName>Person_CitadelWall</defName>
+			</DesignatorDropdownGroupDef>
+				
+			</value>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Architect</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/TerrainDef[defName="VFEArch_BridgeSandstone"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Bridges</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/TerrainDef[defName="VFEArch_BridgeSandstone"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Bridges</designatorDropdown>
+                    </value>
+                </li>
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFEArch_FineWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Walls</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Architect</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <!-- <Operation Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_DoubleDoor"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DoubleDoors</designatorDropdown>
+                    </value>
+                </Operation> -->
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Animals</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AA_BlueGelBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_HexagelBatteries</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AA_HexaGelBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_HexagelBatteries</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Adaptive Primitive Storage</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="ASF_WovenBasket"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_WovenBaskets</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="ASF_WovenBasketDouble"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_WovenBaskets</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="ASF_WovenBasketTriple"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_WovenBaskets</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Memes</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_StoneTable_1x2c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeStoneTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_StoneTable_2x2c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeStoneTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_StoneTable_2x4c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeStoneTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_StoneTable_3x3c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeStoneTables</designatorDropdown>
+                    </value>
+                </li>
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_WoodenTable_1x2c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeWoodTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_WoodenTable_2x2c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeWoodTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_WoodenTable_2x4c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeWoodTables</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="AM_Neolithic_WoodenTable_3x3c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_CrudeWoodTables</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>ReBuild: Doors and Corners</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="Wall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Walls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_RusticWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Walls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_OrnateWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Walls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_ClerestoryWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GlassWalls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_ReinforcedClerestoryWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GlassWalls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_GlassWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GlassWalls</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="RB_ReinforcedGlassWall"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GlassWalls</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="Table_1x1c"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Tables</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[@Name="RoyalTableDesc"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_RoyalTables</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Helixien Gas Expanded</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VHGE_HelixienGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GasGenerators</designatorDropdown>
+                    </value>
+                </li>    
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VHGE_IndustrialHelixienGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_GasGenerators</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Art</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="VFE_Wallpaper"]</xpath>
+					<value>
+						<designatorDropdown>Ferny_Walls</designatorDropdown>
+					</value>
+				</li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Settlers</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="DoorSaloon"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Doors</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="Post"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Columns</designatorDropdown>
+                    </value>
+                </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Fortifications - Industrial</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Vanilla Furniture Expanded - Architect</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/TerrainDef[defName="VFEArch_BridgeConcrete"]/designatorDropdown</xpath>
+					<value>
+						<designatorDropdown>Ferny_Bridges</designatorDropdown>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/TerrainDef[defName="VFEArch_BridgeSteelConcrete"]</xpath>
+					<value>
+						<designatorDropdown>Ferny_Bridges</designatorDropdown>
+					</value>
+				</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Power Poles Extended</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="FT_PowerPole" or defName="FT_PowerPole_Lamp"]</xpath>
+					<value>
+						<designatorDropdown>Ferny_PowerPoles</designatorDropdown>
+					</value>
+				</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Fortification Industrial - Citadel</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="FTC_Palisade_Base"]</xpath>
+					<value>
+						<designatorDropdown>Person_CitadelWall</designatorDropdown>
+					</value>
+				</li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Power</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="Battery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Batteries</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_SmallBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Batteries</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_LargeBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_Batteries</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_AdvancedBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_AdvancedBatteries</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_LargeAdvancedBattery"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_AdvancedBatteries</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_PortableWoodFiredGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_WoodGenerators</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_IndustrialWoodFiredGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_WoodGenerators</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_PortableChemfuelPoweredGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_ChemfuelGenerators</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="VFE_IndustrialChemfuelPoweredGenerator"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_ChemfuelGenerators</designatorDropdown>
+                    </value>
+                </li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>[sbz] Neat Storage</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_DisplayShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_SmallDisplayShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_TallDisplayShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_NarrowTallDisplayShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_WideHangerShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_HangerShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_HangerShelf"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_HangerShelves</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_DisplayCabinet"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayCabinets</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="sbz_NarrowDisplayCabinet"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_DisplayCabinets</designatorDropdown>
+                    </value>
+                </li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Reel's Expanded Storage</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="ReelStorageLargeSpacerContainer"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_SpacerContainers</designatorDropdown>
+                    </value>
+                </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="ReelStorageSpacerContainer"]</xpath>
+                    <value>
+                        <designatorDropdown>Ferny_SpacerContainers</designatorDropdown>
+                    </value>
+                </li>
+				
 			</operations>
 			</match>
 		</li>

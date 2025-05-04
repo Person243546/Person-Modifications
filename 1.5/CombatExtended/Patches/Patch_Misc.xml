@@ -3,6 +3,40 @@
 
 	<Operation Class="PatchOperationFindMod">
     <mods>
+		<li>Too Many Mods - Compats and Rebalances</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimsenal Factions</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/KCSG.SettlementLayoutDef[defName="TMM_GDDefence" or defName="TMM_CPDDefence"]/stockpileOptions/fillWithDefs/li[.="GD_INGrenadeLauncher"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/KCSG.SettlementLayoutDef[defName="TMM_GDDefence" or defName="TMM_CPDDefence"]/stockpileOptions/fillWithDefs/li[.="GD_SKGrenadeLauncher"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/KCSG.SettlementLayoutDef[defName="TMM_GDDefence" or defName="TMM_CPDDefence"]/stockpileOptions/fillWithDefs/li[.="GD_BSLauncher"]</xpath>
+			</li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
 		<li>Vanilla Genetics Expanded</li>
     </mods>
 		<match Class="PatchOperationSequence">
@@ -283,19 +317,59 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
+		
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Combat Extended Guns</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+					<li Class="PatchOperationAddModExtension">
+						<xpath>Defs/ThingDef[
+							defName="CE_Gun_AKM" or
+							defName="CE_Gun_FNFAL" or
+							defName="Gun_SniperRifle" or
+							defName="CE_Gun_HecateTwo" or
+							defName="CE_Gun_MSixty" or
+							defName="CE_Gun_USASTwelve" or
+							defName="Gun_Minigun"
+						]</xpath>
+						<value>	
+							<li Class="DMS.HeavyEquippableExtension">
+								<EquippableDef>AverageHumanCanUse</EquippableDef>
+							</li>
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
 			
-			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="DMS_Ceramics"]/statBases/StuffPower_Armor_Sharp</xpath>
+				<value>
+					<StuffPower_Armor_Sharp>1.4</StuffPower_Armor_Sharp>
+				</value>
+			</li>
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[@Name="BaseAutomatroidRace"]/statBases/PsychicSensitivity</xpath>
 				<value>
 					<PsychicSensitivity>0.25</PsychicSensitivity>
 				</value>
 			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/KCSG.SymbolDef[defName="DMS_DeposableRocketLauncher"]/thing</xpath>
+				<value>
+					<thing>CE_DisposableRocketLauncher</thing>
+				</value>
+			</li>
 			
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/ThingDef[defName="DMS_DeposableRocketLauncher"]</xpath>
 			</li>
-			
+			-->
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/PawnKindDef[defName="DMS_Mech_Iguana"]/inventoryOptions</xpath>
 				<nomatch Class="PatchOperationAdd">
@@ -400,7 +474,7 @@
 					<li>Hair_LightTeal</li>
 				</value>
 			</li>
-			-->
+			
 			<li Class="PatchOperationRemove">
 				<xpath>Defs/XenotypeDef[defName="Highmate"]/genes/li[text()="Skin_SheerWhite"]</xpath>
 			</li>
@@ -411,7 +485,7 @@
 					<li>Ears_Cat</li>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/XenotypeDef[defName="Impid"]/genes</xpath>
 				<value>
@@ -446,6 +520,43 @@
 			-->
 			
 		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Factions Expanded - Tribals</li>
+		</mods>
+		<match Class="PatchOperationFindMod">
+			<mods>
+				<li>ReBuild: Doors and Corners</li>
+			</mods>
+			<match Class="PatchOperationSequence">
+				<operations>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="RB_RusticWall" or defName="RB_OverwallArmor"]</xpath>
+						<value>
+							<researchPrerequisites>
+								<li>VFET_Construction</li>
+							</researchPrerequisites>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="RB_OrnateWall"]/researchPrerequisites</xpath>
+						<value>
+							<li>VFET_Construction</li>
+						</value>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/TerrainDef[defName="RB_FinePlankWood"]</xpath>
+						<value>
+							<researchPrerequisites>
+								<li>VFET_Construction</li>
+							</researchPrerequisites>
+						</value>
+					</li>
+				</operations>
+			</match>
 		</match>
 	</Operation>
 	
@@ -984,6 +1095,47 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VWE_MeleeWeapon_Baton"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+				  <researchPrerequisites>
+					<li>VWE_SpecializedFirearms</li>
+				  </researchPrerequisites>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName="VWE_SpecializedFirearms"]/description</xpath>
+				<value>
+				  <description>Craft specialized firearms and weapons for demanding combat scenarios.</description>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName="VWE_SpecializedFirearms"]/label</xpath>
+				<value>
+				  <label>specialized weapons</label>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VWE_MeleeWeapon_Shovel"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+				  <researchPrerequisites>
+					<li>Smithing</li>
+				  </researchPrerequisites>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VWE_MeleeWeapon_CombatKnife"]/recipeMaker/researchPrerequisite</xpath>
+				<value>
+				  <researchPrerequisites>
+					<li>VWE_SpecializedFirearms</li>
+				  </researchPrerequisites>
+				</value>
+			</li>
 			
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ResearchProjectDef[defName="ChargedShot"]/prerequisites</xpath>
@@ -1820,6 +1972,44 @@
 			<xpath>*/ThoughtDef[defName = "AteWithoutTable"]/stages/li[1]/baseMoodEffect</xpath>
 			<value>
 				<baseMoodEffect>-3</baseMoodEffect>
+			</value>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Basic Medicine</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingSetMakerDef[defName = "OutlanderRaidLootMaker" or defName = "PirateRaidLootMaker"]/root/fixedParams/filter/thingDefs</xpath>
+			<value>
+				<li>MedicineBasic</li>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/TraderKindDef[defName = "Base_Outlander_Standard" or defName = "Caravan_Outlander_CombatSupplier" or defName = "Orbital_BulkGoods"]/stockGenerators</xpath>
+			<value>
+			  <li Class="StockGenerator_SingleDef">
+				<thingDef>MedicineBasic</thingDef>
+				<countRange>25~50</countRange>
+			  </li>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs/TraderKindDef[defName = "Visitor_Outlander_Standard"]/stockGenerators</xpath>
+			<value>
+			  <li Class="StockGenerator_SingleDef">
+				<thingDef>MedicineBasic</thingDef>
+				<countRange>2~8</countRange>
+			  </li>
 			</value>
 		</li>
 		

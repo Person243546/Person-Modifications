@@ -115,6 +115,13 @@
 						</value>
 					</li>
 					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName = "V_ChargeAxe"]/weaponTags</xpath>
+						<value>
+							<li>CE_OneHandedWeapon</li>
+						</value>
+					</li>
+					
 				</operations>
 				</match>
 			</li>
@@ -2038,6 +2045,65 @@
 				<xpath>Defs/BodyPartDef[defName="RM_BehemothShield"]/hitPoints</xpath>
 				<value>
 					<hitPoints>120</hitPoints>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient Charged Arms</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="AW_ChargeMateba" or
+					defName ="AW_ChargeSMG" or
+					defName = "AW_ChargeBR" or
+					defName = "AW_ChargeLMG" or
+					defName = "AW_ChargeSR" or
+					defName = "AW_ChargeCS" or
+					defName = "AW_ChargeJavelin" or
+					defName = "AW_ChargeMKThreeOne"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.5</generateAllowChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "AW_ChargeMKThreeOne"]/statBases/Mass</xpath>
+				<value>
+					<Mass>70</Mass>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "AW_ChargeMKThreeOne"]/statBases/Bulk</xpath>
+				<value>
+					<Bulk>80</Bulk>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Mechanoids</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VFE_Gun_AdvancedInfernoCannon"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/ai_IsBuildingDestroyer</xpath>
+				<value>
+					<ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
 				</value>
 			</li>
 			

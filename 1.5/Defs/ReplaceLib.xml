@@ -63,11 +63,11 @@
 			<li>
 				<replace>BS_GiantPrimitiveBow</replace>
 				<with>Bow_Great</with>
-			</li>
+			</li><!--
 			<li>
 				<replace>VFEM_Bow_HeavyCrossbow</replace>
 				<with>CE_Gun_Crossbow</with>
-			</li><!--
+			</li>
 			<li>
 				<replace>GD_INGrenadeLauncher</replace>
 				<with>GD_GrenadeLauncher</with>
@@ -79,7 +79,63 @@
 			<li>
 				<replace>GD_BSLauncher</replace>
 				<with>GD_GrenadeLauncher</with>
+			</li>
+			<li>
+				<replace>DMS_DeposableRocketLauncher</replace>
+				<with>GD_GrenadeLauncher</with>
 			</li>-->
+			<li MayRequire="ceteam.combatextendedarmory">
+				<replace>HRK_MThreeEOne</replace>
+				<with>CE_Gun_CarlGustaf</with>
+			</li>
+			<li MayRequire="aoba.fortress.industrial">
+				<replace>AM_SmallGenerator</replace>
+				<with>FT_FuelGenerator</with>
+			</li>
+			<li MayRequire="farxmai2.dbh.expanded">
+				<replace>AM_AncientToilet</replace>
+				<with>AncientToilet</with>
+			</li>
+			<li MayRequire="farxmai2.dbh.expanded">
+				<replace>AM_AncientKitchenSink</replace>
+				<with>AncientKitchenSink</with>
+			</li>
+			<li MayRequire="ludeon.rimworld.biotech">
+				<replace>CE_Apparel_GasMask</replace>
+				<with>Apparel_GasMask</with>
+			</li>
+			<li MayRequire="ludeon.rimworld.biotech">
+				<replace>CE_Apparel_ImprovGasMask</replace>
+				<with>Apparel_ClothMask</with>
+			</li>
+			<li>
+				<replace>DMS_Gun_IzhmalRifle</replace>
+				<with>CE_Gun_AKM</with>
+			</li>
+			<li>
+				<replace>DMS_ZlobinRifle</replace>
+				<with>CE_Gun_FNFAL</with>
+			</li>
+			<li>
+				<replace>DMS_VykhlopRifle</replace>
+				<with>Gun_SniperRifle</with>
+			</li>
+			<li>
+				<replace>DMS_YekaterinRifle</replace>
+				<with>CE_Gun_HecateTwo</with>
+			</li>
+			<li>
+				<replace>DMS_PKM</replace>
+				<with>CE_Gun_MSixty</with>
+			</li>
+			<li>
+				<replace>DMS_KS23K</replace>
+				<with>CE_Gun_USASTwelve</with>
+			</li>
+			<li>
+				<replace>DMS_GshG762Gatlinggun</replace>
+				<with>Gun_Minigun</with>
+			</li>
 		</replacers>
 	</ReplaceLib.ReplacerDef>
 	
@@ -339,11 +395,11 @@
 			<li>
 				<replace>Gun_MilitiaRifle</replace>
 				<with>CE_Gun_AKM</with>
-			</li>
+			</li><!--
 			<li>
 				<replace>Gun_RSAMRifle</replace>
 				<with>CE_Gun_HecateTwo</with>
-			</li>
+			</li>-->
 			<li>
 				<replace>Gun_Repeater</replace>
 				<with>CE_Gun_WinchesterNintyFour</with>
@@ -352,7 +408,24 @@
 				<replace>Gun_MarksmanRifle</replace>
 				<with>Gun_SniperRifle</with>
 			</li>
+			<li MayRequire="ceteam.combatextendedarmory">
+				<replace>VWE_SawedOffShotgun</replace>
+				<with>CE_Gun_SawedOff</with>
+			</li>
 		</replacers>
 	</ReplaceLib.ReplacerDef>
-	
+	<!--
+	<ReplaceLib.ReplacerDef>
+		<defName>ConsistentStorageBuildings</defName>
+		<replacers>
+			<li MayRequire="ceteam.combatextendedarmory">
+				<replace>Gun_MarksmanRifle</replace>
+				<with>Gun_SniperRifle</with>
+			</li>
+			<li MayRequire="ceteam.combatextendedarmory">
+				<replace>Gun_MarksmanRifle</replace>
+				<with>Gun_SniperRifle</with>
+			</li>
+		</replacers>
+	</ReplaceLib.ReplacerDef>-->
 </Defs>

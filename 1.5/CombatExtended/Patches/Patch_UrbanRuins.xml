@@ -3,7 +3,7 @@
 	
 	<Operation Class="PatchOperationFindMod">
     <mods>
-		<li>Ancient urban ruins old</li>
+		<li>Ancient urban ruins</li>
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
@@ -13,200 +13,237 @@
 		<value>
 		
 		<ReplaceLib.ReplacerDef>
-			<defName>MM Urban Ruins</defName>
+			<defName>MMUrbanRuins</defName>
 			<replacers>
 				<li>
 					<replace>AM_Makarov</replace>
 					<with>Gun_Autopistol</with>
 				</li>
-				<li>
+				<li MayRequire="harkon.gunnut.chapter1">
 					<replace>AM_APS</replace>
-					<with>CE_Gun_ChargePistol</with>
+					<with>HRK_GlockSeventeen</with> <!-- big mag-->
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_FNHG</replace>
+					<with>CE_Gun_FNFiveSeven</with> 
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_CPHG</replace>
+					<with>CE_Gun_FNFiveSeven</with> 
 				</li>
 				<li>
-					<replace>VWE_Gun_ChargeLMG</replace>
-					<with>CE_Gun_ChargeLMG</with>
+					<replace>AM_Spear68C</replace>
+					<with>CE_Gun_FNFAL</with>
 				</li>
 				<li>
-					<replace>VWE_Gun_ChargeSMG</replace>
-					<with>CE_Gun_ChargeSMG</with>
+					<replace>AM_Spear68A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_M5A3LT</replace>
+					<with>Gun_RSCarbine</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_AK68A</replace>
+					<with>Gun_RSCarbine</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_M4C</replace>
+					<with>Gun_RSCarbine</with>
 				</li>
 				<li>
-					<replace>VWE_Gun_Flamethrower</replace>
-					<with>CE_Gun_Flamethrower</with>
+					<replace>AM_MK68A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_RM68A</replace>
+					<with>LBPack_LBFour</with>
 				</li>
 				<li>
-					<replace>VWE_Bow_Crossbow</replace>
-					<with>CE_Gun_Crossbow</with>
+					<replace>AM_MCX</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li>				
+					<replace>AM_M4ASOP</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M42U</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_MCXC</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M4A</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_ADAR</replace>
+					<with>HRK_MFourAOne</with><!-- do later -->
 				</li>
 				<li>
-					<replace>VWE_Gun_LeverActionRifle</replace>
-					<with>CE_Gun_WinchesterNintyFour</with>
+					<replace>AM_AK101A</replace>
+					<with>CE_Gun_AKM</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter2">
+					<replace>AM_ASVAL</replace>
+					<with>HRK_ASVAL</with>
+				</li><!--
+				<li>
+					<replace>AM_VSS</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>-->
+				<li MayRequire="harkon.gunnut.chapter2">
+					<replace>AM_DTMDR</replace>
+					<with>HRK_AShTwelve</with><!-- might remove-->
 				</li>
 				<li>
-					<replace>VWE_Gun_HMG</replace>
+					<replace>AM_TKB68A</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li>
+					<replace>AM_MK17A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_R11A</replace>
+					<with>LBPack_LBFour</with><!-- dmr -->
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_SR25A</replace>
+					<with>LBPack_LBFour</with>
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_Hunter</replace>
+					<with>CE_Gun_M1903Springfield</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M700A</replace>
+					<with>HRK_RSevenHundred</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_MK18M</replace>
+					<with>HRK_MOneA</with> <!-- big dmr-->
+				</li>
+				<li>
+					<replace>AM_PKM</replace>
 					<with>CE_Gun_MSixty</with>
 				</li>
 				<li>
-					<replace>VWE_Gun_ServiceRifle</replace>
-					<with>CE_Gun_AKM</with>
+					<replace>AM_PKP</replace>
+					<with>Gun_LMG</with>
 				</li>
-				<!--<li>
-					<replace>VWE_Gun_MarksmanRifle</replace>
-					<with>CE_Gun_SVD</with>
-				</li>-->
-				<li>
-					<replace>VWE_Gun_Musket</replace>
-					<with>CE_Gun_FlintlockMusket</with>
-				</li>
-				<li>
-					<replace>VWE_Gun_Flintlock</replace>
-					<with>CE_Gun_FlintlockPistol</with>
-				</li>
-				<li>
-					<replace>VWE_Gun_BattleRifle</replace>
-					<with>CE_Gun_FNFAL</with>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_AVT</replace>
+					<with>Gun_AutomaticRifle</with>
 				</li>
 				<li MayRequire="ceteam.combatextendedarmory">
-					<replace>VWE_Gun_SemiAutomaticRifle</replace>
-					<with>CE_Gun_SKS</with>
+					<replace>AM_MPX</replace>
+					<with>HRK_MPSevenAOne</with><!-- could be better -->
 				</li>
-				<li MayRequire="rimsenal.evp">
-					<replace>VWE_Gun_Carbine</replace>
-					<with>Gun_RSCarbine</with>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_MPXL</replace>
+					<with>CE_Gun_PNinety</with><!-- could be better -->
 				</li>
-				<li MayRequire="rimsenal.evp">
-					<replace>CE_Gun_SigMCX</replace>
-					<with>Gun_RSCarbine</with>
+				<li MayRequire="turkler.advanced.armaments">
+					<replace>AM_STM</replace>
+					<with>SEX_PistolCarbine</with>
 				</li>
-				<li MayRequire="rimsenal.evp">
-					<replace>CE_Gun_AKMSU</replace>
-					<with>Gun_RSCarbine</with>
+				<li MayRequire="turkler.advanced.armaments">
+					<replace>AM_STMC</replace>
+					<with>SEX_PistolCarbine</with>
 				</li>
-				<li>
-					<replace>Gun_ChargeSidearm</replace>
-					<with>CE_Gun_ChargePistol</with>
+				<li MayRequire="iluvsilicon.basicmedicine2">
+					<replace>AM_AI2A</replace>
+					<with>MedicineBasic</with>
 				</li>
-				<li>
-					<replace>Gun_ScatterCharger</replace>
-					<with>VWE_Gun_ChargeShotgun</with>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsA</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsB</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsC</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsA</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsD</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsE</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsF</replace>
+					<with>AC_Chips</with>
 				</li><!--
-				<li MayRequire="ceteam.combatextendedarmory">
-					<replace>Gun_FR</replace>
-					<with>CE_Gun_SKS</with>
+				<li>
+					<replace>AM_ComponentWeapon</replace>
+					<with>ComponentIndustrial</with>
 				</li>
 				<li>
-					<replace>Gun_RSBattleRifle</replace>
-					<with>CE_Gun_FNFAL</with>
+					<replace>AM_227FURYComponents</replace>
+					<with>ComponentIndustrial</with>
 				</li>-->
-				<li>
-					<replace>Gun_MilitiaRifle</replace>
-					<with>CE_Gun_AKM</with>
-				</li>
 			</replacers>
 		</ReplaceLib.ReplacerDef>
 		
 		</value>
 	</li>
-	
+	<!--
 	<li Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[@Name="AMGun"]/weaponTags</xpath>
 		<value>
 			<weaponTags Inherit="False" />
 		</value>
 	</li>
-	
-	<li Class="PatchOperationRemove">
-		<xpath>/Defs/ThingDef[
-			defName="AM_Makarov" or
-			defName="AM_APS" or
-			defName="AM_FNHG" or
-			defName="AM_CPHG" or
-			defName="AM_Spear68C" or
-			defName="AM_Spear68A" or
-			defName="AM_M5A3LT" or
-			defName="AM_TKB68A" or
-			defName="AM_AK68A" or
-			defName="AM_MK68A" or
-			defName="AM_RM68A" or
-			defName="AM_MCX" or
-			defName="AM_MCXC" or
-			defName="AM_ADAR" or
-			defName="AM_M4A" or
-			defName="AM_M4ASOP" or
-			defName="AM_M4C" or
-			defName="AM_M42U" or
-			defName="AM_AK101A" or
-			defName="AM_ASVAL" or
-			defName="AM_VSS" or
-			defName="AM_DTMDR" or
-			defName="AM_MK17A" or
-			defName="AM_R11A" or
-			defName="AM_SR25A" or
-			defName="AM_Hunter" or
-			defName="AM_M700A" or
-			defName="AM_MK18M" or
-			defName="AM_PKM" or
-			defName="AM_PKP" or
-			defName="AM_AVT" or
-			defName="AM_MPX" or
-			defName="AM_MPXL" or
-			defName="AM_STM" or
-			defName="AM_STMC"]</xpath>
-	</li>
-	
-	<li Class="PatchOperationReplace">
+	-->
+	<li Class="PatchOperationAdd">
 		<xpath>/Defs/ThingSetMakerDef[defName="AM_OrdinaryWeapons"]/root/options/li/thingSetMaker/fixedParams/filter/thingDefs</xpath>
 		<value>
-			<thingDefs>
-				<li>Gun_Autopistol</li>
-				<li>Gun_HeavySMG</li>
-				<li>Gun_PumpShotgun</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_GlockSeventeen</li>
-				<li MayRequire="ceteam.combatextendedguns">CE_Gun_SVD</li>
-				<li MayRequire="rimsenal.evp">Gun_PistolHeavyRevolver</li>
-				<li MayRequire="rimsenal.evp">Gun_AutomaticRifle</li>
-				<li MayRequire="ceteam.combatextendedarmory">CE_Gun_M1903Springfield</li>
-			</thingDefs>
+			<li>Gun_BoltActionRifle</li>
+			<li>Gun_HeavySMG</li>
+			<li>Gun_Revolver</li>
+			<li>Gun_PumpShotgun</li>
+			<li>CE_Gun_WinchesterNintyFour</li>
+			<li MayRequire="rimsenal.evp">Gun_PistolHeavyRevolver</li>
+			<li MayRequire="ceteam.combatextendedarmory">CE_Gun_HenrySideGate</li>
+			<li MayRequire="ceteam.combatextendedarmory">CE_Gun_SKS</li>
 		</value>
 	</li>
 	
-	<li Class="PatchOperationReplace">
+	<li Class="PatchOperationAdd">
 		<xpath>/Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[1]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
 		<value>
-			<thingDefs>
-				<li>Gun_AssaultRifle</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_MFourAOne</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOFive</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOThree</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_MOneA</li>
-				<li MayRequire="harkon.gunnut.chapter2">HRK_AShTwelve</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_SAFiftyEight</li>
-				<li MayRequire="harkon.gunnut.community">HRK_GalilACE</li>
-				<li MayRequire="harkon.gunnut.community">HRK_M16AFour</li>
-				<li MayRequire="harkon.gunnut.community">HRK_M4US</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_BullpupPKP</li>
-				<li MayRequire="ceteam.combatextendedguns">CE_Gun_FNFAL</li>
-				<li MayRequire="ceteam.combatextendedguns">CE_Gun_MSixty</li>
-			</thingDefs>
+			<li>Gun_AssaultRifle</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOFive</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOThree</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MOneA</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_SAFiftyEight</li>
+			<li MayRequire="harkon.gunnut.community">HRK_GalilACE</li>
+			<li MayRequire="harkon.gunnut.community">HRK_M16AFour</li>
+			<li MayRequire="harkon.gunnut.community">HRK_M4US</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_BullpupPKP</li>
 		</value>
 	</li>
 	
-	<li Class="PatchOperationReplace">
+	<li Class="PatchOperationAdd">
 		<xpath>/Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[2]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
 		<value>
-			<thingDefs>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_MFourAOne</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_MOneA</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_RSevenHundred</li>
-				<li MayRequire="harkon.gunnut.chapter1">HRK_MPSevenAOne</li>
-				<li MayRequire="harkon.gunnut.chapter2">HRK_ASVAL</li>
-				<li MayRequire="harkon.gunnut.chapter2">HRK_SKS</li>
-				<li MayRequire="harkon.gunnut.chapter2">HRK_PNinety</li>
-				<li MayRequire="ceteam.combatextendedguns">CE_Gun_FNFAL</li>
-				<li MayRequire="ceteam.combatextendedguns">CE_Gun_AKM</li>
-				<li MayRequire="rimsenal.evp">Gun_RSCarbine</li>
-			</thingDefs>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MFourAOne</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MPSevenAOne</li>
+			<li MayRequire="harkon.gunnut.chapter2">HRK_SKS</li>
+			<li MayRequire="harkon.gunnut.chapter2">HRK_PNinety</li>
 		</value>
 	</li>
 	
@@ -260,7 +297,86 @@
 			<li MayRequire="keshash.grenadevariety">Weapon_GV_PrometheumBomb</li>
 		</value>
 	</li>
+	<!--
+	<li Class="PatchOperationAttributeSet">
+		<xpath>Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons" or defName="AM_OrdinaryWeapons"]/root/options/li[thingSetMaker/@Class="ThingSetMaker_Count"]/thingSetMaker</xpath>
+		<attribute>Class</attribute>
+		<value>BreadMoCEThingSetMaker.ThingSetMaker_CountWithAmmo</value>
+	</li>
 	
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[thingSetMaker/@Class="BreadMoCEThingSetMaker.ThingSetMaker_CountWithAmmo"]/thingSetMaker</xpath>
+		<value>
+			<magCount>1~3</magCount>
+			<random>true</random>
+			<canGenerateAdvanced>true</canGenerateAdvanced>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+	  <xpath>Defs/ThingSetMakerDef[defName="AM_OrdinaryWeapons"]/root/options</xpath>
+	  <value>
+		<li>
+		  <weight>5</weight>
+		  <thingSetMaker Class="ThingSetMaker_RandomOption">
+			<options>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoPistols</li>
+					  </categories>
+					</filter>
+					<countRange>100~180</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoRifles</li>
+						<li>AmmoShotguns</li>
+					  </categories>
+					</filter>
+					<countRange>80~150</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			</options>
+		  </thingSetMaker>
+		</li>
+		<li>
+		  <weight>1</weight>
+		  <thingSetMaker Class="ThingSetMaker_RandomOption">
+			<options>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <basic>false</basic>
+				  <advanced>true</advanced>
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoPistols</li>
+						<li>AmmoRifles</li>
+						<li>AmmoShotguns</li>
+					  </categories>
+					</filter>
+					<countRange>25~70</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			</options>
+		  </thingSetMaker>
+		</li>
+	  </value>
+	</li>
+	-->
 	<li Class="PatchOperationConditional">
 		<xpath>/Defs/ThingDef[defName="Gun_AssaultRifle"]/weaponTags</xpath>
 		<nomatch Class="PatchOperationAdd">
@@ -293,6 +409,32 @@
 		<value>
 			<li>Autopistol</li>
 		</value>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Det's Battle Meds</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingSetMakerDef[defName="AM_MedicalSupplies" or defName="AM_Injector"]/root/options/li[2]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+				<value>
+					<li>StimpackUltratech</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingSetMakerDef[defName="AM_MedicalSupplies"]/root/options/li[3]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+				<value>
+					<li>StimpackIndustrial</li>
+					<li>DV_AdrenalineShot</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
 	</li>
 	
 	<li Class="PatchOperationFindMod">
@@ -575,6 +717,21 @@
 		</value>
 	</li>
 	
+	<li MayRequire="" Class="PatchOperationReplace">
+		<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef/pawns/ShamblerSoldier</xpath>
+		<value>
+			<ShamblerSoldier>0.25</ShamblerSoldier>
+		</value>
+	</li>
+	
+	<li MayRequire="" Class="PatchOperationReplace">
+		<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef/pawns/ShamblerSwarmer</xpath>
+		<value>
+			<ShamblerSwarmer>0.5</ShamblerSwarmer>
+		</value>
+	</li>
+	
+	<!--
 	<li Class="PatchOperationFindMod">
     <mods>
 		<li>Integrated Implants</li>
@@ -626,7 +783,7 @@
 		</operations>
 		</match>
 	</li>
-	
+	-->
 		</operations>
 		</match>
 	</Operation>

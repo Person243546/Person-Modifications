@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<FleckDef ParentName="FleckBase_Thrown">
+		<defName>Fleck_ChargedAmmo</defName>
+		<graphicData>
+			<texPath>Things/Mote/BlastFlameCharged</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<solidTime>0.15</solidTime>
+		<fadeOutTime>0.2</fadeOutTime>
+	</FleckDef>
+
+</Defs>

@@ -497,7 +497,7 @@
 		</operations>
 		</match>
 	</Operation>
-		
+	
 	<Operation Class="PatchOperationFindMod">
     <mods>
 		<li>Vanilla Weapons Expanded - Laser</li>
@@ -514,6 +514,31 @@
 			
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="VWEL_Gun_LaserSMG" or defName="VWEL_Gun_SalvagedLaserSMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>35</range>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Spacer Faction Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_SmartRevolver" or defName="Gun_SmartAutoPistol" or defName="Gun_SmartMachinePistol"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+				<value>
+					<range>25</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_SmartHeavySMG"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
 				<value>
 					<range>35</range>
 				</value>

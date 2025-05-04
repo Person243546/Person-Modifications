@@ -17,6 +17,5 @@
   <FT_TableLathe.description>An electrically-powered piece of equipment that allows the production of simple mechanical parts.</FT_TableLathe.description>
   <FT_Operate.label>Operate Concrete Mixer E</FT_Operate.label>
   <RTC_Operate.label MayRequire="rimthunder.core">Operate Assembly Platform</RTC_Operate.label>
-  <IC_Operate.label MayRequire="aoba.fortress.industrial.concrete">Operate Concrete Mixer M</IC_Operate.label>
   
 </LanguageData>

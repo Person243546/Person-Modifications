@@ -7,7 +7,7 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="Gun_MiniTurret" or
@@ -19,7 +19,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="Gun_AutocannonTurret"
@@ -188,7 +188,7 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="Gun_ShotgunTurret"
@@ -197,7 +197,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="Turret_PortableMortar" or
@@ -565,7 +565,7 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="VFES_Gun_MilitaryTurret" or
@@ -578,7 +578,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="VFES_Gun_EMPTurret"
@@ -777,7 +777,7 @@
 					</damageMultipliers>
 				</value>
 			</li>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="VFEE_Gun_StrikerTurret"
@@ -786,7 +786,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[
 				defName="VFED_Gun_Kontarion" or
@@ -828,7 +828,7 @@
 					</damageMultipliers>
 				</value>
 			</li>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="Gun_12_Gauge" or
@@ -842,7 +842,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 		</operations>
 		</match>
 	</Operation>
@@ -1148,7 +1148,7 @@
 					</damageMultipliers>
 				</value>
 			</li>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="BreadMoAM_Gun_ShotgunTurret" or
@@ -1158,7 +1158,7 @@
 					<minRange>1.9</minRange>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs/ThingDef[
 				defName="BreadMoAM_Gun_LargeShotgunTurret"
@@ -1335,5 +1335,25 @@
 		</match>
 	</Operation>
 	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@ParentName="BaseWeaponTurret" or @ParentName="BaseTurretGun" or @ParentName="BaseAutoTurretGun"][(./verbs/li[@Class="CombatExtended.VerbPropertiesCE"])]/verbs/li[@Class="CombatExtended.VerbPropertiesCE" and not (minRange)]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./weaponTags/li[.="TurretGun"] and (./verbs/li[@Class="CombatExtended.VerbPropertiesCE"])]/verbs/li[@Class="CombatExtended.VerbPropertiesCE" and not (./minRange)]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./weaponTags/li[.="TurretGun"]]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>-->
 	
 </Patch>
