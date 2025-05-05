@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Gun_MiniTurret" or
+				defName="Gun_MediumTurret" or
+				defName="Gun_BlasterTurret" or
+				defName="Gun_HeavyTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Gun_AutocannonTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>5</minRange>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Hive"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>8</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_MiniTurret" or
+				defName="Turret_Medium" or
+				defName="Turret_Blaster" or
+				defName="Turret_Heavy" or
+				defName="Turret_M240B" or
+				defName="Turret_KPV" or
+				defName="Turret_AGSThirty" or
+				defName="Turret_Autocannon" or
+				defName="Turret_Sniper" or
+				defName="Turret_Mortar"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Turret_Flak"]/damageMultipliers/li[damageDef="Bullet"]/multiplier</xpath>
+				<value>
+					<multiplier>2.64</multiplier>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_Autocannon" or
+				defName="Turret_Sniper"
+				]/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>CE_HeavyTurret</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Gun_MiniTurret" or
+				defName="Gun_MediumTurret" or
+				defName="Gun_BlasterTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/burstShotCount</xpath>
+				<value>
+					<burstShotCount>5</burstShotCount>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_HeavyTurret"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/burstShotCount</xpath>
+				<value>
+					<burstShotCount>3</burstShotCount>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_MiniTurret" or
+				defName="Turret_Medium" or
+				defName="Turret_Blaster" or
+				defName="Turret_Heavy" or
+				defName="Turret_AutoMiniTurret" or
+				defName="Turret_AutoChargeBlaster" or
+				defName="Turret_AutoInferno" or
+				defName="Turret_Mortar" or
+				defName="Turret_AutoMortar"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>3.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_Autocannon" or
+				defName="Turret_Sniper"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>5.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Royalty</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[
+						defName="Turret_AutoMiniTurret" or
+						defName="Turret_AutoChargeBlaster" or
+						defName="Turret_AutoInferno" or
+						defName="Turret_AutoMortar"
+						]/damageMultipliers</xpath>
+						<value>
+						  <li>
+							<damageDef>Bullet</damageDef>
+							<multiplier>4</multiplier>
+						  </li>
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_Autocannon" or
+				defName="Turret_Sniper"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Armory</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Gun_ShotgunTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_PortableMortar" or
+				defName="Turret_ShotgunTurret"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>3.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>More Vanilla Turrets 1.1</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="MilitaryTurretGun" or
+				defName="ShredderTurretGun" or
+				defName="PrecisionTurretGun" or
+				defName="BlastTurretGun" or
+				defName="VulcanCannon" or
+				defName="MilitaryTurretGunManned" or
+				defName="Turret_DevastatorMortarBomb" or
+				defName="ShredderTurretGunManned" or
+				defName="PrecisionTurretGunManned" or
+				defName="BlastTurretGunManned" or
+				defName="VulcanCannonManned"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="MilitaryTurretGun" or
+				defName="ShredderTurretGun" or
+				defName="PrecisionTurretGun" or
+				defName="BlastTurretGun" or
+				defName="MilitaryTurretGunManned" or
+				defName="ShredderTurretGunManned" or
+				defName="PrecisionTurretGunManned" or
+				defName="BlastTurretGunManned"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>3.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VulcanCannon" or
+				defName="Turret_DevastatorMortarBomb" or
+				defName="VulcanCannonManned"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>5.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="VulcanCannon" or
+				defName="VulcanCannonManned"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Insectoids 2</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="VFEI2_BuildingBase"]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>8</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Hive"
+				]/label</xpath>
+				<value>
+					<label>Sorne Hive</label>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="VFEI2_NuchadusHive" or
+				defName="VFEI2_KemianHive" or
+				defName="VFEI2_ChelisHive" or
+				defName="VFEI2_XanidesHive" or
+				defName="VFEI2_BasicHive" or
+				defName="VFEI2_ArtificialBasicHive" or
+				defName="VFEI2_ArtificialSorneHive" or
+				defName="VFEI2_ArtificialNuchadusHive" or
+				defName="VFEI2_ArtificialKemianHive" or
+				defName="VFEI2_ArtificialChelisHive" or
+				defName="VFEI2_ArtificialXanidesHive"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>0.85</fillPercent>
+				</value>
+			</li>
+			
+			<li MayRequire="sarg.alphaanimals" Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="VFEI2_AA_BlackHive" or
+				defName="VFEI2_AA_ArtificialBlackHive"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>0.85</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Mechanoids</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFE_Turret_AutoChargeBlaster" or
+				defName="VFE_Turret_AutoChargeLance" or
+				defName="VFE_Turret_AutoInfernoCannon" or
+				defName="VFE_Turret_AutoMortar"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFE_Turret_ChargeBlasterCannon" or
+				defName="VFE_Turret_ChargeLanceCannon" or
+				defName="VFE_Turret_AutoMortarCannon" or
+				defName="VFE_Turret_InfernoLauncherArtillery" or
+				defName="VFE_Turret_ChargeRailgun" or
+				defName="VFE_Turret_OrbitalBombardmentUplink"
+				]/damageMultipliers</xpath>
+				<value>
+				  <li>
+					<damageDef>Bullet</damageDef>
+					<multiplier>4</multiplier>
+				  </li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFE_Turret_AutoChargeBlaster" or
+				defName="VFE_Turret_AutoChargeLance" or
+				defName="VFE_Turret_AutoInfernoCannon" or
+				defName="VFE_Turret_AutoMortar"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>3.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFE_Turret_ChargeBlasterCannon" or
+				defName="VFE_Turret_ChargeLanceCannon" or
+				defName="VFE_Turret_AutoMortarCannon" or
+				defName="VFE_Turret_InfernoLauncherArtillery" or
+				defName="VFE_Turret_ChargeRailgun" or
+				defName="VFE_Turret_OrbitalBombardmentUplink"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>5.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Defensive Machine Gun Turret Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_DP28MG" or
+				defName="Turret_M2HB" or
+				defName="Turret_M2HBT" or
+				defName="Turret_M134MG" or
+				defName="Turret_Mk19MGL" or
+				defName="Turret_M2HBs" or
+				defName="Turret_M134MGs" or
+				defName="Turret_Mk19MGLs"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsec Security</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="RSTurretLLT" or
+				defName="RSTurretHLT" or
+				defName="RSTurretHAAC"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="RSTurretLLT" or
+				defName="RSTurretHLT" or
+				defName="RSTurretHAAC"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>5.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="RSTurretLLT" or
+				defName="RSTurretHLT" or
+				defName="RSTurretHAAC"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Federation Faction Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_FedHarvester" or
+				defName="Turret_PB"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Furniture Expanded - Security</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Gun_MilitaryTurret" or
+				defName="VFES_Gun_Searchlight" or
+				defName="VFES_Gun_Flame" or
+				defName="VFES_Gun_SentryGun" or
+				defName="VFES_Gun_ChargeTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Gun_EMPTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>6</minRange>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Turret_AutocannonDouble" or
+				defName="VFES_Turret_TriRocket" or
+				defName="VFES_Turret_MilitaryTurret" or
+				defName="VFES_Turret_Searchlight" or
+				defName="VFES_Turret_Flame" or
+				defName="VFES_Turret_SentryGun" or
+				defName="VFES_Turret_Ballista" or
+				defName="VFES_Turret_Catapult" or
+				defName="VFES_Turret_ChargeTurret" or
+				defName="VFES_Turret_ChargeRailgunTurret" or
+				defName="VFES_Turret_EMPTurret"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Turret_MilitaryTurret" or
+				defName="VFES_Turret_Searchlight" or
+				defName="VFES_Turret_Flame" or
+				defName="VFES_Turret_SentryGun" or
+				defName="VFES_Turret_ChargeTurret"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>3.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Turret_AutocannonDouble" or
+				defName="VFES_Turret_TriRocket" or
+				defName="VFES_Turret_ChargeRailgunTurret" or
+				defName="VFES_Turret_EMPTurret"
+				]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Explosive">
+						<wickTicks>240</wickTicks>
+						<explosiveRadius>5.9</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<damageAmountBase>50</damageAmountBase>
+						<chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="VFES_Turret_AutocannonDouble" or
+				defName="VFES_Turret_TriRocket" or
+				defName="VFES_Turret_ChargeRailgunTurret" or
+				defName="VFES_Turret_EMPTurret"
+				]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Fortifications - Industrial</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="FT_Turret_Mortar" or
+				defName="FT_Turret_Bunker" or
+				defName="FT_Turret_BunkerM" or
+				defName="FT_Turret_BunkerC" or
+				defName="FT_Turret_BunkerF" or
+				defName="FT_Maxim4M" or
+				defName="FT_TurretAutoCannon" or
+				defName="FT_TurretAutoCannon_Twin" or
+				defName="FT_AutoCannon" or
+				defName="FT_RecoillessGun" or
+				defName="FT_TurretPrince" or
+				defName="FT_TurretEmpero" or
+				defName="FT_Gun_TurretHexMortar"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="FT_Gun_MG"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>4</minRange>
+				</value>
+			</li>
+			-->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="FT_Maxim4M"
+				]/researchPrerequisites</xpath>
+				<value>
+					<li>CE_TurretHeavyWeapons</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="FT_AutoCannon" or
+				defName="FT_TurretAutoCannon_Twin"
+				]/researchPrerequisites</xpath>
+				<value>
+					<li>FT_IndustrialCannon</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName="FT_IndustrialCannon"]/prerequisites</xpath>
+				<value>
+					<li>CE_TurretHeavyWeapons</li>
+				</value>
+			</li>
+			
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Bill Doors' Framework</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="FT_Gun_TurretEmpero"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/minRange</xpath>
+				<value>
+					<minRange>60</minRange>
+				</value>
+            </li>
+			
+			</operations>
+			</match>
+		</li>
+		
+	</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Deserters</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				@Name="VFED_ImperialTurretBase"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="VFEE_Gun_StrikerTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="VFED_Gun_Kontarion" or
+				defName="VFED_Gun_Palintone" or
+				defName="VFED_Gun_Onager"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/range</xpath>
+				<value>
+					<range>280</range>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Bill Doors' mini-turrets</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_12_Gauge" or
+				defName="Turret_23_mm_shotgun" or
+				defName="Turret_58x42mmDBP10_Miniturret" or
+				defName="Turret_762NATO_Miniturret" or
+				defName="Turret_545Soviet_Miniturret" or
+				defName="Turret_762Soviet_Miniturret"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Gun_12_Gauge" or
+				defName="Gun_23_mm_shotgun" or
+				defName="Gun_58x42mmDBP10_Miniturret" or
+				defName="Gun_762NATO_Miniturret" or
+				defName="Gun_545Soviet_Miniturret" or
+				defName="Gun_762Soviet_Miniturret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[SHN] Aerocraft Framework - Night Witch</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="SHN_AF_PO2Biplane"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Support Wings - TMC Aerocraft Addon</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="TMC_AttackChopper" or
+				defName="TMCA_GunShip" or
+				defName="TMCA_ReconPlane"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Save Our Ship 2</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName = "ShuttleFuelPods"]/comps</xpath>
+				<success>Always</success>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "ShuttleFuelPods"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="ShuttleFuelPods"
+				]/comps</xpath>
+				<value>
+					  <li Class="CompProperties_Explosive">
+						<explosiveRadius>1.1</explosiveRadius>
+						<explosiveDamageType>Bomb</explosiveDamageType>
+						<explosiveExpandPerStackcount>0.037</explosiveExpandPerStackcount>
+						<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+						<wickTicks>70~150</wickTicks>
+					  </li>
+				</value>
+			</li>
+
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="CE_Artillery_Howitzer"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[defName="CE_Artillery_Howitzer"]/researchPrerequisites</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>CE_TurretHeavyWeapons</li>
+						<li>Mortars</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Giant uranium slug turret</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_GiantUraniumSlug"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_GiantUraniumSlug"
+				]/researchPrerequisites</xpath>
+				<value>
+					<li>CE_HeavyTurret</li>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Bill Doors' Framework</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Fortification Industrial - Citadel</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="FTC_Batterey_Gun"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+					<value>
+						<requireLineOfSight>false</requireLineOfSight>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="FTC_Batterey_Gun"]/comps/li[@Class="BillDoorsFramework.CompProperties_SecondaryAmmo"]/secondaryVerb</xpath>
+					<value>
+						<requireLineOfSight>false</requireLineOfSight>
+					</value>
+				</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[1.5-1.4] CAI 5000 - Advanced AI + Fog Of War</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="CombatAI_TribalPoleCCTV" or
+				defName="CombatAI_IndustrialPoleCCTV" or
+				defName="CombatAI_SpacerPoleCCTV" or
+				defName="CombatAI_CCTVTurretIndustrial" or
+				defName="CombatAI_CCTVTurretSpacer" or
+				defName="CombatAI_IndoorCCTV"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Security Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="Turret_ShardSentry" or
+				defName="Turret_RSCannon" or
+				defName="Turret_Smartmine" or
+				defName="RocketTurret" or
+				defName="Turret_MC" or
+				defName="RSDummy" or
+				defName="FuelBarrel" or
+				defName="Turret_SuvTurret" or
+				defName="Turret_NestMissile" or
+				defName="Turret_NestMMG" or
+				defName="Turret_WaveEmitter" or
+				defName="Turret_ShardSentry"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			<!--
+			<li MayRequire="Aoba.Fortress.Industrial" Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="RocketTurret" or defName="Turret_MC"]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Usable">
+						<useJob>TriggerObject</useJob>
+						<useLabel>Pick up {0_label}</useLabel>
+					</li>
+					<li>
+						<compClass>Fortification.CompMinifyToInventory</compClass>
+					</li>
+				</value>
+			</li>
+			-->
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient mining industry</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_Turret_ShotgunTurret" or
+				defName="BreadMoAM_Turret_ShotgunTurretN" or
+				defName="BreadMoAM_Turret_LargeShotgun"
+				]</xpath>
+				<value>
+					<damageMultipliers>
+					  <li>
+						<damageDef>Bullet</damageDef>
+						<multiplier>4</multiplier>
+					  </li>
+					</damageMultipliers>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_Gun_ShotgunTurret" or
+				defName="BreadMoAM_Gun_ShotgunTurretN"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>1.9</minRange>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_Gun_LargeShotgunTurret"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<minRange>2.9</minRange>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BreadMoAM_AncientMiningFacilities"]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+					<!--<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>-->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_AncientMudCarriage" or
+				defName="BreadMoAM_AncientSteelMiningCars" or
+				defName="BreadMoAM_AncientUraniumMiningCars" or
+				defName="BreadMoAM_AncientPlasteelMiningCars" or
+				defName="BreadMoAM_AncientEmptyMiningCar" or
+				defName="BreadMoAM_AncientRockMiningCar"
+				]</xpath>
+				<value>
+					<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_AncientMudCarriage" or
+				defName="BreadMoAM_AncientSteelMiningCars" or
+				defName="BreadMoAM_AncientUraniumMiningCars" or
+				defName="BreadMoAM_AncientPlasteelMiningCars" or
+				defName="BreadMoAM_AncientEmptyMiningCar" or
+				defName="BreadMoAM_AncientRockMiningCar"
+				]/building/isEdifice</xpath>
+				<value>
+					<isEdifice>true</isEdifice>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="BreadMoAM_AncientElectricalEquipment" or
+				defName="BreadMoAM_AncientMineralConveyor" or
+				defName="BreadMoAM_AncientTunnelStructuralSupport_a" or
+				defName="BreadMoAM_AncientTunnelStructuralSupport_b" or
+				defName="BreadMoAM_AncientTunnelStructuralSupport_c" or
+				defName="BreadMoAM_AncientMineralExports" or
+				defName="BreadMoAM_AncientIndoorFireHydrants" or
+				defName="BreadMoAM_AncientBarrierGate" or
+				defName="BreadMoAM_WarningBoard"
+				]</xpath>
+				<value>
+					<fillPercent>0.5</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient urban ruins</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+					defName="AM_AScompFD" or
+					defName="AM_MK4aConcealed" or
+					defName="AM_CompFlakSuit" or
+					defName="AM_MK4aDefensive"
+					]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>12</ArmorRating_Sharp>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+					defName="AM_AScompFD" or
+					defName="AM_MK4aConcealed" or
+					defName="AM_CompFlakSuit" or
+					defName="AM_MK4aDefensive"
+					]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>18</ArmorRating_Blunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+					defName="AM_FullyEnclosedHelmet" or
+					defName="AM_BulletproofMask" or
+					defName="AM_NightVisionHelmet"
+					]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>10</ArmorRating_Sharp>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+					defName="AM_FullyEnclosedHelmet" or
+					defName="AM_BulletproofMask" or
+					defName="AM_NightVisionHelmet"
+					]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>14</ArmorRating_Blunt>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					@Name="PortalBase" or
+					defName="AM_Amublance" or
+					defName="AM_CardboardBox_Impassable" or
+					defName="AM_AbandonedBigBread" or
+					defName="AM_AbandonedForklift" or
+					defName="AM_AbandonedBus" or
+					defName="AM_BTR82A" or
+					defName="AM_FireTruck"
+					]</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+					<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+					defName="AM_BlockedStairs" or
+					defName="AM_BlockedStairsD" or
+					defName="AM_BlockedElevators" or
+					defName="AM_BlockedElevatorsD" or
+					defName="AM_BlockedElevatorsA" or
+					defName="AM_FreightTrainCarriages" or
+					defName="AM_AncientTruckCarriages" or
+					defName="AM_BlockedElevatorsDA"
+					]/fillPercent</xpath>
+				<value>
+					<fillPercent>1</fillPercent>
+					<!--<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>-->
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="AM_DownwardStairs" or
+				@Name="AM_Building_Atrium"]</xpath>
+				<value>
+					<fillPercent>0.4</fillPercent>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName="AM_AncientRoadblocks" or
+				defName="AM_Palisade"
+				]</xpath>
+				<value>
+					<fillPercent>0.6</fillPercent>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@ParentName="BaseWeaponTurret" or @ParentName="BaseTurretGun" or @ParentName="BaseAutoTurretGun"][(./verbs/li[@Class="CombatExtended.VerbPropertiesCE"])]/verbs/li[@Class="CombatExtended.VerbPropertiesCE" and not (minRange)]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./weaponTags/li[.="TurretGun"] and (./verbs/li[@Class="CombatExtended.VerbPropertiesCE"])]/verbs/li[@Class="CombatExtended.VerbPropertiesCE" and not (./minRange)]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./weaponTags/li[.="TurretGun"]]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+		<value>
+			<minRange>1.9</minRange>
+		</value>
+	</Operation>-->
+	
+</Patch>

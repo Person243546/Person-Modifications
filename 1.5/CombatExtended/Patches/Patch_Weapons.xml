@@ -1,0 +1,2114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Melee</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Melee_PoweredShortsword"]/tools</xpath>
+				<value>
+					<tools>
+					  <li Class="CombatExtended.ToolCE">
+						<label>handle</label>
+						<capacities>
+						  <li>Blunt</li>
+						</capacities>
+						<power>2</power>
+						<cooldownTime>1.35</cooldownTime>
+						<armorPenetrationBlunt>0.325</armorPenetrationBlunt>
+						<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+					  </li>
+					  <li Class="CombatExtended.ToolCE">
+						<label>point</label>
+						<capacities>
+						  <li>Stab</li>
+						</capacities>
+						<power>26</power>
+						<cooldownTime>1.35</cooldownTime>
+						<armorPenetrationBlunt>3.250</armorPenetrationBlunt>
+						<armorPenetrationSharp>22.425</armorPenetrationSharp>
+						<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+					  </li>
+					  <li Class="CombatExtended.ToolCE">
+						<label>edge</label>
+						<capacities>
+						  <li>Cut</li>
+						</capacities>
+						<power>20</power>
+						<cooldownTime>0.79</cooldownTime>
+						<chanceFactor>1.33</chanceFactor>
+						<armorPenetrationBlunt>9.290</armorPenetrationBlunt>
+						<armorPenetrationSharp>20.1</armorPenetrationSharp>
+						<linkedBodyPartsGroup>Edge</linkedBodyPartsGroup>
+					  </li>
+					</tools>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="MeleeWeapon_Warhammer"]/tools</xpath>
+				<value>
+					<tools>
+						<li Class="CombatExtended.ToolCE">
+							<label>handle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>4</power>
+							<cooldownTime>1.78</cooldownTime>
+							<chanceFactor>0.10</chanceFactor>
+							<armorPenetrationBlunt>1.000</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>22</power>
+							<cooldownTime>1.85</cooldownTime>
+							<chanceFactor>0.90</chanceFactor>
+							<armorPenetrationBlunt>11.76</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="CE_Mercenary_SlasherElite"]</xpath>
+				<value>
+					<apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Vali's Charged Arsenal</li>
+				<li>Vali's Charged Arsenal (Continued)</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+					<li Class="PatchOperationReplace">
+						<xpath>/Defs/ThingDef[
+						defName = "V_ChargeCutter" or
+						defName = "V_ChargeKatana" or
+						defName = "V_ChargeLongSword" or
+						defName = "V_ChargeBlade" or
+						defName = "V_ChargeAxe" or
+						defName = "V_ChargeBaton" or
+						defName = "V_ChargeMace" or
+						defName = "V_ChargeHammer" or
+						defName = "V_ChargeGlaive" or
+						defName = "V_ChargeMagariYari" or
+						defName = "V_ChargeHalberd" or
+						defName = "V_ChargeScythe" or
+						defName = "V_ChargeKhopesh"
+						]/recipeMaker/researchPrerequisite</xpath>
+						<value>
+							 <researchPrerequisite>CE_PoweredMelee</researchPrerequisite>
+						</value>
+					</li>
+					
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName = "V_ChargeAxe"]/weaponTags</xpath>
+						<value>
+							<li>CE_OneHandedWeapon</li>
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/HediffDef[defName="PowerClaw"]/comps/li[@Class="HediffCompProperties_VerbGiver"]/tools</xpath>
+			<value>
+				<tools>
+					<li Class="CombatExtended.ToolCE">
+						<label>claw</label>
+						<capacities>
+							<li>Scratch</li>
+						</capacities>
+						<power>21</power>
+						<cooldownTime>0.89</cooldownTime>
+						<armorPenetrationSharp>25</armorPenetrationSharp>
+						<armorPenetrationBlunt>4</armorPenetrationBlunt>
+						<linkedBodyPartsGroup>Blade</linkedBodyPartsGroup>
+						<soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+						<soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+					</li>
+				</tools>
+			</value>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>The Dead Man's Switch</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[
+				defName="DMS_Mech_FieldCommand" or
+				defName="DMS_Mech_ShaftWorker" or
+				defName="DMS_Mech_EscortLifter"
+				]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>HumanoidWide</bodyShape>
+					</li>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>-->
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended: Shields</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Combat Extended Shields - Lite Patch</li>
+			</mods>
+				<nomatch Class="PatchOperationSequence">
+				<operations>
+				
+					<li Class="PatchOperationRemove">
+						<xpath>/Defs/ThingDef[defName="Apparel_RiotShield"]/apparel/tags</xpath>
+					</li>
+					
+				</operations>
+				</nomatch>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Advanced Armaments</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+		
+		<ReplaceLib.ReplacerDef>
+			<defName>AdvancedArmaments</defName>
+			<replacers>
+				<li>
+					<replace>SEX_AutoShotgun</replace>
+					<with>CE_Gun_USASTwelve</with>
+				</li>
+				<li>
+					<replace>Gun_BurstCharger</replace>
+					<with>SEX_ChargedBattleRifle</with>
+				</li>
+			</replacers>
+		</ReplaceLib.ReplacerDef>
+		
+			</value>
+		</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Pirates</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VFEP_WarcasketMeleeWeapon_GravityHammer"]/tools/li[@Class="CombatExtended.ToolCE"][label="head"]/capacities</xpath>
+				<value>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+				defName = "CE_Gun_FlintlockPistol" or
+				defName = "CE_Gun_FlintlockBlunderbuss" or
+				defName = "CE_Gun_FlintlockMusket"
+				]/weaponTags/li[.="SimpleGun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+				defName = "CE_Gun_FlintlockPistol" or
+				defName = "CE_Gun_FlintlockBlunderbuss" or
+				defName = "CE_Gun_FlintlockMusket"
+				]/weaponTags/li[.="Gun"]</xpath>
+			</li>
+			
+			<!--<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "CE_Gun_FlintlockPistol" or
+				defName = "CE_Gun_FlintlockBlunderbuss" or
+				defName = "CE_Gun_FlintlockMusket"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.05</generateAllowChance>
+				</value>
+			</li>-->
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "CE_Gun_FlintlockPistol" or
+				defName = "CE_Gun_FlintlockBlunderbuss" or
+				defName = "CE_Gun_FlintlockMusket"
+				]/weaponTags</xpath>
+				<value>
+					<li>Gunpowder</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "CE_Gun_FlintlockPistol"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/warmupTime</xpath>
+				<value>
+					<warmupTime>0.6</warmupTime>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Medieval Overhaul</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="CE_Gun_Crossbow"]/weaponTags</xpath>
+						<value>
+							<li>DankPyon_Crossbow</li>
+						</value>
+					</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Armory</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "CE_Gun_HandMortar"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.05</generateAllowChance>
+				</value>
+			</li>-->
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+				defName = "CE_Gun_HandMortar"
+				]/weaponTags/li[.="SimpleGun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[
+				defName = "CE_Gun_HandMortar"
+				]/weaponTags/li[.="GunGrenadeLauncher"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "CE_Gun_HandMortar"
+				]/weaponTags</xpath>
+				<value>
+					<li>Gunpowder</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_HandMortar"]/comps/li[@Class="CombatExtended.CompProperties_FireModes"]</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_FireModes">
+						<aiAimMode>AimedShot</aiAimMode>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseMiniCannonBall"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>90</speed>
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+
+<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Pawnmorpher</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Weapon_GrenadeTF"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Mutabow"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Mutarifle"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="TST_Gun_EtherGun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="TST_Gun_TaggingGun"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="MeleeWeapon_MutaniteSpear"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="MeleeWeapon_MutaniteKnife"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Gun_MutagenicRocketLauncher"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="MeleeWeapon_MutagenicStunStick"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Muta_Mercenary_Rocket"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Muta_Grenadier_Mutagenic"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Muta_Grenadier_EMP"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Muta_Grenadier_Smoke"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/PawnKindDef[defName="Muta_Mercenary_Mutagunner"]</xpath>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ScenarioDef[defName="Escaped Morphs"]</xpath>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>-->
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Augmented Vanilla Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_EMPRifle"]/verbs/li/warmupTime</xpath>
+				<value>
+					<warmupTime>0.5</warmupTime>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Gun_EMPRifle"]/statBases/RangedWeapon_Cooldown</xpath>
+				<value>
+					<RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "Gun_FragcatRifle" or
+				defName = "Gun_ThumpercatCarbine" or
+				defName = "Gun_ThundercatRifle"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.2</generateAllowChance>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Core</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_FMJ"]/label</xpath>
+					<value>
+						<label>Caseless ammo (FMJ)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_AP"]/label</xpath>
+					<value>
+						<label>Caseless ammo (AP)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_HP"]/label</xpath>
+					<value>
+						<label>Caseless ammo (HP)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_Incendiary"]/label</xpath>
+					<value>
+						<label>Caseless ammo (Incendiary)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_HE"]/label</xpath>
+					<value>
+					<label>Caseless ammo (HE)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_Sabot"]/label</xpath>
+					<value>
+						<label>Caseless ammo (Sabot)</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_Sabot"]/label</xpath>
+					<value>
+						<label>make Caseless (Sabot) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_FMJ"]/label</xpath>
+					<value>
+						<label>make Caseless (FMJ) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_AP"]/label</xpath>
+					<value>
+						<label>make Caseless (AP) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_HP"]/label</xpath>
+					<value>
+						<label>make Caseless (HP) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_HE"]/label</xpath>
+					<value>
+						<label>make Caseless (HE) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/RecipeDef[defName="MakeAmmo_473x33mmCaseless_Incendiary"]/label</xpath>
+					<value>
+						<label>make Caseless (Incendiary) cartridge x500</label>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_473x33mmCaseless"]/label</xpath>
+					<value>
+						<label>Caseless ammo</label>
+					</value>
+				</li>
+				
+		<!--
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>[HRK] Gun Nut - Community Pack</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_FMJ"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_AP"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_HP"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_Incendiary"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_HE"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Ammo_473x33mmCaseless_Sabot"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/PulseRifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				
+			</operations>
+			</match>
+		</li>-->
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/comps/li[@Class="CombatExtended.CompProperties_FireModes"]</xpath>
+			<value>
+				<li Class="CombatExtended.CompProperties_FireModes">
+					<aiAimMode>AimedShot</aiAimMode>
+				</li>
+			</value>
+		</li>
+		<!--
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Pickaxe"]/weaponTags</xpath>
+		</li>
+		-->
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Hammer"]/weaponTags</xpath>
+		</li>
+		
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Axe"]/weaponTags</xpath>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/RecipeDef[defName="MakeVWEThrowingKnives"]/recipeUsers</xpath>
+			<value>
+				<recipeUsers Inherit="False">
+					<li>FueledSmithy</li>
+					<li>ElectricSmithy</li>
+					<li MayRequire="vanillaexpanded.vfeproduction">VFE_TableSmithyLarge</li>
+					<li MayRequire="vanillaexpanded.helixiengas">VHGE_GasPoweredSmithy</li>
+				</recipeUsers>
+			</value>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Furniture Expanded - Security</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="VFES_CavalrySpikes"]/building</xpath>
+				<value>
+					<ai_neverTrashThis>true</ai_neverTrashThis>
+				</value>
+			</li>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Projectile_CatapultBullet_Boulder"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]</xpath>
+				<value>
+					<gravityFactor>20</gravityFactor>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Fortification Industrial - Citadel</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="VFES_Turret_Artillery"]/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites>
+						  <li>FT_HeavyArtillery</li>
+						</researchPrerequisites>
+					</value>
+				</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+	</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded - Tribal</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="MakeVWEThrowingShard" or defName="MakeFireBomb"]/recipeUsers</xpath>
+				<value>
+					<recipeUsers Inherit="False">
+						<li>CraftingSpot</li>
+						<li>FueledSmithy</li>
+						<li>ElectricSmithy</li>
+						<li MayRequire="vanillaexpanded.vfeproduction">VFE_TableSmithyLarge</li>
+						<li MayRequire="vanillaexpanded.helixiengas">VHGE_GasPoweredSmithy</li>
+					</recipeUsers>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Generations CE Patches</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+					<li Class="PatchOperationReplace">
+						<xpath>/Defs/RecipeDef[defName="MakeFireBomb"]</xpath>
+						<value>
+							<RecipeDef>
+								<defName>MakeFireBomb</defName>
+								<label>make fire bombs x10</label>
+								<description>Craft 10 fire bombs.</description>
+								<jobString>Making fire bombs.</jobString>
+								<workAmount>1200</workAmount>
+								<recipeUsers>
+									<li>CraftingSpot</li>
+									<li>FueledSmithy</li>
+									<li>ElectricSmithy</li>
+									<li>VBY_PrimitiveCraftingTable</li>
+									<li MayRequire="vanillaexpanded.vfeproduction">VFE_TableSmithyLarge</li>
+									<li MayRequire="vanillaexpanded.helixiengas">VHGE_GasPoweredSmithy</li>
+								</recipeUsers>
+								<ingredients>
+									<li>
+										<filter>
+											<thingDefs>
+												<li>Cloth</li>
+											</thingDefs>
+										</filter>
+										<count>20</count>
+									</li>
+									<li>
+										<filter>
+											<thingDefs>
+												<li>Chemfuel</li>
+											</thingDefs>
+										</filter>
+										<count>20</count>
+									</li>
+								</ingredients>
+								<fixedIngredientFilter>
+									<thingDefs>
+										<li>Cloth</li>
+										<li>Chemfuel</li>
+									</thingDefs>
+								</fixedIngredientFilter>
+								<products>
+									<VWE_Weapon_FireBomb>10</VWE_Weapon_FireBomb>
+								</products>
+							</RecipeDef>
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+				<nomatch Class="PatchOperationSequence">
+				<operations>
+					
+					<li Class="PatchOperationReplace">
+						<xpath>/Defs/ThingDef[defName="VWE_Weapon_FireBomb"]/costList</xpath>
+						<value>
+							<costList>
+								<Cloth>20</Cloth>
+								<Chemfuel>20</Chemfuel>
+							</costList>
+						</value>
+					</li>
+					
+				</operations>
+				</nomatch>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded - Non-Lethal</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[defName="MakeAmmo_40x46mmGrenade_CN" or defName="MakeVWENLTearGasGrenade"]</xpath>
+				<value>
+					<researchPrerequisite Inherit="False">VWE_NonLethal</researchPrerequisite>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Fortification Industrial - Citadel</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[defName="MakeAmmo_132mmM13_HE"]</xpath>
+				<value>
+					<researchPrerequisite>FT_HeavyArtillery</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[
+				defName="MakeAmmo_15cmNebelwerfer_HE" or
+				defName="MakeAmmo_15cmNebelwerfer_Smoke" or
+				defName="MakeAmmo_15cmNebelwerfer_EMP" or
+				defName="MakeAmmo_15cmNebelwerfer_Toxic"
+				]</xpath>
+				<value>
+					<researchPrerequisite>Mortars</researchPrerequisite>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[
+				defName="MakeAmmo_15cmNebelwerfer_EMP"
+				]</xpath>
+				<value>
+					<researchPrerequisites>
+						<li>Mortars</li>
+						<li>MicroelectronicsBasics</li>
+					</researchPrerequisites>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[
+				defName="MakeAmmo_37x223mmR_Canister" or
+				defName="MakeAmmo_37x223mmR_HE" or
+				defName="MakeAmmo_37x223mmR_AP"
+				]</xpath>
+				<value>
+					<researchPrerequisite>FT_IndustrialCannon</researchPrerequisite>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient Charged Arms</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/RecipeDef[defName="MakeAmmo_AW_ChargeJavelin_HEAT"]</xpath>
+				<value>
+					<researchPrerequisite>ChargedShot</researchPrerequisite>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Outer Rim - Rebel Alliance</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="OuterRim_A280Blaster"]</xpath>
+				<value>
+					<equippedAngleOffset>45</equippedAngleOffset>	
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Outer Rim - Core</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/HediffDef[defName="OuterRim_BlasterBurn"]/injuryProps</xpath>
+				<value>
+					<bleedRate>0.02</bleedRate>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_Pistol"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>18</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_PistolAP"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>22</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_BlasterBolt_Scatter"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>12</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_Rifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>26</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_RifleAP"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>37</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_Sniper"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>24</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="BaseBlasterBolt_SniperAP"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>40</armorPenetrationSharp>	
+				</value>
+			</li>
+			
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Settlers</li>
+		<li>Vanilla Weapons Expanded - Frontier</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name="Base4570GovBullet"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>127.5</speed>	
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_WinchesterNintyFour"]/weaponTags</xpath>
+				<value>
+					<li>FrontierGunSimple</li>
+				</value>
+			</li>
+			
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Combat Extended Armory</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CE_Gun_M1903Springfield"]/weaponTags</xpath>
+					<value>
+						<li>FrontierGunAdvanced</li>
+						<li>SimpleGun</li>
+					</value>
+				</li>
+					
+				</operations>
+				</match>
+			</li>
+			
+			<!--
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Vanilla Weapons Expanded - Coilguns</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+			
+					<li Class="PatchOperationReplace">
+						<xpath>/Defs/ThingDef[defName="VWEFT_Gun_GaussRevolver"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/range</xpath>
+						<value>
+							<range>30</range>	
+						</value>
+					</li>
+					
+				</operations>
+				</match>
+			</li>
+			-->
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded - Laser</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_SalvagedLaserPistol"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>31</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_LaserPistol" or defName="Bullet_Laser_LaserRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>35</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_LaserSMG"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>36.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_SalvagedLaserRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>33.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_SalvagedLaserShotgun"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>28.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_LaserShotgun"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>31.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_SalvagedLaserSniperRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>37.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_LaserSniperRifle"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>40.5</armorPenetrationSharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_LaserMiniGun"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>32</armorPenetrationSharp>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Alpha Mechs</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Bullet_HeavyLaser"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+					<value>
+						<armorPenetrationSharp>25.5</armorPenetrationSharp>
+					</value>
+				</li>
+					
+				</operations>
+				</match>
+			</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Grenade Variety for Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+				defName="Weapon_GrenadeFrag" or
+				defName="Weapon_GrenadeEMP" or
+				defName="Weapon_GrenadeFlashbang" or
+				defName="Weapon_GrenadeSmoke" or
+				defName="Weapon_GrenadeMolotov" or
+				defName="Weapon_GrenadeConcussion" or
+				defName="Weapon_GrenadeFirefoam" or
+				defName="Weapon_GrenadeTox" or
+				defName="Weapon_GV_GrenadeThermobaric" or
+				defName="Weapon_GV_GrenadeStinger" or
+				defName="Weapon_GV_GrenadeIncendiary" or
+				defName="Weapon_GV_GrenadeAntiTank" or
+				defName="Weapon_GV_GrenadePipeBomb"
+				]/verbs/li/range</xpath>
+				<value>
+				<range>20</range>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+				defName="Weapon_GrenadeFrag" or
+				defName="Weapon_GrenadeEMP" or
+				defName="Weapon_GrenadeFlashbang" or
+				defName="Weapon_GrenadeSmoke" or
+				defName="Weapon_GrenadeMolotov" or
+				defName="Weapon_GrenadeConcussion" or
+				defName="Weapon_GrenadeFirefoam" or
+				defName="Weapon_GrenadeTox" or
+				defName="Weapon_GV_GrenadeThermobaric" or
+				defName="Weapon_GV_GrenadeStinger" or
+				defName="Weapon_GV_GrenadeIncendiary" or
+				defName="Weapon_GV_GrenadePipeBomb" or
+				defName="Weapon_GV_GrenadeDefensive"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/warmupTime</xpath>
+				<value>
+				<warmupTime>0.5</warmupTime>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+				defName="Weapon_GV_GrenadeAntiTank"
+				]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/warmupTime</xpath>
+				<value>
+				<warmupTime>0.95</warmupTime>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[
+				defName="Weapon_GrenadeFrag" or
+				defName="Weapon_GrenadeEMP" or
+				defName="Weapon_GrenadeFlashbang" or
+				defName="Weapon_GrenadeSmoke" or
+				defName="Weapon_GrenadeMolotov" or
+				defName="Weapon_GrenadeConcussion" or
+				defName="Weapon_GrenadeFirefoam" or
+				defName="Weapon_GrenadeTox" or
+				defName="Weapon_GV_GrenadeStinger" or
+				defName="Weapon_GV_GrenadeThermobaric" or
+				defName="Weapon_GV_GrenadeIncendiary" or
+				defName="Weapon_GV_GrenadePipeBomb" or
+				defName="Weapon_GV_GrenadeAntiTank" or
+				defName="Weapon_GV_PrometheumBomb" or
+				defName="Weapon_GV_GrenadeDefensive"]/statBases/SightsEfficiency</xpath>
+				<value>
+				<SightsEfficiency>0.85</SightsEfficiency>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Proj_GV_GrenadeAntiTank"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+				<value>
+					<speed>15</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Vanilla Factions Expanded - Settlers</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VFES_Weapon_GrenadeDynamite"]/verbs/li/range</xpath>
+					<value>
+					<range>15</range>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VFES_Weapon_GrenadeDynamite"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/warmupTime</xpath>
+					<value>
+					<warmupTime>0.5</warmupTime>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="VFES_Weapon_GrenadeDynamite"]/statBases/SightsEfficiency</xpath>
+					<value>
+					<SightsEfficiency>0.85</SightsEfficiency>
+					</value>
+				</li>
+				
+				</operations>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Grenade Tweaks</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+					
+					<!--
+					<li Class="PatchOperationAdd">
+						<xpath>Defs/ThingDef[
+						defName="Weapon_GV_GrenadeThermobaric" or
+						defName="Weapon_GV_GrenadeStinger" or
+						defName="Weapon_GV_GrenadeIncendiary" or
+						defName="Weapon_GV_GrenadePipeBomb" or
+						defName="Weapon_GV_GrenadeDefensive"]</xpath>
+						<value>
+						   <comps><li><compClass>AmogusGrenade.GizmoForNades</compClass></li></comps>
+						</value>
+					</li>
+					-->
+				</operations>
+				</match>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Chapter #1</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AKOneOFive" or
+				defName = "HRK_AKOneOThree" or
+				defName = "HRK_MFourAOne" or
+				defName = "HRK_RSevenHundred" or
+				defName = "HRK_MOneA" or
+				defName = "HRK_BullpupPKP" or
+				defName = "HRK_SaigaTwelveK" or	
+				defName = "HRK_SAFiftyEight" or
+				defName = "HRK_MPSevenAOne" or
+				defName = "HRK_GlockSeventeen"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.1</generateAllowChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "HRK_BullpupPKP"]/weaponTags</xpath>
+				<value>
+					<li>CE_AI_LMG</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ushankas Biological Warfare</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name = "USH_BiologicalShellBase"]</xpath>
+				<value>
+					<generateAllowChance>0.05</generateAllowChance>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Chapter #2</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AShTwelve" or
+				defName = "HRK_ASVAL" or
+				defName = "HRK_GMSix" or
+				defName = "HRK_GThirtySix" or
+				defName = "HRK_HKGL" or
+				defName = "HRK_SKS" or
+				defName = "HRK_MThreeEOne" or
+				defName = "HRK_Neopup" or
+				defName = "HRK_PNinety" or
+				defName = "HRK_KSTwentyThree"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.2</generateAllowChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AShTwelve" or
+				defName = "HRK_ASVAL" or
+				defName = "HRK_GMSix" or
+				defName = "HRK_GThirtySix" or
+				defName = "HRK_HKGL" or
+				defName = "HRK_SKS" or
+				defName = "HRK_MThreeEOne" or
+				defName = "HRK_Neopup" or
+				defName = "HRK_PNinety" or
+				defName = "HRK_KSTwentyThree"
+				]</xpath>
+				<value>
+					<thingSetMakerTags Inherit="False"/>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Community Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName = "HRK_SRTwentyFive" or                    
+                    defName = "HRK_MGThree" or                                            
+                    defName = "HRK_M16AFour" or
+                    defName = "HRK_M2HB" or                                            
+                    defName = "HRK_AATwelve" or
+                    defName = "HRK_M202F" or
+                    defName = "HRK_PulseRifle" or
+                    defName = "HRK_M240B" or
+                    defName = "HRK_M56SG" or
+                    defName = "HRK_M4US" or
+                    defName = "HRK_GalilACE"
+					]</xpath>
+				<value>
+					<generateAllowChance>0.2</generateAllowChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName = "HRK_SRTwentyFive" or
+                    defName = "HRK_MGThree" or
+                    defName = "HRK_M16AFour" or
+                    defName = "HRK_M2HB" or
+                    defName = "HRK_AATwelve" or
+                    defName = "HRK_M202F" or
+                    defName = "HRK_PulseRifle" or
+                    defName = "HRK_M240B" or
+                    defName = "HRK_M56SG" or
+                    defName = "HRK_M4US" or
+                    defName = "HRK_GalilACE"
+				]</xpath>
+				<value>
+					<thingSetMakerTags Inherit="False"/>
+				</value>
+			</li>
+			<!--
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ResearchProjectDef[defName = "HRK_Research_GunNut_Caseless"]</xpath>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[
+					defName = "MakeAmmo_10x24mmCaseless_HE" or
+                    defName = "MakeAmmo_10x24mmCaseless_Incendiary" or
+                    defName = "MakeAmmo_10x24mmCaseless_FMJ" or
+					defName = "MakeAmmo_10x28mmCaseless_HE" or
+                    defName = "MakeAmmo_10x28mmCaseless_Incendiary" or
+                    defName = "MakeAmmo_10x28mmCaseless_FMJ"
+				]/researchPrerequisite</xpath>
+				<value>
+					<researchPrerequisite>Fabrication</researchPrerequisite>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Turret Collection (Unofficial)</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ResearchProjectDef[
+				defName = "TC_MissileTech"
+				]/techLevel</xpath>
+				<value>
+					<techLevel>Industrial</techLevel>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>LB Rifle Series</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="LBPack_LBFour" or defName="LBPack_LBRM"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/burstShotCount</xpath>
+				<value>
+					<burstShotCount>1</burstShotCount>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="LBPack_LBFour" or defName="LBPack_LBRM"]/weaponTags/li[.="CE_AI_AR"]</xpath>
+				<value>
+					<li>CE_AI_SR</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="LBPack_LBFour" or defName="LBPack_LBRM"]/comps/li[@Class="CombatExtended.CompProperties_FireModes"]/aimedBurstShotCount</xpath>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_42mmRailgun"]</xpath>
+				<value>
+					<similarTo>AmmoSet_RailgunSabot</similarTo>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_68mmRailgun"]</xpath>
+				<value>
+					<similarTo>AmmoSet_RailgunSabot</similarTo>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_RailgunSabot"]/ammoTypes</xpath>
+				<value>
+					<Ammo_68mmRailgun_Splinter>Bullet_68mmRailgun_Splinter</Ammo_68mmRailgun_Splinter>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Ammo_68mmRailgun_Splinter"]/label</xpath>
+				<value>
+					<label>Railgun cartridge (Splintering)</label>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="MakeAmmo_68mmRailgun_Splinter"]/label</xpath>
+				<value>
+					<label>make Railgun cartridge (splintering) x500</label>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="MakeAmmo_68mmRailgun_Splinter"]/description</xpath>
+				<value>
+					<description>Craft 500 Railgun (Splintering) cartridges.</description>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RecipeDef[defName="MakeAmmo_68mmRailgun_Splinter"]/jobString</xpath>
+				<value>
+					<jobString>Making Railgun (Splintering) cartridges.</jobString>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Alpha Mechs</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName = "AM_Bullet_Starfire"
+				]/projectile/speed</xpath>
+				<value>
+					<speed>40</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="AM_MechanoidMortar"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<requireLineOfSight>false</requireLineOfSight>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="AM_MechanoidMortar"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/ignorePartialLoSBlocker</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/ThingDef[defName="AM_MechanoidGunRotaryNeedle"]/weaponTags/li[.="MechanoidGunLongRange"]</xpath>
+			</li>
+			
+			<!--
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					<AbilityDef>
+						<defName>AM_SwapWeapon_Pikeman</defName>
+						<label>swap gun</label>
+						<description>Swaps between a needle gun and rotary needlegun.</description>
+						<iconPath>UI/Abilities/AM_SwapMortar</iconPath>
+						<cooldownTicksRange>1</cooldownTicksRange>
+						<jobDef>CastAbilityOnThing</jobDef>
+						<targetRequired>False</targetRequired>
+						<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+						<stunTargetWhileCasting>True</stunTargetWhileCasting>
+						<showPsycastEffects>False</showPsycastEffects>
+						<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+						<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+						<hotKey>Misc12</hotKey>
+						<verbProperties>
+							<verbClass>Verb_CastAbility</verbClass>
+							<warmupTime>0.5</warmupTime>
+							<drawAimPie>False</drawAimPie>
+							<requireLineOfSight>False</requireLineOfSight>
+							<targetParams>
+								<canTargetSelf>true</canTargetSelf>
+								<canTargetPawns>false</canTargetPawns>
+								<canTargetBuildings>false</canTargetBuildings>
+								<canTargetAnimals>false</canTargetAnimals>
+								<canTargetHumans>false</canTargetHumans>
+								<canTargetMechs>false</canTargetMechs>
+							</targetParams>
+						</verbProperties>
+						<comps>
+							<li Class="AlphaMechs.CompProperties_SwapWeapons">
+								<weapon1>Gun_Needle</weapon1>
+								<weapon2>AM_MechanoidGunRotaryNeedle</weapon2>
+							</li>
+						</comps>
+					</AbilityDef>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/PawnKindDef[defName="Mech_Pikeman"]/abilities</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/PawnKindDef[defName="Mech_Pikeman"]</xpath>
+					<value>
+						<abilities/>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/PawnKindDef[defName="Mech_Pikeman"]</xpath>
+					<value>
+					</value>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/PawnKindDef[defName = "Mech_Pikeman"]/abilities</xpath>
+				<value>
+					<li>AM_SwapWeapon_Pikeman</li>
+				</value>
+			</li>
+			-->
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Bill Doors' Compound Bow</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimsenal - Augmented Vanilla Pack</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bow_Compound"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/defaultProjectile</xpath>
+				<value>
+					<defaultProjectile>Projectile_StreamlinedArrow_Stone</defaultProjectile>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bow_Compound"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_AmmoUser">
+						<ammoSet>AmmoSet_BDArrowPlus</ammoSet>
+					</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName = "BDs_CompoundBow"]</xpath>
+			</li>
+			
+			
+			</operations>
+			</match>
+		</li>
+	
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Flamethrower Revamp for Combat Extended</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Vehicles Expanded</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+					
+					<CombatExtended.AmmoSetDef>
+						<defName>AmmoSet_Flamethrower_Bunsen</defName>
+						<label>flamethrower fuel</label>
+						<ammoTypes>
+							<Ammo_Flamethrower_Napalm>Bullet_Flamethrower_Napalm_Bunsen</Ammo_Flamethrower_Napalm>
+							<Ammo_Flamethrower_Prometheum>Bullet_Flamethrower_Prometheum_Bunsen</Ammo_Flamethrower_Prometheum>
+						</ammoTypes>
+					</CombatExtended.AmmoSetDef>
+					
+					<ThingDef ParentName="BaseFlamethrowerBullet">
+						<defName>Bullet_Flamethrower_Napalm_Bunsen</defName>
+						<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+						<label>jellied chemfuel stream</label>
+						<projectile Class="CombatExtended.ProjectilePropertiesCE">
+							<damageDef>Flame</damageDef>
+							<damageAmountBase>3</damageAmountBase>
+							<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+							<preExplosionSpawnChance>0.33</preExplosionSpawnChance>
+							<soundExplode>CE_FlamethrowerExplosion</soundExplode>
+							<explosionRadius>1.0</explosionRadius>
+							<ai_IsIncendiary>true</ai_IsIncendiary>
+							<screenShakeFactor>0</screenShakeFactor>
+						</projectile>
+					</ThingDef>
+					
+					<ThingDef ParentName="BaseFlamethrowerBullet">
+						<defName>Bullet_Flamethrower_Prometheum_Bunsen</defName>
+						<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+						<label>jellied prometheum stream</label>
+						<projectile Class="CombatExtended.ProjectilePropertiesCE">
+							<damageDef>PrometheumFlame</damageDef>
+							<damageAmountBase>5</damageAmountBase>
+							<preExplosionSpawnThingDef>FilthPrometheum</preExplosionSpawnThingDef>
+							<preExplosionSpawnChance>0.67</preExplosionSpawnChance>
+							<soundExplode>CE_FlamethrowerExplosion</soundExplode>
+							<explosionRadius>1.2</explosionRadius>
+							<ai_IsIncendiary>true</ai_IsIncendiary>
+							<screenShakeFactor>0</screenShakeFactor>
+						</projectile>
+					</ThingDef>
+					
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/Vehicles.VehicleTurretDef[defName="VVE_Bunsen_MainTurret"]/projectile</xpath>
+				<value>
+					<projectile>Bullet_Flamethrower_Prometheum_Bunsen</projectile>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/Vehicles.VehicleTurretDef[defName="VVE_Bunsen_MainTurret"]/modExtensions/li[@Class="Vehicles.CETurretDataDefModExtension"]/ammoSet</xpath>
+				<value>
+					<ammoSet>AmmoSet_Flamethrower_Bunsen</ammoSet>
+				</value>
+			</li>
+			
+			</operations>
+			</match>
+		</li>
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Simple Industrial Factions</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			<!--
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_MSixty"]/weaponTags</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CE_Gun_MSixty"]</xpath>
+					<value>
+						<weaponTags/>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CE_Gun_MSixty"]</xpath>
+					<value>
+					</value>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_MTwoFourNine"]/weaponTags</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CE_Gun_MTwoFourNine"]</xpath>
+					<value>
+						<weaponTags/>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="CE_Gun_MTwoFourNine"]</xpath>
+					<value>
+					</value>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="CE_Gun_MSixty"]/weaponTags</xpath>
+				<value>
+					<li>TI_762MMG</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="CE_Gun_MTwoFourNine"]/weaponTags</xpath>
+				<value>
+					<li>TI_762LMG</li>
+				</value>
+			</li>
+			-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="CE_Gun_SVD"]/weaponTags</xpath>
+				<value>
+					<li>TI_762Rifle</li>
+				</value>
+			</li>
+			
+			
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimsenal - Augmented Vanilla Pack</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationConditional">
+					<xpath>/Defs/ThingDef[defName="Gun_RSCarbine"]/weaponTags</xpath>
+					<nomatch Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Gun_RSCarbine"]</xpath>
+						<value>
+							<weaponTags/>
+						</value>
+					</nomatch>
+					<match Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName="Gun_RSCarbine"]</xpath>
+						<value>
+						</value>
+					</match>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Gun_RSCarbine"]/weaponTags</xpath>
+					<value>
+						<li>TI_545ARifle</li>
+					</value>
+				</li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		</operations>
+		</match>
+	</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Reinforced Mechanoid 2 (Continued)</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "RM_Bullet_PlasmaCellHellgator"]/graphicData</xpath>
+				<value>
+					<graphicData>
+						<texPath>Things/Projectile/Mortar/Charged</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<shaderType>TransparentPostLight</shaderType>
+					</graphicData>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName = "RM_Bullet_PlasmaCellHellgator"]/projectile</xpath>
+				<value>
+					<projectile Class="CombatExtended.ProjectilePropertiesCE">
+						<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+						<soundExplode>Explosion_GiantBomb</soundExplode>
+						<soundImpactAnticipate>RM_Hit_PlasmaHellgator</soundImpactAnticipate>
+						<soundAmbient>MortarRound_Ambient</soundAmbient>
+						<ai_IsIncendiary>true</ai_IsIncendiary>
+						<damageDef>PrometheumFlame</damageDef>
+						<damageAmountBase>6</damageAmountBase>
+						<explosionRadius>4.9</explosionRadius>
+						<flyOverhead>true</flyOverhead>
+						<preExplosionSpawnThingDef>FilthPrometheum</preExplosionSpawnThingDef>
+						<preExplosionSpawnChance>0.2</preExplosionSpawnChance>
+						<!--<soundExplode>MortarIncendiary_Explode</soundExplode>-->
+					</projectile>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationConditional">
+				<xpath>/Defs/ThingDef[defName = "RM_Bullet_PlasmaCellHellgator"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "RM_Bullet_PlasmaCellHellgator"]</xpath>
+					<value>
+						<comps>
+							<li Class="CombatExtended.CompProperties_ExplosiveCE">
+								<damageAmountBase>48</damageAmountBase>
+								<explosiveDamageType>Thermobaric</explosiveDamageType>
+								<explosiveRadius>1.5</explosiveRadius>
+								<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+							</li>
+						</comps>
+					</value>
+				</nomatch>
+				<match Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "RM_Bullet_PlasmaCellHellgator"]/comps</xpath>
+					<value>
+						<li Class="CombatExtended.CompProperties_ExplosiveCE">
+							<damageAmountBase>48</damageAmountBase>
+							<explosiveDamageType>Thermobaric</explosiveDamageType>
+							<explosiveRadius>1.5</explosiveRadius>
+							<applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+						</li>
+					</value>
+				</match>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/PawnKindDef[defName = "RM_Mech_WraithSiege"]/modExtensions/li[@Class="CombatExtended.LoadoutPropertiesExtension"]/primaryMagazineCount</xpath>
+				<value>
+					<primaryMagazineCount>
+						<min>300</min>
+						<max>600</max>
+					</primaryMagazineCount>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName = "RM_MeleeWeapon_GravitonMace"]</xpath>
+				<value>
+					<recipeMaker>
+						<researchPrerequisites>
+							<li>ChargedShot</li>
+						</researchPrerequisites>
+					</recipeMaker>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs</xpath>
+				<value>
+				
+				<CombatExtended.AmmoSetDef>
+					<defName>AmmoSet_MechChargedRM</defName>
+					<label>mech charged ammo</label>
+					<ammoTypes>
+						<Ammo_Mech_Charged>Bullet_8x40mmCharged</Ammo_Mech_Charged>
+					</ammoTypes>
+				</CombatExtended.AmmoSetDef>
+				
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_RM_5x35mmS" or defName="AmmoSet_RM_5x35mmH"]</xpath>
+				<value>
+					<similarTo>AmmoSet_MechChargedRM</similarTo>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="RM_Mech_Behemoth"]/race/baseHealthScale</xpath>
+				<value>
+					<baseHealthScale>1.25</baseHealthScale>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/BodyPartDef[defName="RM_BehemothShield"]/hitPoints</xpath>
+				<value>
+					<hitPoints>120</hitPoints>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient Charged Arms</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[
+					defName="AW_ChargeMateba" or
+					defName ="AW_ChargeSMG" or
+					defName = "AW_ChargeBR" or
+					defName = "AW_ChargeLMG" or
+					defName = "AW_ChargeSR" or
+					defName = "AW_ChargeCS" or
+					defName = "AW_ChargeJavelin" or
+					defName = "AW_ChargeMKThreeOne"
+				]</xpath>
+				<value>
+					<generateAllowChance>0.5</generateAllowChance>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "AW_ChargeMKThreeOne"]/statBases/Mass</xpath>
+				<value>
+					<Mass>70</Mass>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName = "AW_ChargeMKThreeOne"]/statBases/Bulk</xpath>
+				<value>
+					<Bulk>80</Bulk>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Factions Expanded - Mechanoids</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="VFE_Gun_AdvancedInfernoCannon"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/ai_IsBuildingDestroyer</xpath>
+				<value>
+					<ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>

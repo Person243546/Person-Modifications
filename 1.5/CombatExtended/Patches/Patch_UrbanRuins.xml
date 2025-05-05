@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Ancient urban ruins</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs</xpath>
+		<value>
+		
+		<ReplaceLib.ReplacerDef>
+			<defName>MMUrbanRuins</defName>
+			<replacers>
+				<li>
+					<replace>AM_Makarov</replace>
+					<with>Gun_Autopistol</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_APS</replace>
+					<with>HRK_GlockSeventeen</with> <!-- big mag-->
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_FNHG</replace>
+					<with>CE_Gun_FNFiveSeven</with> 
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_CPHG</replace>
+					<with>CE_Gun_FNFiveSeven</with> 
+				</li>
+				<li>
+					<replace>AM_Spear68C</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li>
+					<replace>AM_Spear68A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_M5A3LT</replace>
+					<with>Gun_RSCarbine</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_AK68A</replace>
+					<with>Gun_RSCarbine</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_M4C</replace>
+					<with>Gun_RSCarbine</with>
+				</li>
+				<li>
+					<replace>AM_MK68A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_RM68A</replace>
+					<with>LBPack_LBFour</with>
+				</li>
+				<li>
+					<replace>AM_MCX</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li>				
+					<replace>AM_M4ASOP</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M42U</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_MCXC</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M4A</replace>
+					<with>HRK_MFourAOne</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_ADAR</replace>
+					<with>HRK_MFourAOne</with><!-- do later -->
+				</li>
+				<li>
+					<replace>AM_AK101A</replace>
+					<with>CE_Gun_AKM</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter2">
+					<replace>AM_ASVAL</replace>
+					<with>HRK_ASVAL</with>
+				</li><!--
+				<li>
+					<replace>AM_VSS</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>-->
+				<li MayRequire="harkon.gunnut.chapter2">
+					<replace>AM_DTMDR</replace>
+					<with>HRK_AShTwelve</with><!-- might remove-->
+				</li>
+				<li>
+					<replace>AM_TKB68A</replace>
+					<with>Gun_AssaultRifle</with>
+				</li>
+				<li>
+					<replace>AM_MK17A</replace>
+					<with>CE_Gun_FNFAL</with>
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_R11A</replace>
+					<with>LBPack_LBFour</with><!-- dmr -->
+				</li>
+				<li MayRequire="safair.lbriflepack">
+					<replace>AM_SR25A</replace>
+					<with>LBPack_LBFour</with>
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_Hunter</replace>
+					<with>CE_Gun_M1903Springfield</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_M700A</replace>
+					<with>HRK_RSevenHundred</with>
+				</li>
+				<li MayRequire="harkon.gunnut.chapter1">
+					<replace>AM_MK18M</replace>
+					<with>HRK_MOneA</with> <!-- big dmr-->
+				</li>
+				<li>
+					<replace>AM_PKM</replace>
+					<with>CE_Gun_MSixty</with>
+				</li>
+				<li>
+					<replace>AM_PKP</replace>
+					<with>Gun_LMG</with>
+				</li>
+				<li MayRequire="rimsenal.evp">
+					<replace>AM_AVT</replace>
+					<with>Gun_AutomaticRifle</with>
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_MPX</replace>
+					<with>HRK_MPSevenAOne</with><!-- could be better -->
+				</li>
+				<li MayRequire="ceteam.combatextendedarmory">
+					<replace>AM_MPXL</replace>
+					<with>CE_Gun_PNinety</with><!-- could be better -->
+				</li>
+				<li MayRequire="turkler.advanced.armaments">
+					<replace>AM_STM</replace>
+					<with>SEX_PistolCarbine</with>
+				</li>
+				<li MayRequire="turkler.advanced.armaments">
+					<replace>AM_STMC</replace>
+					<with>SEX_PistolCarbine</with>
+				</li>
+				<li MayRequire="iluvsilicon.basicmedicine2">
+					<replace>AM_AI2A</replace>
+					<with>MedicineBasic</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsA</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsB</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsC</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsA</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsD</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsE</replace>
+					<with>AC_Chips</with>
+				</li>
+				<li MayRequire="sarg.alphacrafts">
+					<replace>AM_PotatoChipsF</replace>
+					<with>AC_Chips</with>
+				</li><!--
+				<li>
+					<replace>AM_ComponentWeapon</replace>
+					<with>ComponentIndustrial</with>
+				</li>
+				<li>
+					<replace>AM_227FURYComponents</replace>
+					<with>ComponentIndustrial</with>
+				</li>-->
+			</replacers>
+		</ReplaceLib.ReplacerDef>
+		
+		</value>
+	</li>
+	<!--
+	<li Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[@Name="AMGun"]/weaponTags</xpath>
+		<value>
+			<weaponTags Inherit="False" />
+		</value>
+	</li>
+	-->
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_OrdinaryWeapons"]/root/options/li/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li>Gun_BoltActionRifle</li>
+			<li>Gun_HeavySMG</li>
+			<li>Gun_Revolver</li>
+			<li>Gun_PumpShotgun</li>
+			<li>CE_Gun_WinchesterNintyFour</li>
+			<li MayRequire="rimsenal.evp">Gun_PistolHeavyRevolver</li>
+			<li MayRequire="ceteam.combatextendedarmory">CE_Gun_HenrySideGate</li>
+			<li MayRequire="ceteam.combatextendedarmory">CE_Gun_SKS</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[1]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li>Gun_AssaultRifle</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOFive</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_AKOneOThree</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MOneA</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_SAFiftyEight</li>
+			<li MayRequire="harkon.gunnut.community">HRK_GalilACE</li>
+			<li MayRequire="harkon.gunnut.community">HRK_M16AFour</li>
+			<li MayRequire="harkon.gunnut.community">HRK_M4US</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_BullpupPKP</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[2]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MFourAOne</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_MPSevenAOne</li>
+			<li MayRequire="harkon.gunnut.chapter2">HRK_SKS</li>
+			<li MayRequire="harkon.gunnut.chapter2">HRK_PNinety</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_VanillaWeapons"]/root/options/li[1]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li MayRequire="rimsenal.evp">Gun_PistolHeavyRevolver</li>
+			<li MayRequire="ceteam.combatextended">CE_FlareGun</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_VanillaWeapons"]/root/options/li[2]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li MayRequire="vanillaexpanded.vwe">VWE_Gun_LightSMG</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_WinchesterNintyFour</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_MTwoFourNine</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_AKM</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_FNFAL</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_USASTwelve</li>
+			<li MayRequire="harkon.gunnut.chapter1">HRK_SaigaTwelveK</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_VanillaWeapons"]/root/options/li[3]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_SVD</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_HecateTwo</li>
+			<li MayRequire="ceteam.combatextended">CE_DisposableRocketLauncher</li>
+			<li MayRequire="ceteam.combatextended">CE_GrenadeLauncher</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_RPGSeven</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_MilkorMGL</li>
+			<li MayRequire="ceteam.combatextendedguns">CE_Gun_Flamethrower</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingSetMakerDef[defName="AM_VanillaWeapons"]/root/options/li[4]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+		<value>
+			<li MayRequire="ceteam.combatextended">Weapon_GrenadeConcussion</li>
+			<li MayRequire="ceteam.combatextended">Weapon_GrenadeFlashbang</li>
+			<li MayRequire="ceteam.combatextended">Weapon_GrenadeSmoke</li>
+			<li MayRequire="ceteam.combatextended">Weapon_GrenadeFirefoam</li>
+			<li MayRequire="ludeon.rimworld.biotech">Weapon_GrenadeTox</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_GrenadeStinger</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_GrenadeThermobaric</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_GrenadeIncendiary</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_GrenadePipeBomb</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_GrenadeAntiTank</li>
+			<li MayRequire="keshash.grenadevariety">Weapon_GV_PrometheumBomb</li>
+		</value>
+	</li>
+	<!--
+	<li Class="PatchOperationAttributeSet">
+		<xpath>Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons" or defName="AM_OrdinaryWeapons"]/root/options/li[thingSetMaker/@Class="ThingSetMaker_Count"]/thingSetMaker</xpath>
+		<attribute>Class</attribute>
+		<value>BreadMoCEThingSetMaker.ThingSetMaker_CountWithAmmo</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingSetMakerDef[defName="AM_AdvancedWeapons"]/root/options/li[thingSetMaker/@Class="BreadMoCEThingSetMaker.ThingSetMaker_CountWithAmmo"]/thingSetMaker</xpath>
+		<value>
+			<magCount>1~3</magCount>
+			<random>true</random>
+			<canGenerateAdvanced>true</canGenerateAdvanced>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+	  <xpath>Defs/ThingSetMakerDef[defName="AM_OrdinaryWeapons"]/root/options</xpath>
+	  <value>
+		<li>
+		  <weight>5</weight>
+		  <thingSetMaker Class="ThingSetMaker_RandomOption">
+			<options>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoPistols</li>
+					  </categories>
+					</filter>
+					<countRange>100~180</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoRifles</li>
+						<li>AmmoShotguns</li>
+					  </categories>
+					</filter>
+					<countRange>80~150</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			</options>
+		  </thingSetMaker>
+		</li>
+		<li>
+		  <weight>1</weight>
+		  <thingSetMaker Class="ThingSetMaker_RandomOption">
+			<options>
+			  <li>
+				<weight>2</weight>
+				<thingSetMaker Class="BreadMoCEThingSetMaker.ThingSetMaker_StackCountEnabledAmmoOnly">
+				  <basic>false</basic>
+				  <advanced>true</advanced>
+				  <fixedParams>
+					<filter>
+					  <categories>
+						<li>AmmoPistols</li>
+						<li>AmmoRifles</li>
+						<li>AmmoShotguns</li>
+					  </categories>
+					</filter>
+					<countRange>25~70</countRange>
+				  </fixedParams>
+				</thingSetMaker>
+			  </li>
+			</options>
+		  </thingSetMaker>
+		</li>
+	  </value>
+	</li>
+	-->
+	<li Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="Gun_AssaultRifle"]/weaponTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Gun_AssaultRifle"]</xpath>
+			<value>
+				<weaponTags/>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Gun_AssaultRifle"]/weaponTags</xpath>
+			<value>
+			</value>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[
+			defName="Gun_AssaultRifle"
+			]/weaponTags</xpath>
+		<value>
+			<li>AMGuns</li>
+			<li>AM</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[
+			defName="Gun_Autopistol"
+			]/weaponTags</xpath>
+		<value>
+			<li>Autopistol</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Det's Battle Meds</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingSetMakerDef[defName="AM_MedicalSupplies" or defName="AM_Injector"]/root/options/li[2]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+				<value>
+					<li>StimpackUltratech</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingSetMakerDef[defName="AM_MedicalSupplies"]/root/options/li[3]/thingSetMaker/fixedParams/filter/thingDefs</xpath>
+				<value>
+					<li>StimpackIndustrial</li>
+					<li>DV_AdrenalineShot</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Combat Extended Guns</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="CE_Gun_PKM" or
+					defName="CE_Gun_MSixty"
+					]/weaponTags</xpath>
+				<value>
+					<li>PKM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="CE_Gun_AKM" or
+					defName="CE_Gun_FNFAL" or
+					defName="CE_Gun_SigMCX" or
+					defName="CE_Gun_MSixty" or
+					defName="CE_Gun_AKMSU"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="CE_Gun_FNFAL"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMHP</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Supermarket_2L_S"]/thingDatas/li[def="AM_MK17A"]/def</xpath>
+				<value>
+					<def>CE_Gun_FNFAL</def>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Vanilla Weapons Expanded</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="VWE_Gun_HMG"
+					]/weaponTags</xpath>
+				<value>
+					<li>PKM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="VWE_Gun_Carbine" or
+					defName="VWE_Gun_ServiceRifle"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Rimsenal - Augmented Vanilla Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="Gun_RSCarbine" or
+					defName="Gun_MilitiaRifle" or
+					defName="Gun_RSBattleRifle" or
+					defName="Gun_AutomaticRifle"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="Gun_RSBattleRifle"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMHP</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Supermarket_2L_S"]/thingDatas/li[def="AM_STM"]/def</xpath>
+				<value>
+					<def>Gun_RSCarbine</def>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Chapter #1</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="HRK_BullpupPKP"
+					]/weaponTags</xpath>
+				<value>
+					<li>PKM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AKOneOFive" or
+				defName = "HRK_AKOneOThree" or
+				defName = "HRK_MFourAOne" or
+				defName = "HRK_RSevenHundred" or
+				defName = "HRK_MOneA" or
+				defName = "HRK_BullpupPKP" or
+				defName = "HRK_SAFiftyEight" or
+				defName = "HRK_MPSevenAOne"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_SAFiftyEight"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMHP</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_GlockSeventeen"
+					]/weaponTags</xpath>
+				<value>
+					<li>Autopistol</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Supermarket_2L_S" or defName="AM_Supermarket_L"]/thingDatas/li[def="AM_M4A"]/def</xpath>
+				<value>
+					<def>HRK_MFourAOne</def>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Supermarket_2L_S"]/thingDatas/li[def="AM_FNHG"]/def</xpath>
+				<value>
+					<def>HRK_GlockSeventeen</def>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Reserve"]/thingDatas/li[def="AM_AK101A"]/def</xpath>
+				<value>
+					<def>HRK_AKOneOFive</def>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Chapter #2</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AShTwelve" or
+				defName = "HRK_ASVAL" or
+				defName = "HRK_GThirtySix" or
+				defName = "HRK_SKS" or
+				defName = "HRK_PNinety"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_AShTwelve"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMHP</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>[HRK] Gun Nut - Community Pack</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+					defName="HRK_M240B"
+					]/weaponTags</xpath>
+				<value>
+					<li>PKM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_SRTwentyFive" or
+				defName = "HRK_M16AFour" or
+				defName = "HRK_M4US" or
+				defName = "HRK_GalilACE"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMGuns</li>
+					<li>AM</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[
+				defName = "HRK_GalilACE"
+					]/weaponTags</xpath>
+				<value>
+					<li>AMHP</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef[defName="AM_Supermarket_L"]/thingDatas/li[def="AM_MPX"]/def</xpath>
+		<value>
+			<def>Gun_HeavySMG</def>
+		</value>
+	</li>
+	
+	<li MayRequire="" Class="PatchOperationReplace">
+		<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef/pawns/ShamblerSoldier</xpath>
+		<value>
+			<ShamblerSoldier>0.25</ShamblerSoldier>
+		</value>
+	</li>
+	
+	<li MayRequire="" Class="PatchOperationReplace">
+		<xpath>/Defs/AncientMarket_Libraray.CustomMapDataDef/pawns/ShamblerSwarmer</xpath>
+		<value>
+			<ShamblerSwarmer>0.5</ShamblerSwarmer>
+		</value>
+	</li>
+	
+	<!--
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Integrated Implants</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+	<li Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="SkeletalBracing"]/techHediffsTags</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SkeletalBracing"]</xpath>
+			<value>
+				<techHediffsTags>
+					<li>SBracing</li>
+				</techHediffsTags>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="SkeletalBracing"]/techHediffsTags</xpath>
+			<value>
+				<li>SBracing</li>
+			</value>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="AncientSoldierBoss"]/techHediffsTags</xpath>
+		<value>
+			<li>SBracing</li>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>/Defs/PawnKindDef[defName="AncientSoldierBoss"]/techHediffsMoney</xpath>
+		<value>
+			<techHediffsMoney>3000~4000</techHediffsMoney>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationAdd">
+		<xpath>/Defs/PawnKindDef[defName="AncientMallGuards"]</xpath>
+		<value>
+			<techHediffsMoney>3000~4000</techHediffsMoney>
+			<techHediffsChance>1</techHediffsChance>
+			<techHediffsTags><li>SBracing</li></techHediffsTags>
+		</value>
+	</li>
+	
+		</operations>
+		</match>
+	</li>
+	-->
+		</operations>
+		</match>
+	</Operation>
+	
+</Patch>

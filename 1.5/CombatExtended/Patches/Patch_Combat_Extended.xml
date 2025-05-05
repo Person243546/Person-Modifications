@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+<!--
+  <li Class="PatchOperationAdd">
+	<xpath>/Defs/StatDef[defName="SwayFactor"]</xpath>
+	<value>
+	  <parts>
+	  <li Class="StatPart_Quality">
+		<factorAwful>1.6</factorAwful>
+		<factorPoor>1.2</factorPoor>
+		<factorNormal>1</factorNormal>
+		<factorGood>0.95</factorGood>
+		<factorExcellent>0.8</factorExcellent>
+		<factorMasterwork>0.7</factorMasterwork>
+		<factorLegendary>0.6</factorLegendary>
+	  </li>
+	  <li Class="StatPart_Health">
+		<curve>
+		  <points>
+			<li>(0,3)</li>
+			<li>(1,1)</li>
+		  </points>
+		</curve>
+	  </li>
+	</parts>
+	</value>
+  </li>
+  -->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Fire"]/modExtensions/li[@Class="CombatExtended.FireSpreadExtension"]</xpath>
+		<value>
+			<li Class="CombatExtended.FireSpreadExtension">
+				<baseSpreadTicks>14</baseSpreadTicks><!-- Base number of ticks a fire must wait to spread to a new adjacent cell, before size and wind multipliers. -->
+				<minSpreadTicks>8</minSpreadTicks><!-- Hard cap on spread rate, fire must always wait this number of ticks to spread even if multipliers would put it below this value. -->
+				<baseGrowthPerTick>0.00075</baseGrowthPerTick><!-- How quickly fire increases in size when it has something to burn. -->
+				<spreadFarBaseChance>0.035</spreadFarBaseChance><!-- Base chance of fire spawning a spark (sparks can set fire to objects up to 3 tiles away). This is affected by wind. -->
+				<fireSizeMultiplier>2.50</fireSizeMultiplier><!-- Controls how strongly fire size affects its rate of spread. -->
+				<windSpeedMultiplier>1.0</windSpeedMultiplier><!-- Controls how easily wind can push fire in its direction. -->
+				<maxHumidity>180000</maxHumidity><!-- Map humidity ranges between 0 and this value, with rain increasing it, and dry weather decreasing it. -->
+				<humidityDecayPerTick>0.05</humidityDecayPerTick><!-- How much humidity is reduced per tick when it isn't raining. -->
+				<humidityIncreaseMultiplier>3.5</humidityIncreaseMultiplier><!-- How quickly rain increases humidity, per tick. This value is multiplied by RainRate, which is always 1.0 for vanilla weathers (as of RW-1.1). -->
+				<flammabilityHumidityMin>2.0</flammabilityHumidityMin><!-- Multiplier on flammability when humidity is at 0%. -->
+				<flammabilityHumidityHalf>1.0</flammabilityHumidityHalf><!-- Multiplier on flammability when humidity is at 50%. -->
+				<flammabilityHumidityMax>0.625</flammabilityHumidityMax><!-- Multiplier on flammability when humidity is at 100%. -->
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/StatDef[@Name="MeleeArmorPenetrationBase"]</xpath>
+		<value>
+			<parts>
+				<li Class="StatPart_Bodysize" />
+			</parts>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Proj_GrenadeMolotov"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
+		<value>
+			<speed>10</speed>
+		</value>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Proj_GrenadeFlashbang"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/explosionRadius</xpath>
+		<value>
+			<explosionRadius>8</explosionRadius>
+		</value>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[defName="Hive"]/fillPercent</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Hive"]</xpath>
+			<value>
+				<fillPercent/>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="Hive"]</xpath>
+			<value>
+			</value>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Hive"]/fillPercent</xpath>
+		<value>
+			<fillPercent>0.85</fillPercent>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/HediffDef[defName="ElectricalBurn"]/injuryProps</xpath>
+		<value>
+			<painPerSeverity>0.009375</painPerSeverity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/DamageDef[defName="Flame_Secondary"]</xpath>
+		<value>
+			<armorCategory>Sharp</armorCategory>
+			<hediffSkin>BurnSecondary</hediffSkin>
+			<hediffSolid>BurnSecondary</hediffSolid>
+		</value>
+	</Operation>
+	
+	<!--
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_545x39mmSoviet_FMJ" or
+			defName="Bullet_545x39mmSoviet_HE" or
+			defName="Bullet_556x45mmNATO_FMJ" or
+			defName="Bullet_556x45mmNATO_HE"]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>6</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_556x45mmNATO_AP" or
+			defName="Bullet_556x45mmNATO_Incendiary"]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>12.5</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_545x39mmSoviet_AP" or
+			defName="Bullet_545x39mmSoviet_Incendiary"]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>13</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_556x45mmNATO_HP" or
+			defName="Bullet_545x39mmSoviet_HP"]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>3.5</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_556x45mmNATO_Sabot" or
+			defName="Bullet_545x39mmSoviet_Sabot"]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>20</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_762x51mmNATO_FMJ" or
+			defName="Bullet_762x54mmR_FMJ" or
+			defName="Bullet_762x51mmNATO_HE" or
+			defName="Bullet_762x54mmR_HE"
+			]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>8</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+			defName="Bullet_762x51mmNATO_AP" or
+			defName="Bullet_762x54mmR_AP" or
+			defName="Bullet_762x51mmNATO_Incendiary" or
+			defName="Bullet_762x54mmR_Incendiary"
+			]/projectile/armorPenetrationSharp</xpath>
+		<value>
+			<armorPenetrationSharp>15</armorPenetrationSharp>
+		</value>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Pilum_Thrown"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>20</damageAmountBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Pilum_Fired"]/projectile/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>40</damageAmountBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_40x46mmGrenade_HE"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]</xpath>
+		<value>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			  <explosionRadius>1.5</explosionRadius >
+			  <damageDef>Bomb</damageDef>
+			  <damageAmountBase>30</damageAmountBase>
+			  <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
+			</projectile>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Bullet_40x46mmGrenade_HE"]/comps/li[@Class="CombatExtended.CompProperties_Fragments"]</xpath>
+		<value>
+			  <li Class="CombatExtended.CompProperties_Fragments">
+				<fragments>
+				  <Fragment_Small>26</Fragment_Small>
+				</fragments>
+			  </li>
+		</value>
+	</Operation>
+	-->
+	<!--
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/AbilityDef[@Name="PsycastBase"]/verbProperties/range</xpath>
+		<value>
+			<range>75</range>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/AbilityDef[@ParentName="PsycastBase" or @ParentName="PsycastBaseSkip"]/verbProperties/range</xpath>
+		<value>
+			<range>75</range>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RoyalTitlePermitDef[workerClass="RoyalTitlePermitWorker_CallAid" or workerClass="RoyalTitlePermitWorker_OrbitalStrike"]/royalAid</xpath>
+		<value>
+			<targetingRequireLOS>false</targetingRequireLOS>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RoyalTitlePermitDef[workerClass="RoyalTitlePermitWorker_CallAid" or workerClass="RoyalTitlePermitWorker_OrbitalStrike"]/royalAid/targetingRange</xpath>
+		<value>
+			<targetingRange>1000</targetingRange>
+		</value>
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ResearchProjectDef[defName="CE_AdvancedLaunchers"]/techLevel</xpath>
+		<value>
+			<techLevel>Industrial</techLevel>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="CE_GrenadeLauncher"]/comps/li[@Class="CombatExtended.CompProperties_FireModes"]/aiAimMode</xpath>
+		<value>
+			  <aiAimMode>AimedShot</aiAimMode>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/PawnKindDef[@Name="MercenarySlasherBase"]/apparelAllowHeadgearChance</xpath>
+		<value>
+			<apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="AmmoBench"]/researchPrerequisites</xpath>
+		<value>
+			<researchPrerequisites>
+				<li>Machining</li>
+			</researchPrerequisites>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_TacVest"]/apparel/wornGraphicPath</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_Backpack"]/apparel/wornGraphicPath</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Combat Extended Armors</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		<li Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[defName="CE_Armor_LargeBackpack"]/apparel/wornGraphicPath</xpath>
+		</li>
+		</operations>
+		</match>
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_Backpack"]/apparel/wornGraphicPath</xpath>
+		<value>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/SmokepopPack/SmokepopPack</wornGraphicPath>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_Backpack"]/apparel/wornGraphicData</xpath>
+		<value>
+		  <wornGraphicData>
+			<renderUtilityAsPack>true</renderUtilityAsPack>
+			<north>
+			  <offset>(0,-0.15)</offset>
+			</north>
+			<east>
+			  <offset>(-0.35,-0.05)</offset>
+			  <thin><offset>(0.05,0)</offset></thin>
+			  <hulk><offset>(-0.1,0)</offset></hulk>
+			  <fat><offset>(-0.15,0)</offset></fat>
+			</east>
+			<west>
+			  <offset>(0.35,-0.05)</offset>
+			  <thin><offset>(-0.05,0)</offset></thin>
+			  <hulk><offset>(0.1,0)</offset></hulk>
+			  <fat><offset>(0.15,0)</offset></fat>
+			</west>
+			<male>  <scale>(0.75,0.75)</scale></male>
+			<female><scale>(0.75,0.75)</scale></female>
+			<thin>  <scale>(0.7,0.7)</scale></thin>
+			<hulk>  <scale>(0.9,0.9)</scale></hulk>
+			<fat>   <scale>(0.9,0.9)</scale></fat>
+		  </wornGraphicData>
+		</value>
+	</Operation>
+	-->
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>The Generic Ammo Experience for Combat Extended edited</li>
+	</mods>
+		<nomatch Class="PatchOperationSequence">
+		<operations>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_FMJ"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_AP"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/AP</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_HP"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/HP</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_Incendiary"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/Incendiary</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_HE"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/HE</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_Rifle_Sabot"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Rifle/Battlerifle/Sabot</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_PistolMagnum_FMJ"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Revolver/FMJ</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_PistolMagnum_AP"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Revolver/AP</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+	<li Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Ammo_PistolMagnum_HP"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Ammo/Revolver/HP</texPath>
+				<graphicClass>Graphic_StackCount</graphicClass>
+			</graphicData>
+		</value>
+	</li>
+		</operations>
+		</nomatch>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[
+		@Name="ChargePistolAmmo" or
+		@Name="ChargeRifleAmmo" or
+		@Name="AmmoBase" or
+		@Name="AmmoAntiMaterielBase" or
+		@Name="AmmoAutocannonShellBase" or
+		@Name="MechChargedAmmo"
+		]/stackLimit</xpath>
+		<value>
+			<stackLimit>500</stackLimit>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[@Name="AmmoLauncherGrenadeBase"]/stackLimit</xpath>
+		<value>
+			<stackLimit>100</stackLimit>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/CombatExtended.AmmoCategoryDef[defName="ExplosiveAP"]/label</xpath>
+		<value>
+			<label>high-explosive</label>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/CombatExtended.AmmoCategoryDef[defName="ExplosiveAP"]/labelShort</xpath>
+		<value>
+			<labelShort>HE</labelShort>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Apparel_PackJump" or defName="Apparel_FirefoampopPack"]/statBases</xpath>
+		<value>
+			<ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+		</value>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_RevolverShotgun"]/label</xpath>
+		<value>
+			<label>pistol</label>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Generic Ammo Fixes edited</li> 
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/CombatExtended.AmmoSetDef[
+				defName="AmmoSet_5x50mmCaseless" or
+				defName="AmmoSet_5x50mmCaseless_HV" or
+				defName="AmmoSet_5x50mmCaselessToxic" or
+				defName="AmmoSet_5x50mmCaseless_LV"
+				]/similarTo</xpath>
+			<value>
+				<similarTo>AmmoSet_RailgunSabot</similarTo>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Ammo_5x50mmCaseless_Sabot"]/ammoClass</xpath>
+			<value>
+				<ammoClass>RailgunSabot</ammoClass>
+			</value>
+		</li>
+	
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="ApparelCarryGearBase"]/statBases</xpath>
+		<value>
+			<MarketValue>50</MarketValue>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[defName="CarryBulk"]/defaultBaseValue</xpath>
+		<value>
+			<defaultBaseValue>30</defaultBaseValue>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_Backpack" or defName="CE_Apparel_TacVest"]/equippedStatOffsets/CarryBulk</xpath>
+		<value>
+			<CarryBulk>25</CarryBulk>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="CE_Apparel_KidBackpack" or defName="CE_Apparel_TribalBackpack"]/equippedStatOffsets/CarryBulk</xpath>
+		<value>
+			<CarryBulk>15</CarryBulk>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageDef</xpath>
+		<value>
+			<damageDef>Thermobaric</damageDef>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/explosionRadius</xpath>
+		<value>
+			<explosionRadius>2</explosionRadius>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>83</damageAmountBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/comps/li[@Class="CombatExtended.CompProperties_ExplosiveCE"]/explosiveDamageType</xpath>
+		<value>
+			<explosiveDamageType>PrometheumFlame</explosiveDamageType>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/comps/li[@Class="CombatExtended.CompProperties_ExplosiveCE"]/explosiveRadius</xpath>
+		<value>
+			<explosiveRadius>6.5</explosiveRadius>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/comps/li[@Class="CombatExtended.CompProperties_ExplosiveCE"]/damageAmountBase</xpath>
+		<value>
+			<damageAmountBase>11</damageAmountBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/comps/li[@Class="CombatExtended.CompProperties_ExplosiveCE"]</xpath>
+		<value>
+			<preExplosionSpawnThingDef>FilthPrometheum</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/preExplosionSpawnChance</xpath>
+
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="Bullet_80x256mmFuel_Incendiary"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/preExplosionSpawnThingDef</xpath>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[./projectile[@Class="CombatExtended.ProjectilePropertiesCE"] and contains(defName, "Charged") and not (./modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension"])]</xpath>
+		<value>	
+			<li Class="ProjectileImpactFX.EffectProjectileExtension">
+				<AutoAssign>false</AutoAssign>
+				<explosionFleckDef>Fleck_ChargedAmmo</explosionFleckDef>
+				<explosionFleckSize>0.25</explosionFleckSize>
+				<ImpactGlowFleckDef>ExplosionFlash</ImpactGlowFleckDef>
+			</li>
+		</value>
+	</Operation>-->
+	
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[./projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/secondaryDamage/li[def="Bomb_Secondary"] and contains(defName, "Charged") and not (./modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension"])]</xpath>
+		<value>	
+			<li Class="ProjectileImpactFX.EffectProjectileExtension">
+				<AutoAssign>false</AutoAssign>
+				<explosionFleckDef>Fleck_ChargedAmmo</explosionFleckDef>
+				<!--<explosionFleckSize>0.25</explosionFleckSize>-->
+				<ImpactGlowFleckDef>ExplosionFlash</ImpactGlowFleckDef>
+			</li>
+		</value>
+	</Operation>
+	<!--
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/ThingDef[./modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension" and (explosionFleckDef="Fleck_ChargedAmmo")]
+		/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/secondaryDamage/li[def="Bomb_Secondary" and (amount >= 5)]]</xpath>
+		<value>	
+			<li Class="ProjectileImpactFX.EffectProjectileExtension">
+				<AutoAssign>false</AutoAssign>
+				<explosionFleckDef>Fleck_ChargedAmmo</explosionFleckDef>
+				<explosionFleckSize>0.25</explosionFleckSize>
+				<ImpactGlowFleckDef>ExplosionFlash</ImpactGlowFleckDef>
+			</li>
+		</value>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success> <!-- might fail if there's no charged ammo with enough explosion. prob overkill -->
+		<xpath>Defs/ThingDef[./projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/secondaryDamage/li[def="Bomb_Secondary" and (amount >= 30)] and contains(defName, "Charged")]
+		/modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension" and not (./explosionFleckSize)]</xpath>
+		<value>
+			<explosionFleckSize>1.5</explosionFleckSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/secondaryDamage/li[def="Bomb_Secondary" and (amount >= 10 and not(.>15))] and contains(defName, "Charged")]
+		/modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension" and not (./explosionFleckSize)]</xpath>
+		<value>	
+			<explosionFleckSize>0.4</explosionFleckSize>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[./projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/secondaryDamage/li[def="Bomb_Secondary" and (amount >= 0 and not(.>10))] and contains(defName, "Charged")]
+		/modExtensions/li[@Class="ProjectileImpactFX.EffectProjectileExtension" and not (./explosionFleckSize)]</xpath>
+		<value>	
+			<explosionFleckSize>0.25</explosionFleckSize>
+		</value>
+	</Operation>
+	
+</Patch>
