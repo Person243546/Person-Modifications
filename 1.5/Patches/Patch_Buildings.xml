@@ -40,91 +40,91 @@
 		</value>
 	</Operation>
 	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TrapIED_EMP"]/costList</xpath>
+		<value>
+			<costList>
+			  <Steel>10</Steel>
+			  <ComponentIndustrial>4</ComponentIndustrial>
+			</costList>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="TrapIED_Smoke"]/costList</xpath>
+		<value>
+			<costList>
+			  <Steel>10</Steel>
+			  <Chemfuel>10</Chemfuel>
+			</costList>
+		</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationFindMod">
 	<mods>
 		<li>Ideology</li>
 	</mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-	<li Class="PatchOperationFindMod">
-	<mods>
-		<li>Vanilla Furniture Expanded - Props and Decor</li>
-	</mods>
-		<match Class="PatchOperationSequence">
-		<operations>
-			<!--
-			<li Class="PatchOperationRemove">
-				<xpath>Defs/ThingDef[defName="Ideogram"]/placeWorkers/li[.="PlaceWorker_PreventInteractionSpotOverlap"]</xpath>
-			</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Furniture Expanded - Props and Decor</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
 			
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="Ideogram"]</xpath>
-				<value>
-					<fillPercent>0</fillPercent>
-					<altitudeLayer>Floor</altitudeLayer>
-					<clearBuildingArea>false</clearBuildingArea>
-				</value>
-			</li>
-			
-			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="Ideogram"]/building</xpath>
-				<value>
-					<isEdifice>false</isEdifice>
-				</value>
-			</li>
-			
-			<li Class="PatchOperationReplace">
-				<xpath>Defs/ThingDef[defName="Ideogram"]/interactionCellOffset</xpath>
-				<value>
-					<interactionCellOffset>(0,0,-2)</interactionCellOffset>
-				</value>
-			</li>
-			-->
-			<li Class="PatchOperationAdd">
-				<xpath>Defs</xpath>
-				<value>
-					<ThingDef ParentName="AltarBase" MayRequire="vanillaexpanded.vfepropsanddecor">
-						<defName>VFEPD_PlanningTableAltar</defName>
-						<label>planning table</label>
-						<description>A large size planning screen mounted on a large table.</description>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs</xpath>
+					<value>
+					
+					<ThingStyleDef>   
+						<defName>Ideogram_PlanningTable</defName>     
 						<graphicData>
 							<texPath>Things/Building/SpacerProps/PlanningTable</texPath>
 							<graphicClass>Graphic_Random</graphicClass>
 							<drawSize>(3,3)</drawSize>
 							<shaderType>CutoutComplex</shaderType>
 						</graphicData>
-						<costStuffCount>100</costStuffCount>
-						<costList>
-							<ComponentIndustrial>2</ComponentIndustrial>
-						</costList>
-						<stuffCategories Inherit="False">
-						  <li>Metallic</li>
-						</stuffCategories>
-						<rotatable>false</rotatable>
-						<altitudeLayer>Building</altitudeLayer>
-						<castEdgeShadows>True</castEdgeShadows>
-						<passability>PassThroughOnly</passability>
-						<pathCost>80</pathCost>
-						<statBases>
-							<MaxHitPoints>180</MaxHitPoints>
-							<Mass>35</Mass>
-							<Flammability>0</Flammability>
-							<WorkToBuild>2000</WorkToBuild>
-							<Beauty>20</Beauty>
-							<StyleDominance>40</StyleDominance>
-						</statBases>
-						<size>(3,3)</size>
-						<uiIconScale>1</uiIconScale>
-						<building>
-							<isInert>true</isInert>
-						</building>
-					</ThingDef>
-				</value>
-			</li>
-			
+					</ThingStyleDef>
+					
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/StyleCategoryDef[defName="Techist"]/thingDefStyles</xpath>
+					<value>
+					  <li>
+						<thingDef>Ideogram</thingDef>
+						<styleDef>Ideogram_PlanningTable</styleDef>
+					  </li>
+					</value>
+				</li>
+				
+			</operations>
+			</match>
+		</li>
+	
 		</operations>
 		</match>
-	</li>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Buffs 'n Nerfs for the Generic Ammo Experience</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="TrapIED_Firefoam"]/costList</xpath>
+			<value>
+				<costList>
+				  <Steel>15</Steel>
+				  <Ammo_Firefoam>15</Ammo_Firefoam>
+				</costList>
+			</value>
+		</li>
 	
 		</operations>
 		</match>
@@ -241,6 +241,17 @@
 				]</xpath>
 				<value>
 					<clearBuildingArea>false</clearBuildingArea>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[
+				defName="Gomi_Handrail" or
+				defName="Gomi_FloorFence" or
+				defName="Gomi_GLHighWall"
+				]/coversFloor</xpath>
+				<value>
+					<coversFloor>true</coversFloor>
 				</value>
 			</li>
 			
@@ -576,6 +587,68 @@
 				</operations>
 				</match>
 			</li>-->
+			
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>Save Our Ship 2</li>
+			</mods>
+				<match Class="PatchOperationSequence">
+				<operations>
+				
+					<li Class="PatchOperationAdd">
+						<xpath>Defs</xpath>
+						<value>
+						
+						<ThingDef ParentName="BuildingBase">
+							<defName>Person_Airlockframe</defName>
+							<label>airlock door frame</label>
+							<description>A decorative door frame that gives beauty.</description>
+							<thingClass>Building</thingClass>
+							<altitudeLayer>PawnUnused</altitudeLayer>
+							<statBases>
+								<MaxHitPoints>180</MaxHitPoints>
+								<WorkToBuild>1800</WorkToBuild>
+								<Flammability>0.0</Flammability>
+								<Mass>10</Mass>
+								<Beauty>20</Beauty>
+							</statBases>
+							<graphicData>
+								<texPath>Things/Building/Airlock/Frame/AirlockFrame</texPath>
+								<graphicClass>Graphic_Multi</graphicClass>
+								<drawSize>(3,2)</drawSize>
+							</graphicData><!--
+							<uiIconScale>1.75</uiIconScale>
+							<uiIconOffset>(0,0.15)</uiIconOffset>-->
+							<uiIconPath>Things/Building/Airlock/Frame/AirlockFrame_MenuIcon</uiIconPath>
+							<researchPrerequisites>
+								<li>ShipBasics</li>
+							</researchPrerequisites>		
+							<defaultPlacingRot>South</defaultPlacingRot>
+							<clearBuildingArea>false</clearBuildingArea>
+							<designationCategory>Ship</designationCategory>
+							<tradeability>None</tradeability>
+							<building>
+								<isEdifice>false</isEdifice>
+								<paintable>true</paintable>
+								<!--<shipPart>true</shipPart>-->
+							</building>
+							<repairEffect>Repair</repairEffect>
+							<costList>
+								<Steel>1</Steel>
+							</costList>
+							<comps>
+								<li>
+									<compClass>CompColorable</compClass>
+								</li>
+							</comps>
+						</ThingDef>
+						
+						</value>
+					</li>
+				
+				</operations>
+				</match>
+			</li>
 			
 		</operations>
 		</match>
@@ -1817,6 +1890,13 @@
 				</value>
 			</li>
 			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Table_Counter" or defName="VFE_CoffeeTable" or defName="Table_1x1c"]/pathCost</xpath>
+				<value>
+					<pathCost>500</pathCost>
+				</value>
+			</li>
+			
 		</operations>
 		</match>
 	</Operation>
@@ -2228,6 +2308,29 @@
 				<maxSimultaneous>1</maxSimultaneous>
 				<maxDistance>25</maxDistance>
 			  </li>
+		  </value>
+		</li>
+		
+		</operations>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+	<mods>
+		<li>Reel's Expanded Storage</li>
+	</mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[
+				defName="ReelStorageSpacerContainer" or
+				defName="ReelStorageLargeSpacerContainer" or
+				defName="ReelStorageSpacerContainerStack" or
+				defName="ReelStorageSpacerLocker"
+			]/building/maxItemsInCell</xpath>
+			<value>
+				<maxItemsInCell>25</maxItemsInCell>
 		  </value>
 		</li>
 		
@@ -3202,6 +3305,13 @@
 		</li>
 		
 		<li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[@Name="TrapIEDBase"]</xpath>
+			<value>
+				<designatorDropdown>Person_IED</designatorDropdown>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationAdd">
 			<xpath>Defs/ThingDef[defName="Table1x2c"]</xpath>
 			<value>
 				<designatorDropdown>Ferny_Tables</designatorDropdown>
@@ -3246,11 +3356,43 @@
 		<li Class="PatchOperationAdd">
 			<xpath>Defs</xpath>
 			<value>
-				
+			
 			<DesignatorDropdownGroupDef>
 				<defName>Person_CitadelWall</defName>
 			</DesignatorDropdownGroupDef>
-				
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_Crate</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_MetalCrate</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_Barrel</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_Bundle</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_Canister</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_IED</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_Sandbag</defName>
+			</DesignatorDropdownGroupDef>
+			
+			<DesignatorDropdownGroupDef>
+				<defName>Person_FrontierTurret</defName>
+			</DesignatorDropdownGroupDef>
+			
 			</value>
 		</li>
 		
@@ -3286,18 +3428,120 @@
 		
 		<li Class="PatchOperationFindMod">
 		<mods>
-			<li>Vanilla Furniture Expanded - Architect</li>
+			<li>Phaneron's Basic Storage</li>
 		</mods>
 			<match Class="PatchOperationSequence">
 			<operations>
-			
-                <!-- <Operation Class="PatchOperationAdd">
-                    <xpath>Defs/ThingDef[defName="RB_DoubleDoor"]</xpath>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BasicStorageMediumCrate" or
+						defName="BasicStorageLargeCrate"
+					]</xpath>
                     <value>
-                        <designatorDropdown>Ferny_DoubleDoors</designatorDropdown>
+                        <designatorDropdown>Person_Crate</designatorDropdown>
                     </value>
-                </Operation> -->
-			
+                </li>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BasicStorageMetalCrate"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_MetalCrate</designatorDropdown>
+                    </value>
+                </li>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BasicStorageFuelTank"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Canister</designatorDropdown>
+                    </value>
+                </li>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BasicStorageSack"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Bundle</designatorDropdown>
+                    </value>
+                </li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Adaptive Simple Storage</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="PalletCrateA" or
+						defName="PalletCrateB" or
+						defName="CrateA" or
+						defName="CrateB" or
+						defName="CrateC" or
+						defName="CrateD" or
+						defName="CrateE" or
+						defName="CrateF" or
+						defName="CrateG"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Crate</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="MetalCrateA" or
+						defName="MetalCrateB" or
+						defName="MetalCrateC" or
+						defName="MetalCrateD"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_MetalCrate</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BarrelA" or
+						defName="BarrelB" or
+						defName="BarrelC"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Barrel</designatorDropdown>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="BundleA" or
+						defName="BundleB" or
+						defName="BundleC"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Bundle</designatorDropdown>
+                    </value>
+                </li>
+				
+				<li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+						defName="CanisterA" or
+						defName="CanisterB"
+					]</xpath>
+                    <value>
+                        <designatorDropdown>Person_Canister</designatorDropdown>
+                    </value>
+                </li>
+				
 			</operations>
 			</match>
 		</li>
@@ -3569,6 +3813,13 @@
 			<match Class="PatchOperationSequence">
 			<operations>
 			
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[@Name="FT_SandBag_Base"]</xpath>
+				<value>
+					<designatorDropdown>Person_Sandbag</designatorDropdown>
+				</value>
+			</li>
+			
 			<li Class="PatchOperationFindMod">
 			<mods>
 				<li>Vanilla Furniture Expanded - Architect</li>
@@ -3582,6 +3833,7 @@
 						<designatorDropdown>Ferny_Bridges</designatorDropdown>
 					</value>
 				</li>
+				
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/TerrainDef[defName="VFEArch_BridgeSteelConcrete"]</xpath>
 					<value>
@@ -3626,6 +3878,25 @@
 					<xpath>Defs/ThingDef[@Name="FTC_Palisade_Base"]</xpath>
 					<value>
 						<designatorDropdown>Person_CitadelWall</designatorDropdown>
+					</value>
+				</li>
+			
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Fortification Industrial - Frontier</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="FT_BaseCannonBuilding_Deployable"]</xpath>
+					<value>
+						<designatorDropdown>Person_FrontierTurret</designatorDropdown>
 					</value>
 				</li>
 			
@@ -3761,6 +4032,12 @@
                     <value>
                         <designatorDropdown>Ferny_DisplayCabinets</designatorDropdown>
                     </value>
+                </li>
+				<li Class="PatchOperationRemove">
+                    <xpath>Defs/AdaptiveStorage.GraphicsDef[defName="sbz_PalletASF"]</xpath>
+                </li>
+				<li Class="PatchOperationRemove">
+                    <xpath>Defs/AdaptiveStorage.GraphicsDef[defName="sbz_MiniPalletASF"]</xpath>
                 </li>
 				
 			</operations>

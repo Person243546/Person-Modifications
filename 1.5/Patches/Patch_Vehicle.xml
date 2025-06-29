@@ -20,6 +20,13 @@
 			</li>
 			
 			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="Make_ComponentFuelTank" or defName="Make_ComponentTransmission"]/recipeUsers</xpath>
+				<value>
+				  <recipeUsers Inherit="false"/>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
 				<xpath>/Defs/RecipeDef[defName="CastFromMold"]/products</xpath>
 				<value>
 				  <products>
@@ -362,7 +369,6 @@
 				defName="VVE_Burya_Blueprint" or
 				defName="VVE_Cherokee_Blueprint" or
 				defName="VVE_Goliath_Blueprint" or
-				defName="VVE_Hermano_Blueprint" or
 				defName="VVE_Louie_Blueprint" or
 				defName="VVE_Marshal_Blueprint" or
 				defName="VVE_Nomad_Blueprint" or
@@ -376,7 +382,6 @@
 				defName="VVE_Badger_Blueprint" or
 				defName="VVE_BigRig_Blueprint" or
 				defName="VVE_Burya_Blueprint" or
-				defName="VVE_Hermano_Blueprint" or
 				defName="VVE_Nomad_Blueprint" or
 				defName="VVE_Paladin_Blueprint"
 				]/costList/VVE_CarAlternator</xpath>
@@ -424,6 +429,137 @@
 					<ComponentWheelRoad>16</ComponentWheelRoad>
 					<ComponentHeavyCasting>2</ComponentHeavyCasting>
 				</value>
+			</li>
+			
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_ClassicCarWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_SupercarWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_BattleTankWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_LightArmoredVehicleWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_OffroadJeepWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_HelicopterWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_TruckWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_ArtilleryWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_CargoHelicopterWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_RefrigeratedTruckWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_InfantryFightingVehicleWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_RocketArtilleryWreck</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/VFECore.ObjectSpawnsDef[
+					defName="VVE_AllMaps_VehicleWrecks" or
+					defName="VVE_DirtPath_VehicleWrecks" or
+					defName="VVE_DirtRoad_VehicleWrecks" or
+					defName="VVE_StoneRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltRoad_VehicleWrecks" or
+					defName="VVE_AncientAsphaltHighway_VehicleWrecks"
+				]/thingDefs/VVE_SiegePodWreck</xpath>
 			</li>
 
 		</operations>
@@ -602,7 +738,7 @@
 		</operations>
 		</match>
 	</li>
-	
+	<!--
 	<li Class="PatchOperationFindMod">
     <mods>
 		<li>VVE - Secondary Weapons</li>
@@ -624,7 +760,7 @@
 			
 		</operations>
 		</match>
-	</li>
+	</li>-->
 	
 	<li Class="PatchOperationFindMod">
     <mods>
@@ -861,7 +997,139 @@
 		</match>
 	</li>
 	
-
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>Technical map Vehicles</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="Dreadnought_Blueprint"
+				]/costList</xpath>
+				<value>
+					<costList>
+						<EngineHeavy>1</EngineHeavy>
+						<VVE_CarAlternator>2</VVE_CarAlternator>
+						<VVE_CarExhaust>6</VVE_CarExhaust>
+						<VVE_CarSuspension>8</VVE_CarSuspension>
+						<VVE_CarWheel>6</VVE_CarWheel>
+						<Steel>400</Steel>
+						<ComponentIndustrial>18</ComponentIndustrial>
+						<VVE_CarFuelTank>2</VVE_CarFuelTank>
+						<VVE_CarTransmission>2</VVE_CarTransmission>
+						<VVE_CarRadiator>4</VVE_CarRadiator>
+					</costList>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="MudHead_Blueprint"
+				]/costList</xpath>
+				<value>
+					<costList>
+						<EngineMedium>1</EngineMedium>
+						<VVE_CarAlternator>2</VVE_CarAlternator>
+						<VVE_CarExhaust>2</VVE_CarExhaust>
+						<VVE_CarSuspension>8</VVE_CarSuspension>
+						<VVE_CarWheel>4</VVE_CarWheel>
+						<VVE_CarRadiator>1</VVE_CarRadiator>
+						<VVE_CarFuelTank>1</VVE_CarFuelTank>
+						<Steel>300</Steel>
+						<ComponentIndustrial>6</ComponentIndustrial>
+					</costList>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="SandPatrol_Blueprint"
+				]/costList</xpath>
+				<value>
+					<costList>
+					  <EngineMedium>1</EngineMedium>
+					  <VVE_CarAlternator>2</VVE_CarAlternator>
+					  <VVE_CarExhaust>2</VVE_CarExhaust>
+					  <VVE_CarSuspension>8</VVE_CarSuspension>
+					  <VVE_CarWheel>4</VVE_CarWheel>
+					  <VVE_CarFuelTank>1</VVE_CarFuelTank>
+					  <VVE_CarRadiator>1</VVE_CarRadiator>
+					  <Steel>120</Steel>
+					  <ComponentIndustrial>4</ComponentIndustrial>
+					</costList>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="LandCarrier_Blueprint"
+				]/costList</xpath>
+				<value>
+					<EngineHeavy>4</EngineHeavy>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="SandPatrol_Blueprint" or
+					defName="MudHead_Blueprint" or
+					defName="LandCarrier_Blueprint" or
+					defName="Dreadnought_Blueprint"
+				]/researchPrerequisites</xpath>
+				<value>
+					<li>VVE_BasicVehicles</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
+	
+	<li Class="PatchOperationFindMod">
+    <mods>
+		<li>DAYUN</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="DAYUNC_Blueprint" or
+					defName="DAYUNB_Blueprint" or
+					defName="DAYUNV_Blueprint"
+				]/costList</xpath>
+				<value>
+					<costList>
+						<EngineHeavy>1</EngineHeavy>
+						<VVE_CarAlternator>2</VVE_CarAlternator>
+						<VVE_CarExhaust>6</VVE_CarExhaust>
+						<VVE_CarSuspension>8</VVE_CarSuspension>
+						<VVE_CarWheel>6</VVE_CarWheel>
+						<Steel>400</Steel>
+						<ComponentIndustrial>18</ComponentIndustrial>
+						<VVE_CarFuelTank>2</VVE_CarFuelTank>
+						<VVE_CarTransmission>2</VVE_CarTransmission>
+						<VVE_CarRadiator>4</VVE_CarRadiator>
+					</costList>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/Vehicles.VehicleBuildDef[
+					defName="DAYUNC_Blueprint" or
+					defName="DAYUNB_Blueprint" or
+					defName="DAYUNV_Blueprint"
+				]/researchPrerequisites</xpath>
+				<value>
+					<li>VVE_BasicVehicles</li>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</li>
 	
 		</operations>
 		</match>

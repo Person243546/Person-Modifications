@@ -4,13 +4,21 @@
 	<ReplaceLib.ReplacerDef>
 		<defName>PersonModifications</defName>
 		<replacers>
-			<li>
+			<li MayRequire="rimthunder.core">
 				<replace>VVE_EngineBlock</replace>
 				<with>EngineMedium</with>
 			</li>
-			<li>
+			<li MayRequire="rimthunder.core">
 				<replace>VVE_CarWheel</replace>
 				<with>ComponentWheelTire</with>
+			</li>
+			<li MayRequire="oskarpotocki.vanillavehiclesexpanded">
+				<replace>ComponentFuelTank</replace>
+				<with>VVE_CarFuelTank</with>
+			</li>
+			<li MayRequire="oskarpotocki.vanillavehiclesexpanded">
+				<replace>ComponentTransmission</replace>
+				<with>VVE_CarSuspension</with>
 			</li>
 			<li>
 				<replace>CE_Gun_PKM</replace>
@@ -60,30 +68,6 @@
 				<replace>VWE_MeleeWeapon_Halberd</replace>
 				<with>CE_Melee_Halberd</with>
 			</li>
-			<li>
-				<replace>BS_GiantPrimitiveBow</replace>
-				<with>Bow_Great</with>
-			</li><!--
-			<li>
-				<replace>VFEM_Bow_HeavyCrossbow</replace>
-				<with>CE_Gun_Crossbow</with>
-			</li>
-			<li>
-				<replace>GD_INGrenadeLauncher</replace>
-				<with>GD_GrenadeLauncher</with>
-			</li>
-			<li>
-				<replace>GD_SKGrenadeLauncher</replace>
-				<with>GD_GrenadeLauncher</with>
-			</li>
-			<li>
-				<replace>GD_BSLauncher</replace>
-				<with>GD_GrenadeLauncher</with>
-			</li>
-			<li>
-				<replace>DMS_DeposableRocketLauncher</replace>
-				<with>GD_GrenadeLauncher</with>
-			</li>-->
 			<li MayRequire="ceteam.combatextendedarmory">
 				<replace>HRK_MThreeEOne</replace>
 				<with>CE_Gun_CarlGustaf</with>
@@ -135,6 +119,114 @@
 			<li>
 				<replace>DMS_GshG762Gatlinggun</replace>
 				<with>Gun_Minigun</with>
+			</li>
+			<li>
+				<replace>SEX_MountedGunTurret</replace>
+				<with>Turret_M240B</with>
+			</li>
+			<li>
+				<replace>SEX_RocketLauncherTurret</replace>
+				<with>FT_RecoillessRifle</with>
+			</li><!--
+			<li>
+				<replace>SEX_Slugthrowers</replace>
+				<with>Gunsmithing</with>
+			</li>
+			<li>
+				<replace>SEX_Scatterguns</replace>
+				<with>Gunsmithing</with>
+			</li>-->
+			<li>
+				<replace>SEX_ShotgunTurret</replace>
+				<with>Turret_ShotgunTurret</with>
+			</li><!--
+			<li>
+				<replace>compositearmor</replace>
+				<with>FlakArmor</with>
+			</li>-->
+			<li MayRequire="ludeon.rimworld.royalty">
+				<replace>CE_Melee_Maul</replace>
+				<with>MeleeWeapon_Warhammer</with>
+			</li><!--
+			<li>
+				<replace>CE_Melee_Zweihander</replace>
+				<with>CE_Melee_Zweihander</with>
+			</li>
+			<li>
+				<replace>CE_Melee_Halberd</replace>
+				<with>CE_Melee_Halberd</with>
+			</li>-->
+			<li MayRequire="reel.expanded.storage">
+				<replace>BasicStorageNeolithicStorage</replace>
+				<with>ReelNeolithicStorage</with>
+			</li>
+			<li MayRequire="reel.expanded.storage">
+				<replace>BasicStorageReelMedievalStorage</replace>
+				<with>ReelMedievalStorage</with>
+			</li>
+			<li MayRequire="rimsenal.evp">
+				<replace>CE_Apparel_HeavyCompositeHelmet</replace>
+				<with>Apparel_ProtectiveHelmet</with>
+			</li>
+			<li MayRequire="rimsenal.evp">
+				<replace>CE_Apparel_Gorka</replace>
+				<with>Apparel_ProtectiveGear</with>
+			</li>
+			<li>
+				<replace>VWE_Gun_SMG</replace>
+				<with>Gun_HeavySMG</with>
+			</li>
+			<li MayRequire="rosalina.mating.press">
+				<replace>VFES_Turret_Flame</replace>
+				<with>SEX_FlamethrowerTurret</with>
+			</li>
+			<li MayRequire="rosalina.mating.press">
+				<replace>VFES_Gun_FlameTurret</replace>
+				<with>VFES_Gun_FlameTurret</with>
+			</li>
+			<li MayRequire="whoup.tweakingthey.balancern">
+				<replace>VFES_Turret_MilitaryTurret</replace>
+				<with>Turret_MiniTurret</with>
+			</li>
+			<li MayRequire="phaneron.basic.storage">
+				<replace>sbz_MiniPallet</replace>
+				<with>BasicStoragePalletSmall</with>
+			</li>
+			<li MayRequire="phaneron.basic.storage">
+				<replace>sbz_Pallet</replace>
+				<with>BasicStoragePalletLarge</with>
+			</li>
+			<li MayRequire="phaneron.basic.storage">
+				<replace>MetalCrateA</replace>
+				<with>BasicStorageMetalCrate</with>
+			</li>
+			<li MayRequire="phaneron.basic.storage">
+				<replace>ReelStorageMetalCrate</replace>
+				<with>BasicStorageMetalCrate</with>
+			</li>
+			<li MayRequire="phaneron.basic.storage">
+				<replace>ReelStorageSkip</replace>
+				<with>BasicStorageIndustrialContainer</with>
+			</li>
+			<li MayRequire="adaptive.simplestorage">
+				<replace>ReelStorageLargeMetalCrate</replace>
+				<with>MetalCrateB</with>
+			</li>
+			<li MayRequire="adaptive.simplestorage">
+				<replace>ReelStorageWoodCrate</replace>
+				<with>CrateA</with>
+			</li>
+			<li MayRequire="adaptive.simplestorage">
+				<replace>ReelStorageLargeWoodCrate</replace>
+				<with>CrateE</with>
+			</li>
+			<li MayRequire="adaptive.simplestorage">
+				<replace>ReelStorageBarrel</replace>
+				<with>BarrelA</with>
+			</li>
+			<li MayRequire="adaptive.simplestorage">
+				<replace>BasicStorageLargeBundle</replace>
+				<with>BundleC</with>
 			</li>
 		</replacers>
 	</ReplaceLib.ReplacerDef>
@@ -360,7 +452,7 @@
 				<replace>VWE_Gun_BattleRifle</replace>
 				<with>CE_Gun_FNFAL</with>
 			</li>
-			<li MayRequire="ceteam.combatextendedarmory">
+			<li>
 				<replace>VWE_Gun_SemiAutomaticRifle</replace>
 				<with>CE_Gun_SKS</with>
 			</li>
@@ -384,7 +476,7 @@
 				<replace>Gun_ScatterCharger</replace>
 				<with>VWE_Gun_ChargeShotgun</with>
 			</li>
-			<li MayRequire="ceteam.combatextendedarmory">
+			<li>
 				<replace>Gun_FR</replace>
 				<with>CE_Gun_SKS</with>
 			</li>
@@ -411,6 +503,30 @@
 			<li MayRequire="ceteam.combatextendedarmory">
 				<replace>VWE_SawedOffShotgun</replace>
 				<with>CE_Gun_SawedOff</with>
+			</li>
+			<li>
+				<replace>V_ChargeKhopesh</replace>
+				<with>V_ChargeLongSword</with>
+			</li>
+			<li>
+				<replace>V_ChargeKatana</replace>
+				<with>V_ChargeLongSword</with>
+			</li>
+			<li>
+				<replace>V_ChargeMagariYari</replace>
+				<with>V_ChargeGlaive</with>
+			</li>
+			<li>
+				<replace>V_ChargeScythe</replace>
+				<with>V_ChargeGlaive</with>
+			</li>
+			<li>
+				<replace>V_ChargeHalberd</replace>
+				<with>V_ChargeGlaive</with>
+			</li>
+			<li>
+				<replace>VWE_Gun_GrenadeLauncher</replace>
+				<with>CE_Gun_MilkorMGL</with>
 			</li>
 		</replacers>
 	</ReplaceLib.ReplacerDef>

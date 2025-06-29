@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: fueling compoment -->
+  <ComponentFuelTank.label>car fuel tank</ComponentFuelTank.label>
+  <!-- EN: metal parts such as fuel tank, carburetor, fuel pump and filter that is necessary for a fuel powered vehicle. -->
+  <ComponentFuelTank.description>Carefully manufactured fuel storage and injection systems. Ideal for vehicles that require greater fuel capacity or even increased fuel consumption without increasing the likelihood of gas leaks or engine damage.</ComponentFuelTank.description>
+  
+  <!-- EN: transmisson compoment -->
+  <ComponentTransmission.label>car suspension</ComponentTransmission.label>
+  <!-- EN: Metal parts such as driveshafts, gearboxes, differentials and planetary gears that are necessary to transmit torque. -->
+  <ComponentTransmission.description>A series of transmissions, springs and shock absorbers that redirect or reduce forces transferred through the wheels. Generally, the greater the mass and cargo capacity of the vehicle, the more suspensions are needed.</ComponentTransmission.description>
+  
+</LanguageData>

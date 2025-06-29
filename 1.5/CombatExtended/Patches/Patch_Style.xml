@@ -52,6 +52,14 @@
 					  <graphicClass>Graphic_Single</graphicClass>
 					</graphicData>
 				</ThingStyleDef>
+				
+				<ThingStyleDef MayRequire="me.furniturestolen">
+					<defName>MM_Rustic_ChargeRifle</defName>
+					<graphicData>
+					  <texPath>Things/Weapons/ChargeRifleAK</texPath>
+					  <graphicClass>Graphic_Single</graphicClass>
+					</graphicData>
+				</ThingStyleDef>
 			
 			</value>
 		</li>
@@ -74,6 +82,10 @@
 				<li MayRequire="tostov.simpleindustrialfactions">
 					<thingDef>Gun_HeavySMG</thingDef>
 					<styleDef>MM_Rustic_HeavySMG</styleDef>
+				</li>
+				<li MayRequire="me.furniturestolen">
+					<thingDef>Gun_ChargeRifle</thingDef>
+					<styleDef>MM_Rustic_ChargeRifle</styleDef>
 				</li>
 			</value>
 		</li>
@@ -343,6 +355,36 @@
 							</graphicData>
 						</ThingStyleDef>
 						
+						<ThingStyleDef MayRequire="zal.valica">
+							<defName>MM_V_ChargeScythe</defName>
+							<overrideLabel>charge scythe</overrideLabel>
+							<graphicData>
+							  <texPath>Things/Weapons/V_ChargedScythe</texPath>
+							  <graphicClass>Graphic_Single</graphicClass>
+							   <shaderType>TransparentPostLight</shaderType>
+							  <drawSize>1.6</drawSize>
+							  <drawOffsetSouth>(0.3,0,0)</drawOffsetSouth>
+							  <drawOffsetNorth>(0.3,0,0)</drawOffsetNorth>
+							  <drawOffsetEast>(0.3,0,0)</drawOffsetEast>
+							  <drawOffsetWest>(0.3,0,0)</drawOffsetWest>
+							</graphicData>
+						</ThingStyleDef>
+						
+						<ThingStyleDef MayRequire="zal.valica">
+							<defName>MM_V_ChargeHalberd</defName>
+							<overrideLabel>charge halberd</overrideLabel>
+							<graphicData>
+							  <texPath>Things/Weapons/V_ChargedHalberd</texPath>
+							  <graphicClass>Graphic_Single</graphicClass>
+							   <shaderType>TransparentPostLight</shaderType>
+							  <drawSize>1.5</drawSize>
+							  <drawOffsetSouth>(0.3,0,0)</drawOffsetSouth>
+							  <drawOffsetNorth>(0.3,0,0)</drawOffsetNorth>
+							  <drawOffsetEast>(0.3,0,0)</drawOffsetEast>
+							  <drawOffsetWest>(0.3,0,0)</drawOffsetWest>
+							</graphicData>
+						</ThingStyleDef>
+						
 					</value>
 				</li>
 				
@@ -366,6 +408,26 @@
 						<li MayRequire="zal.valica">
 							<thingDef>V_ChargeLongSword</thingDef>
 							<styleDef>MM_V_ChargeKhopesh</styleDef>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/StyleCategoryDef[defName="Morbid"]/thingDefStyles</xpath>
+					<value>
+						<li MayRequire="zal.valica">
+							<thingDef>V_ChargeGlaive</thingDef>
+							<styleDef>MM_V_ChargeScythe</styleDef>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/StyleCategoryDef[defName="Christian"]/thingDefStyles</xpath>
+					<value>
+						<li MayRequire="zal.valica">
+							<thingDef>V_ChargeGlaive</thingDef>
+							<styleDef>MM_V_ChargeHalberd</styleDef>
 						</li>
 					</value>
 				</li>
@@ -604,6 +666,14 @@
 									<thingDef>VWE_Gun_ChargeMinigun</thingDef>
 									<styleDef>AM_Rustic_ChargeMinigun</styleDef>
 								</li>
+								<li>
+									<thingDef>Gun_ChargeRifle</thingDef>
+									<styleDef>AM_Rustic_ChargeRifle</styleDef>
+								</li>
+								<li MayRequire="rimsenal.evp">
+									<thingDef>Gun_Repeater</thingDef>
+									<styleDef>Rustic_Gun_Repeater</styleDef>
+								</li>
 							</thingDefStyles>
 						</StyleCategoryDef>
 						
@@ -617,7 +687,6 @@
 					thingDef="VWE_Gun_ChargeShotgun" or
 					thingDef="VWE_Gun_ChargeSMG" or
 					thingDef="VWE_Gun_ChargeLMG" or
-					thingDef="Gun_ChargeRifle" or
 					thingDef="VWE_Gun_ChargeSniperRifle" or
 					thingDef="VWE_Gun_ChargeMinigun" or
 					thingDef="VWE_Gun_SemiAutomaticRifle" or
@@ -626,6 +695,12 @@
 					thingDef="Gun_Minigun" or
 					thingDef="Gun_IncendiaryLauncher" or
 					thingDef="VWE_SawedOffShotgun"
+					]</xpath>
+				</li>
+				
+				<li MayRequire="rimsenal.evp" Class="PatchOperationRemove">
+					<xpath>/Defs/StyleCategoryDef[defName="Rustic"]/thingDefStyles/li[
+					thingDef="Gun_Repeater"
 					]</xpath>
 				</li>
 				

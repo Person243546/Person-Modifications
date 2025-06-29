@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[(./statBases)]/statBases[(./FilthRate)]/FilthRate</xpath>
+		<value>
+			<FilthRate>1</FilthRate>
+		</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationFindMod">
     <mods>
 		<li>Too Many Mods - Compats and Rebalances</li>
@@ -229,6 +236,13 @@
 				]/apparelRequired</xpath>
 				<value>
 						<li>CE_Apparel_TacVest</li>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Prometheum" or defName="FSX"]/thingCategories/li</xpath>
+				<value>
+					<li>Manufactured</li>
 				</value>
 			</li>
 			
@@ -1110,6 +1124,13 @@
 		</value>
 	</Operation>
 	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ResearchProjectDef[defName="Gunlink"]/prerequisites</xpath>
+		<value>
+			<li>CE_AdvancedNV</li>
+		</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationFindMod">
     <mods>
 		<li>Vanilla Weapons Expanded</li>
@@ -1171,6 +1192,12 @@
 			</mods>
 				<match Class="PatchOperationSequence">
 				<operations>
+			<li Class="PatchOperationFindMod">
+			<mods>
+				<li>The Generic Ammo Experience for Combat Extended</li>
+			</mods>
+				<nomatch Class="PatchOperationSequence">
+				<operations>
 				
 				<li Class="PatchOperationAdd">
 					<xpath>Defs/ResearchProjectDef[defName="ReconArmor"]/prerequisites</xpath>
@@ -1179,6 +1206,9 @@
 					</value>
 				</li>
 				
+				</operations>
+				</nomatch>
+			</li>
 				<li Class="PatchOperationFindMod">
 				<mods>
 					<li>[HRK] Gun Nut - CORE</li>
@@ -2068,6 +2098,155 @@
 	</Operation>
 	-->
 	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>The Generic Ammo Experience for Combat Extended</li> 
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Gun_MiniTurret"]/label</xpath>
+			<value>
+				<label>light auto-turret</label>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Gun_MiniTurret"]/graphicData</xpath>
+			<value>
+				<graphicData>
+					<texPath>Things/Building/Turrets/SEX_IntermediateTurretTop</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+				</graphicData>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Gun_MiniTurret"]/statBases</xpath>
+			<value>
+				<statBases>
+					<SightsEfficiency>1</SightsEfficiency>
+					<ShotSpread>0.8</ShotSpread>
+					<SwayFactor>0.65</SwayFactor>
+					<RangedWeapon_Cooldown>0.4</RangedWeapon_Cooldown>
+					<Mass>10</Mass>
+				</statBases>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Gun_MiniTurret"]/verbs</xpath>
+			<value>
+				<verbs>
+					<li Class="CombatExtended.VerbPropertiesCE">
+						<recoilAmount>1.02</recoilAmount>
+						<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+						<hasStandardCommand>true</hasStandardCommand>
+						<defaultProjectile>Bullet_556x45mmNATO_FMJ</defaultProjectile>
+						<warmupTime>1.2</warmupTime>
+						<range>32.9</range>
+						<ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+						<burstShotCount>8</burstShotCount>
+						<soundCast>GunShotA</soundCast>
+						<soundCastTail>GunTail_Light</soundCastTail>
+						<muzzleFlashScale>9</muzzleFlashScale>
+						<recoilPattern>Mounted</recoilPattern>
+					</li>
+				</verbs>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Gun_MiniTurret"]/comps/li[@Class="CombatExtended.CompProperties_AmmoUser"]</xpath>
+			<value>
+				<li Class="CombatExtended.CompProperties_AmmoUser">
+					<magazineSize>80</magazineSize>
+					<reloadTime>4</reloadTime>
+					<ammoSet>AmmoSet_RifleIntermediate</ammoSet>
+				</li>
+			</value>
+		</li>
+		
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/statBases</xpath>
+			<value>
+				<statBases>
+					<WorkToBuild>6000</WorkToBuild>
+					<MaxHitPoints>200</MaxHitPoints>
+					<Flammability>0.6</Flammability>
+					<Mass>20</Mass>
+					<Bulk>25</Bulk>
+					<AimingAccuracy>0.50</AimingAccuracy>
+					<ShootingAccuracyTurret>0.50</ShootingAccuracyTurret>
+				</statBases>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/label</xpath>
+			<value>
+				<label>light auto-turret</label>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/graphicData/texPath</xpath>
+			<value>
+				<texPath>Things/Building/Turrets/MachineGunBase</texPath>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/uiIconPath</xpath>
+			<value>
+				<uiIconPath>UI/Icons/Turrets/SEX_LightTurretIcon</uiIconPath>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/costStuffCount</xpath>
+			<value>
+				<costStuffCount>40</costStuffCount>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]/costList</xpath>
+			<value>
+				<costList>
+					<Steel>80</Steel>
+					<ComponentIndustrial>5</ComponentIndustrial>
+				</costList>
+			</value>
+		</li><!--
+		<li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="Turret_MiniTurret"]</xpath>
+			<value>
+				<graphicData>
+					<texPath>Things/Building/Turrets/MachineGunBase</texPath>
+					<shadowData>
+						<volume>(0.27,0.25,0.27)</volume>
+						<offset>(0,0,0)</offset>
+					</shadowData>
+				</graphicData>
+					<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+					<description>Automatic gun turret capable of firing intermediate rifle cartridges. Its dumb AI brain can't be directly controlled, so beware of friendly fire.</description>
+					<stuffCategories>
+						<li>Metallic</li>
+					</stuffCategories>
+					<costStuffCount>40</costStuffCount>
+					<costList>
+						<Steel>80</Steel>
+						<ComponentIndustrial>5</ComponentIndustrial>
+					</costList>
+					<building>
+						<combatPower>30</combatPower>
+						<ai_combatDangerous>true</ai_combatDangerous>
+						<turretGunDef>Gun_MiniTurret</turretGunDef>
+						<turretBurstCooldownTime>0.8</turretBurstCooldownTime>
+					</building>
+			</value>
+		</li>-->
+		
+		</operations>
+		</match>
+	</Operation>
 	
 	<Operation Class="PatchOperationFindMod">
     <mods>
@@ -2117,7 +2296,144 @@
 				<li Class="PatchOperationRemove">
 					<xpath>Defs/ThingDef[defName="CE_Apparel_SimpleNightVision" or defName="CE_Apparel_AdvancedNightVision"]/costList/RB_Glass</xpath>
 				</li>
-			
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ThingDef[defName="CE_Apparel_BallisticShield"]/costList</xpath>
+				</li>
+				
+			</operations>
+			</match>
+		</li>
+		
+		<li Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Weapons Expanded</li>
+		</mods>
+			<match Class="PatchOperationSequence">
+			<operations>
+				
+				<li Class="PatchOperationRemove">
+					<xpath>Defs/ResearchProjectDef[defName="SEX_Slugthrowers" or defName="SEX_Scatterguns" or defName="SEX_AdvancedOptics"]</xpath>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName='BlowbackOperation']/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>Gunsmithing</li>
+						</prerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName='CE_Launchers']/prerequisites</xpath>
+					<value>
+						<prerequisites>
+							<li>SEX_Grenades</li>
+							<li>GasOperation</li>
+						</prerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+						defName='VWE_SawedOffShotgun' or
+						defName='Gun_PumpShotgun' or
+						defName='Gun_BoltActionRifle'
+						]/recipeMaker/researchPrerequisite</xpath>
+					<value>
+						<researchPrerequisite>Gunsmithing</researchPrerequisite>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+						defName='Gun_Autopistol'
+						]/recipeMaker/researchPrerequisite</xpath>
+					<value>
+						<researchPrerequisite>BlowbackOperation</researchPrerequisite>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+						defName='VWE_Gun_SemiAutomaticRifle' or
+						defName='VWE_CombatHandgun' or
+						defName='Gun_ChainShotgun'
+						]/recipeMaker/researchPrerequisite</xpath>
+					<value>
+						<researchPrerequisite>GasOperation</researchPrerequisite>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[
+						defName='Gun_SniperRifle' or
+						defName='VWE_Gun_AntiMaterialRifle' or
+						defName='VWE_Gun_MarksmanRifle'
+						]/recipeMaker/researchPrerequisite</xpath>
+					<value>
+						<researchPrerequisite>PrecisionRifling</researchPrerequisite>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName='VWE_Gun_AntiMaterialRifle']/recipeMaker/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites Inherit="false">
+							<li>PrecisionRifling</li>
+							<li>CE_TurretHeavyWeapons</li>
+						</researchPrerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[
+						defName="MakeAmmo_Rifle_FMJ" or
+						defName="MakeAmmo_Rifle_AP" or
+						defName="MakeAmmo_Rifle_HP" or
+						defName="MakeAmmo_Shotgun_Buck" or
+						defName="MakeAmmo_Shotgun_Slug" or
+						defName="MakeAmmo_Shotgun_Beanbag" or
+						defName="MakeAmmo_RifleMagnum_FMJ" or
+						defName="MakeAmmo_RifleMagnum_AP"
+					]/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites>
+							<li>Machining</li>
+						</researchPrerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[
+						defName="MakeAmmo_Shotgun_ElectroSlug"
+					]/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites>
+							<li>Machining</li>
+							<li>MicroelectronicsBasics</li>
+						</researchPrerequisites>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/RecipeDef[
+						defName="MakeAmmo_Rifle_HE" or
+						defName="MakeAmmo_Rifle_Incendiary" or
+						defName="MakeAmmo_Rifle_Sabot" or
+						defName="MakeAmmo_RifleMagnum_HE" or
+						defName="MakeAmmo_RifleMagnum_Incendiary" or
+						defName="MakeAmmo_RifleMagnum_Sabot"
+					]/researchPrerequisites</xpath>
+					<value>
+						<researchPrerequisites>
+							<li>CE_AdvancedAmmo</li>
+							<li>Machining</li>
+						</researchPrerequisites>
+					</value>
+				</li>
+				
 			</operations>
 			</match>
 		</li>
@@ -2151,6 +2467,20 @@
 				</value>
 			</li>
 			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="CE_Armor_SoftVest"]/apparel/wornGraphicPath</xpath>
+				<value>
+					<wornGraphicPath>Things/Apparel/CE_SoftArmorVest/SoftArmor</wornGraphicPath>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="CE_Armor_SoftVest"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Apparel/CE_SoftArmorVest/SoftArmor</texPath>
+				</value>
+			</li>
+			
 			</operations>
 			</match>
 		</li>
@@ -2163,5 +2493,210 @@
 		</match>
 	</Operation>
 	
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>CE Extensive Animal Balance Tweaks</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[@Name="BaseBear"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>1.725</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[@Name="BaseBear"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.7875</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Muffalo" or defName="Bison" or defName="Yak"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Muffalo" or defName="Bison" or defName="Yak"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Sheep"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Sheep"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.24</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Elephant"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>1.475</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Elephant"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.7875</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Megasloth"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>1.8</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Megasloth"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.56</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Thrumbo"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>11.0</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="WildBoar"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>0.725</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="WildBoar"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Warg"]/statBases/ArmorRating_Blunt</xpath>
+		  <value>
+			<ArmorRating_Blunt>1.425</ArmorRating_Blunt>
+		  </value>
+		</li>
+		<li Class="PatchOperationReplace">
+		  <xpath>Defs/ThingDef[defName="Warg"]/statBases/ArmorRating_Sharp</xpath>
+		  <value>
+			<ArmorRating_Sharp>0.74</ArmorRating_Sharp>
+		  </value>
+		</li>
+		<li Class="PatchOperationFindMod">
+		  <mods>
+			<li>Vanilla Animals Expanded</li>
+		  </mods>
+		  <match Class="PatchOperationSequence">
+			<operations>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_Hippopotamus"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.775</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_Hippopotamus"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.7875</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_BlackBear"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.225</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_BlackBear"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.54</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_Walrus"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_Walrus"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Rhinoceros"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.775</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Rhinoceros"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.7875</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Elephant"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>0.875</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="Elephant"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.8225</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AEXP_Gorilla"]/statBases</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.625</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="AEXP_Gorilla"]/statBases</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.66</ArmorRating_Sharp>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_MegaWolverine"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+				  <ArmorRating_Blunt>1.8</ArmorRating_Blunt>
+				</value>
+			  </li>
+			  <li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="AEXP_MegaWolverine"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+				  <ArmorRating_Sharp>0.56</ArmorRating_Sharp>
+				</value>
+			  </li>
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/ThingDef[defName="AEXP_Muskox"]/statBases/ArmorRating_Blunt</xpath>
+			  <value>
+				<ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+			  </value>
+			</li>
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/ThingDef[defName="AEXP_Muskox"]/statBases/ArmorRating_Sharp</xpath>
+			  <value>
+				<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+			  </value>
+			</li>
+			</operations>
+		  </match>
+		</li>
+	
+		</operations>
+		</match>
+	</Operation>
 	
 </Patch>

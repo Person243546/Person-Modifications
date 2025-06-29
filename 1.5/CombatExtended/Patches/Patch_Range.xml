@@ -94,14 +94,14 @@
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-			
+			<!--
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
 				<nomatch Class="PatchOperationConditional">
 					<li Class="PatchOperationConditional">
 						<xpath>Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[verbClass="CombatExtended.Verb_ShootMortarCE"]/range</xpath>
 						<match Class="PatchOperationReplace">
-							<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[verbClass="CombatExtended.Verb_ShootCE"]/range</xpath>
+							<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[verbClass="CombatExtended.Verb_ShootMortarCE"]/range</xpath>
 							<value>
 								<range>38.0</range>
 							</value>
@@ -114,6 +114,13 @@
 						<range>38.0</range>
 					</value>
 				</match>
+			</li>
+			-->
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]/range</xpath>
+				<value>
+					<range>38.0</range>
+				</value>
 			</li>
 			
 			<li Class="PatchOperationReplace">

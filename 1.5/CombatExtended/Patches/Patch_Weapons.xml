@@ -52,7 +52,7 @@
 			<li Class="PatchOperationReplace">
 				<xpath>/Defs/ThingDef[defName="MeleeWeapon_Warhammer"]/tools</xpath>
 				<value>
-					<tools>
+					<tools><!--
 						<li Class="CombatExtended.ToolCE">
 							<label>handle</label>
 							<capacities>
@@ -73,6 +73,27 @@
 							<cooldownTime>1.85</cooldownTime>
 							<chanceFactor>0.90</chanceFactor>
 							<armorPenetrationBlunt>11.76</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+						</li>-->
+						<li Class="CombatExtended.ToolCE">
+							<label>handle</label>
+							<capacities>
+								<li>Poke</li>
+							</capacities>
+							<power>5</power>
+							<chanceFactor>0.33</chanceFactor>
+							<cooldownTime>2.01</cooldownTime>
+							<armorPenetrationBlunt>1.6</armorPenetrationBlunt>
+							<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>38</power>
+							<cooldownTime>2.59</cooldownTime>
+							<armorPenetrationBlunt>16.384</armorPenetrationBlunt>
 							<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
 						</li>
 					</tools>
@@ -120,6 +141,29 @@
 						<value>
 							<li>CE_OneHandedWeapon</li>
 						</value>
+					</li>
+					
+					<li Class="PatchOperationFindMod">
+					<mods>
+						<li>Proper Polearms</li>
+					</mods>
+						<match Class="PatchOperationSequence">
+						<operations>
+							
+						<li Class='PatchOperationAdd'>
+							<xpath>Defs/ThingDef[
+								defName='V_ChargeHammer' or
+								defName='V_ChargeHalberd' or
+								defName='V_ChargeGlaive' or
+								defName='V_ChargeMagariYari'
+							]/statBases</xpath>
+							<value>
+								<VEF_MeleeWeaponRange>2.84</VEF_MeleeWeaponRange>
+							</value>
+						</li>
+						
+						</operations>
+						</match>
 					</li>
 					
 				</operations>
@@ -382,6 +426,19 @@
 				</value>
 			</li>
 			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Bullet_Laser_ArmoryLaserCarbine"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/armorPenetrationSharp</xpath>
+				<value>
+					<armorPenetrationSharp>44</armorPenetrationSharp>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="CE_Gun_M1Garand"]/weaponTags/li[.="IndustrialGunAdvanced"]</xpath>
+				<value>
+					<li>SimpleGun</li>
+				</value>
+			</li>
 			
 		</operations>
 		</match>
@@ -494,7 +551,7 @@
 		</operations>
 		</match>
 	</Operation>
-	
+	<!--
 	<Operation Class="PatchOperationFindMod">
     <mods>
 		<li>Rimsenal - Core</li>
@@ -593,7 +650,76 @@
 					</value>
 				</li>
 				
-		<!--
+				<Operation Class="PatchOperationFindMod">
+				<mods>
+					<li>The Generic Ammo Experience for Combat Extended</li>
+				</mods>
+					<match Class="PatchOperationSequence">
+					<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_FMJ"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_AP"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/AP</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_HP"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/HP</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_Incendiary"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/Incendiary</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_HE"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/HE</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Ammo_473x33mmCaseless_Sabot"]/graphicData</xpath>
+					<value>
+						<graphicData>
+							<texPath>Things/Ammo/Rifle/Battlerifle/Sabot</texPath>
+							<graphicClass>Graphic_StackCount</graphicClass>
+						</graphicData>
+					</value>
+				</li>
+					</operations>
+					</match>
+				</Operation>
+				
+		
 		<li Class="PatchOperationFindMod">
 		<mods>
 			<li>[HRK] Gun Nut - Community Pack</li>
@@ -664,18 +790,18 @@
 				
 			</operations>
 			</match>
-		</li>-->
+		</li>
 		</operations>
 		</match>
 	</Operation>
-	
+	-->
 	<Operation Class="PatchOperationFindMod">
     <mods>
 		<li>Vanilla Weapons Expanded</li>
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
-		
+		<!--
 		<li Class="PatchOperationReplace">
 			<xpath>/Defs/ThingDef[defName="VWE_Bow_Long"]/comps/li[@Class="CombatExtended.CompProperties_FireModes"]</xpath>
 			<value>
@@ -684,7 +810,7 @@
 				</li>
 			</value>
 		</li>
-		<!--
+		
 		<li Class="PatchOperationRemove">
 			<xpath>/Defs/ThingDef[defName="VWE_MeleeWeapon_Pickaxe"]/weaponTags</xpath>
 		</li>
@@ -873,6 +999,24 @@
 		</operations>
 		</match>
 	</Operation>
+	<!--
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Biotech</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+	
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[defName="Gun_ChargeBlasterTurret"]/verbs/li[@Class="CombatExtended.VerbPropertiesCE"]</xpath>
+				<value>
+					<warmupTime>0.5</warmupTime>
+				</value>
+			</li>
+			
+		</operations>
+		</match>
+	</Operation>-->
 	
 	<Operation Class="PatchOperationFindMod">
     <mods>
@@ -1264,6 +1408,37 @@
 				<xpath>/Defs/ThingDef[defName="Proj_GV_GrenadeAntiTank"]/projectile[@Class="CombatExtended.ProjectilePropertiesCE"]/speed</xpath>
 				<value>
 					<speed>15</speed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Proj_GV_GrenadeDefensive"]/label</xpath>
+				<value>
+					<label>impact grenade</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[defName="Weapon_GV_GrenadeDefensive"]/label</xpath>
+				<value>
+					<label>impact grenade</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="GV_MakeDefensiveFragGrenade"]/label</xpath>
+				<value>
+					<label>make impact grenades x10</label>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="GV_MakeDefensiveFragGrenade"]/description</xpath>
+				<value>
+					<description>Craft 10 impact grenades.</description>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/RecipeDef[defName="GV_MakeDefensiveFragGrenade"]/jobString</xpath>
+				<value>
+					<jobString>Making impact grenades.</jobString>
 				</value>
 			</li>
 			
@@ -2011,7 +2186,7 @@
 					</recipeMaker>
 				</value>
 			</li>
-			
+			<!--
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
 				<value>
@@ -2033,7 +2208,7 @@
 					<similarTo>AmmoSet_MechChargedRM</similarTo>
 				</value>
 			</li>
-			
+			-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="RM_Mech_Behemoth"]/race/baseHealthScale</xpath>
 				<value>

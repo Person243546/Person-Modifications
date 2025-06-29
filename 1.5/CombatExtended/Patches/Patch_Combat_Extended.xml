@@ -343,7 +343,7 @@
 	
 	<Operation Class="PatchOperationFindMod">
 	<mods>
-		<li>The Generic Ammo Experience for Combat Extended edited</li>
+		<li>The Generic Ammo Experience for Combat Extended</li>
 	</mods>
 		<nomatch Class="PatchOperationSequence">
 		<operations>
@@ -472,15 +472,15 @@
 			<labelShort>HE</labelShort>
 		</value>
 	</Operation>
-	<!--
+	
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Apparel_PackJump" or defName="Apparel_FirefoampopPack"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="Apparel_PackJump" or defName="Apparel_FirefoampopPack" or defName="Apparel_PackBroadshield"]/statBases</xpath>
 		<value>
 			<ArmorRating_Sharp>0.01</ArmorRating_Sharp>
 			<ArmorRating_Blunt>0.01</ArmorRating_Blunt>
 		</value>
 	</Operation>
-	-->
+	
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_RevolverShotgun"]/label</xpath>
 		<value>
@@ -490,7 +490,7 @@
 	
 	<Operation Class="PatchOperationFindMod">
     <mods>
-		<li>Generic Ammo Fixes edited</li> 
+		<li>The Generic Ammo Experience for Combat Extended</li> 
     </mods>
 		<match Class="PatchOperationSequence">
 		<operations>
